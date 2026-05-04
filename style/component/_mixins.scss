@@ -1,0 +1,108 @@
+// размещаем миксины которые можно будет использовать в любом scss файле
+
+//! единицы измерения не указываем, но подразумевается именно px
+//? данный миксин упростит вычисление для динамического размера шрифта
+//? достаточно вызвать в селекторе миксин передав в него максимальное и минимальное значение шрифта без указания единиц измерения
+
+@mixin fluid-text($max: 48, $min: 16) {
+	font-size: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+
+@mixin fluid-block($max: 48, $min: 16) {
+	width: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+	height: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+
+@mixin fluid-width($max: 48, $min: 16) {
+	width: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+
+@mixin fluid-height($max: 48, $min: 16) {
+	height: clamp(#{$min}px, #{$max / 1440 * 100}vw, #{$max}px);
+}
+//! сбрасывает свойства присущие ссылкам
+@mixin reset-link {
+	color: inherit;
+
+	&,
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+@mixin reset-button {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+}
+
+@mixin flex-center($isInline: false) {
+	@if $isInline {
+		display: inline-flex;
+	} @else {
+		display: flex;
+	}
+
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin abs-center {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+}
+
+@mixin square($size) {
+	width: $size;
+	aspect-ratio: 1;
+}
+
+@mixin visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	border: 0 !important;
+	padding: 0 !important;
+	white-space: nowrap !important;
+	clip-path: inset(100%) !important;
+	clip: rect(0 0 0 0) !important;
+	overflow: hidden !important;
+}
+
+@mixin flexSpaceBetween {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover {
+			@content;
+		}
+	}
+
+	@media (hover: none) {
+		&:active {
+			@content;
+		}
+	}
+}
+
+@mixin title {
+	// text-transform: lowercase;
+	// display: inline-block;
+	font-size: 3rem;
+	line-height: 1;
+	font-weight: bold;
+	text-align: center;
+}
+
+@mixin shadow {
+	-webkit-box-shadow: -4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: -4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+	box-shadow: -4px 4px 8px 0px rgba(0, 0, 0, 0.2);
+}

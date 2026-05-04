@@ -1,0 +1,121 @@
+.popup {
+    &__container {
+        width: 100%;
+    }
+
+    &__content {
+        border: 1px solid var(--color-border-light);
+        border-radius: 30px;
+        background: var(--color-light);
+        padding: 30px 100px 30px 30px;
+        position: relative;
+        overflow: hidden;
+        z-index: 10;
+
+        @include mobile {
+            padding-right: 30px;
+        }
+
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+
+        &-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 0;
+        }
+    }
+
+    &__title {
+        background: var(--color-popup-title);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-transform: uppercase;
+        font-family: var(--trial-bold);
+        @include fluid-text(56, 15);
+        // line-height: 40px;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+
+        span {
+            @include fluid-text(32, 15);
+            display: block;
+            margin-top: 0;
+            line-height: 1;
+            background: var(--color-popup-title-span);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+
+    &__text {
+        font-family: var(--trial-demi-bold);
+        @include fluid-text(18, 10);
+        margin-bottom: 10px;
+        position: relative;
+        z-index: 10;
+
+    }
+
+    &__body {
+        position: relative;
+        z-index: 10;
+    }
+
+    &__grid {
+        @include mobile-above {
+            width: 70%;
+        }
+    }
+
+    &__group {
+        input {
+            border-radius: 30px;
+            border: 1px solid var(--color-dark);
+        }
+    }
+
+    &__btn {
+        border: 1px solid var(--color-dark);
+        border-radius: 30px;
+        background-color: var(--color-blue-light);
+        font-family: var(--font-family-bold);
+        cursor: pointer;
+        padding: 10px;
+
+        @include mobile {
+            padding: 15px;
+        }
+
+        @include hover {
+            box-shadow: inset 0 0 10px var(--color-btn);
+        }
+
+        &:active {
+            transform: translateY(0);
+            box-shadow: none;
+        }
+    }
+
+
+
+}
+
+.modal__close {
+    z-index: 10;
+}

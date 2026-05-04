@@ -1,0 +1,59 @@
+// !записываем глобальные переменные проекта
+
+//так записываются переменные
+
+:root {
+	// переменная для цвета
+	--color-dark: #1A1A1A; //заголовок
+	--color-black: #000; 
+	--color-light: #ffffff;
+	--color-accent: #1E2286;
+	--color-accent-dark: #000461;
+	--color-accent-light: #5E66F7;
+	--color-red: #FF0402;
+	--color-red-dark: #D10200;
+	--color-gray: #9c9c9c;
+	// переменные для рамок
+	--border: 1px solid var(--color-light);
+	--border-radius: 14px;
+	--border-radius-small: 7px;
+	--border-radius-large: 45px;
+	// переменные для цвета
+	--shadow: 0 5px 0 0 var(--color-black);
+	// переменные для семейства шрифтов
+	--font-family: "InterRegular", sans-serif;
+	--second-family: "MortendBold", sans-serif;
+	--third-family: "IgraSans", sans-serif;
+	--font3: "CGXYZLCDRegular", sans-serif;
+	--font4: "Postertoaster", sans-serif;
+	// переменные для ширины класса контейнера и отступа по Х
+	--container-width: 1798px;
+	--container-padding-x: 20px;
+	// переменные для отступа по Y  для секций
+	--section-padding-y: 70px;
+	// высота для кнопок и полей ввода
+	--input-height: 59px;
+	--button-height: 68px;
+	--button-height-small: 40px;
+
+	--transition-duration: 0.2s;
+
+	@include desktop {
+		--section-padding-y: 50px;
+	}
+
+	@include mobile {
+		--section-padding-y: 30px;
+	}
+}
+
+:root.dark-theme {
+	--color-dark: #1A1A1A; //заголовок
+	--color-black: #000; 
+	--color-light: #ffffff;
+	--color-accent: #1E2286;
+	--color-accent-dark: #000461;
+	--color-accent-light: #5E66F7;
+	--color-red: #FF0402;
+	--color-red-dark: #D10200;
+}

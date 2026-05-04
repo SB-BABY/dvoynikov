@@ -1,0 +1,126 @@
+.documents {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &__content {
+        background: var(--color-light);
+        border: 1px solid rgba(255, 255, 255, 0.75);
+        border-radius: 24px;
+        box-shadow: 5px 16px 31px 0 rgba(54, 99, 114, 0.03);
+
+        padding: 24px 51px 47px;
+    }
+
+    &__title {
+        font-family: var(--trial-bold);
+        text-transform: uppercase;
+        @include fluid-text(38, 14);
+        // max-width: 800px;
+    }
+
+    &__list {
+        margin: 0 -10px;
+
+        .slick-slide {
+            padding: 10px;
+
+            @include mobile {
+                padding: 0;
+            }
+
+        }
+    }
+
+    &__item {
+        border: 1px solid var(--border-doc-border);
+        border-radius: 10px;
+        background: rgba(134, 183, 206, 0.15);
+        padding: 0 17px;
+        display: flex !important;
+        align-items: center;
+        column-gap: 17px;
+
+        @include mobile {
+            padding: 12px 10px;
+        }
+
+        &-img {
+            box-shadow: 6px 7px 14px 0 rgba(0, 0, 0, 0.16);
+        }
+
+        &:nth-child(1) {
+            margin-top: 30px;
+        }
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+
+        &-title {
+            font-family: var(--trial-bold);
+            text-transform: uppercase;
+            @include fluid-text(16, 10);
+        }
+
+        &-link {
+            display: flex;
+            align-items: center;
+            column-gap: 53px;
+
+            @include mobile {
+                flex-direction: column;
+                align-items: start;
+                row-gap: 20px;
+            }
+
+            & a {
+                font-weight: 400;
+                @include fluid-text(16, 10);
+                 line-height: 120%;
+                text-decoration: underline;
+                color: var(--color-gray-link);
+            }
+        }
+    }
+}
+
+/* Стили для стрелок */
+.slick-arrow {
+    @include mobile {
+        top: 105%;
+        left: 38%;
+        transform: translate(-50%, -50%);
+    }
+
+
+    &:before {
+        @include mobile {
+            width: 17px;
+            height: 17px;
+            border: 2px solid var(--color-dark);
+            border-width: 2px 2px 0 0;
+        }
+    }
+}
+
+.slick-prev {
+    @include mobile {
+        display: none !important;
+    }
+}
+
+.slick-next {
+    @include mobile {
+        rotate: 90deg;
+        background: transparent;
+        border: none;
+    }
+
+    &:focus {
+        @include mobile {
+            background: transparent;
+            border: none;
+        }
+    }
+}

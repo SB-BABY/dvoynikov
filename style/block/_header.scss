@@ -1,0 +1,101 @@
+.header {
+    position: sticky;
+    top: 30px;
+    z-index: 99;
+
+    &__container {
+        position: relative;
+    }
+
+    &__content {
+        // background-color: var(--color-black);
+        // border: 2px solid rgba(34, 34, 34, 0.8);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px 30px;
+        border-radius: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 10;
+    }
+
+    &__logo {
+
+        &-img {
+            @include fluid-width(278, 150);
+            @include fluid-height(70, 35);
+        }
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 50px;
+    }
+
+
+    &__lists {
+        display: flex;
+        align-items: center;
+        column-gap: 55px;
+        @include fluid-text(16, 6);
+    }
+
+    &__link {
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+
+    &__phone {
+        position: relative;
+        display: flex;
+        align-items: center;
+        background: var(--color-accent);
+        padding: 5px 30px;
+        border-radius: 70px;
+        text-transform: uppercase;
+    }
+
+    &__phone-number {
+        position: absolute;
+        top: calc(100% + 8px); // появляется СНИЗУ кнопки
+        right: 50%;
+        transform: translateX(50%) translateY(-6px); // центрируем по кнопке + начальный сдвиг
+
+        @include fluid-text(12, 6);
+        white-space: nowrap;
+        background: var(--color-accent); // тёмный фон — контраст
+        color: var(--color-light);
+        padding: 7px 14px;
+        border-radius: 20px;
+        font-family: var(--trial-demi-bold);
+        border-color: var(--color-accent-light);
+
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+        z-index: 100;
+
+        // маленький треугольник-стрелка вверх
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 5px solid transparent;
+            border-bottom-color: var(--color-accent);
+        }
+    }
+
+    /* активное состояние */
+    &__phone.active .header__phone-number {
+        opacity: 1;
+        transform: translateX(50%) translateY(0);
+        pointer-events: auto;
+    }
+
+}

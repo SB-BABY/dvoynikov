@@ -1,0 +1,132 @@
+.footer {
+    background-color: var(--color-dark-footer);
+    color: var(--color-light-footer);
+    font-family: var(--trial-demi-bold);
+    padding-top: 60px;
+    padding-bottom: 25px;
+
+    @media (max-width: 610px) {
+        padding-top: 14px;
+        padding-bottom: 45px;
+    }
+
+    &__container {
+        position: relative;
+    }
+
+    &__top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @media (max-width: 610px) {
+            flex-direction: column;
+            align-items: start;
+            row-gap: 58px;
+        }
+    }
+
+    &__logo {
+
+        &-link {
+            display: flex;
+            align-items: center;
+            column-gap: 5px;
+        }
+
+        &-text {
+            @include fluid-text(15, 11);
+            text-transform: uppercase;
+        }
+
+        &-img {
+            @include fluid-block(104, 51);
+        }
+    }
+
+    &__adress {
+        display: flex;
+        column-gap: 17px;
+
+        &-title {
+            @include fluid-text(18, 15);
+            text-transform: uppercase;
+            position: relative;
+
+            & img {
+                position: absolute;
+                top: 0;
+                left: -20px;
+            }
+        }
+
+        &-text {
+            @include fluid-text(20, 17);
+            font-family: var(--font-family-regular);
+        }
+
+        @media (max-width: 610px) {}
+    }
+
+    &__bottom {
+        margin-top: 66px;
+
+        &-text {
+            @include fluid-text(20, 17);
+            font-family: var(--font-family-regular);
+            opacity: 0.5;
+            text-align: center;
+        }
+
+        @media (max-width: 610px) {
+            display: none;
+        }
+    }
+
+    &__icons {
+        position: absolute;
+        bottom: 0;
+        right: var(--container-padding-x);
+
+        @media (max-width: 610px) {
+            top: 0;
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+    }
+
+    &__item {
+        position: relative;
+
+        &-white{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 50%;
+        }
+    }
+
+    &__link {
+        & img {
+            @include fluid-block(45, 32);
+            position: relative;
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                transform: translate(-50%, -50%);
+                
+                width: 20px;
+                height: 20px;
+                background: #fff;
+            }
+        }
+    }
+}

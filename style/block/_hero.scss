@@ -1,0 +1,96 @@
+// Стили для секции hero
+.hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    @include mobile {
+        padding-bottom: 100px;
+    }
+
+
+    &__content {
+        position: relative;
+        padding-top: 100px;
+        background: linear-gradient(180deg, #000016 0%, #3d44fb 67.48%, #3035c1 100%);
+        border-radius: 36px;
+        padding: 100px 63px 200px;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    &__title {
+        font-weight: 500;
+        text-transform: uppercase;
+        @include fluid-text(75, 24);
+        letter-spacing: 0.04em;
+        color: var(--color-light);
+        margin-bottom: 10px;
+
+        &-pixle {
+            font-family: var(--font3);
+            @include fluid-text(42, 24);
+        }
+
+        &-right {
+            margin-left: 300px;
+        }
+    }
+
+    &__text {
+        font-family: var(--third-family);
+        color: var(--color-gray);
+        @include fluid-text(25, 15);
+        text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    }
+
+    &__btns {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 60%;
+    }
+
+    &__btn {
+        border-radius: 41px;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        text-align: center;
+        padding: 28px;
+
+        @include fluid-text(15, 12);
+        text-transform: uppercase;
+    }
+
+    &__right {
+        position: relative;
+
+        &-title {
+            font-family: var(--second-family);
+            @include fluid-text(118, 76);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 0.9;
+
+            .one {
+                margin-left: 185px;
+            }
+
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+
+}

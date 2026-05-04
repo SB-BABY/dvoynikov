@@ -1,0 +1,138 @@
+/* ===== FAB (круг) ===== */
+.fab {
+    position: fixed;
+    right: 0%;
+    top: 10%;
+    transform: translateY(-50%) scale(0);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 1000;
+}
+
+.fab.visible {
+    transform: translateY(-50%) scale(1);
+    opacity: 1;
+}
+
+/* ===== КНОПКА ===== */
+.burger {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: var(--color-blue);
+    color: var(--color-light);
+    font-size: 26px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== МЕНЮ ===== */
+.side-menu {
+    position: fixed;
+    top: 5%;
+    // right: 0;
+    left: 0;
+
+    /* отступ от FAB */
+
+    transform: translateY(-50%) translateX(40px);
+    opacity: 0;
+
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+    z-index: 999;
+    width: 100%;
+
+    @include mobile-s {
+        gap: 10px;
+        padding: 20px 15px;
+    }
+
+    &__container {
+        width: 100%;
+    }
+
+    &__content {
+        background-color: var(--color-light);
+        padding: 10px;
+        border-radius: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 10;
+        border: 2px solid var(--color-border-light);
+
+        @include mobile {
+            padding: 10px 20px 10px 10px;
+        }
+
+        @include mobile-s {
+            gap: 10px;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        &-text {
+            font-size: clamp(5px, 0.625vw, 9px);
+            text-transform: uppercase;
+            font-family: var(--trial-bold);
+        }
+    }
+
+    &__bottom{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        row-gap: 10px;
+    }
+
+    &__nav {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-family: var(--trial-demi-bold);
+        @include fluid-text(16, 6);
+
+        @include mobile {
+            width: 100%;
+            justify-content: space-between;
+            flex-wrap: wrap; // чтобы переносилось
+            gap: 10px;
+        }
+    }
+
+    &__icons {
+        display: flex; 
+        gap: 10px;
+        justify-content: flex-start;
+
+    }
+}
+
+.side-menu.open {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ===== ССЫЛКИ ===== */
+.side-menu a {
+    text-decoration: none;
+    color: var(--color-dark);
+    @include fluid-text(16, 8);
+    // padding: 6px 12px;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+.side-menu a:hover {
+    background: #3fc1c9;
+    color: white;
+}

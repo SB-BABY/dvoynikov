@@ -1,0 +1,218 @@
+.descr {
+    padding: 4rem 0;
+    background: var(--color-gray-light);
+    
+    &__header {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+    
+    &__title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: var(--color-text);
+        margin-bottom: 1rem;
+        
+        @media (max-width: 768px) {
+            font-size: 2rem;
+        }
+    }
+    
+    &__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        margin-bottom: 4rem;
+        
+        @media (max-width: 968px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+    
+    &__text-block {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    &__text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-text-secondary);
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    
+    &__image-block {
+        position: relative;
+        
+        @media (max-width: 968px) {
+            order: -1;
+        }
+    }
+    
+    &__image {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: var(--border-radius);
+        @include shadow;
+        
+        @media (max-width: 768px) {
+            height: 250px;
+        }
+    }
+    
+    &__advantages {
+        background: white;
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        @include shadow;
+        
+        @media (max-width: 768px) {
+            padding: 2rem;
+        }
+    }
+    
+    &__advantages-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: var(--color-text);
+        text-align: center;
+        margin-bottom: 3rem;
+        
+        @media (max-width: 768px) {
+            font-size: 1.7rem;
+            margin-bottom: 2rem;
+        }
+    }
+    
+    &__advantages-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        margin-bottom: 3rem;
+        
+        @media (max-width: 968px) {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+    
+    &__advantage {
+        &-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        
+        &-card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--color-accent);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        
+        &-icon {
+            font-size: 1.5rem;
+        }
+        
+        &-subtitle {
+            color: var(--color-text-secondary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        
+        &-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+        
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--color-text-secondary);
+        }
+        
+        &-check {
+            color: var(--color-success);
+            font-weight: bold;
+            font-size: 1.1rem;
+            width: 20px;
+            text-align: center;
+        }
+        
+        &-bullet {
+            width: 8px;
+            height: 8px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        
+        &-note {
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+            
+            &:before {
+                content: '"';
+                position: absolute;
+                left: 0;
+                top: 0;
+                font-size: 1.5rem;
+                color: var(--color-accent);
+            }
+        }
+    }
+    
+    &__why {
+        background: linear-gradient(135deg, var(--color-accent-light) 0%, var(--color-pink-light) 100%);
+        padding: 3rem;
+        border-radius: var(--border-radius);
+        text-align: center;
+        
+        @media (max-width: 768px) {
+            padding: 2rem;
+        }
+    }
+    
+    &__why-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: var(--color-text);
+        margin-bottom: 1.5rem;
+        
+        @media (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+    }
+    
+    &__why-text {
+        font-size: 1.1rem;
+        line-height: 1.7;
+        color: var(--color-text-secondary);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+// Дополнительные CSS переменные (если нужно)
+:root {
+    --color-success: #28a745;
+    --color-accent-light: #f3e8ff;
+    --color-pink-light: #fce7f3;
+}

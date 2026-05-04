@@ -1,0 +1,25 @@
+// размещаем   все импорты
+@import "./component/fonts", "./component/media", "./component/mixins", "./component/reset", "./component/vars",
+    "./component/globals", "./component/utils";
+
+//Размещаем блок
+
+@import "./block/mobile-overlay";
+@import "./block/button";
+@import "./block/slick";
+
+@import "./block/header";
+@import "./block/burger";
+@import "./block/hero";
+@import "./block/accordion";
+@import "./block/about";
+@import "./block/director";
+@import "./block/advantages";
+@import "./block/accordion-section";
+@import "./block/slider-section";
+@import "./block/form";
+@import "./block/modal";
+@import "./block/popup";
+@import "./block/documents";
+@import "./block/footer";
+@import "./block/scroll";

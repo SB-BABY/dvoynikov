@@ -1,0 +1,16 @@
+.js-accordion{
+    &-content{
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+    }
+
+    &-arrow{
+        transition: transform 0.3s ease;
+    }
+
+    &-item.active &-arrow{
+        transform: rotate(90deg);
+    }
+}
+

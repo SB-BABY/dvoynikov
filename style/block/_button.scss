@@ -1,0 +1,219 @@
+// BUTTON
+.button {
+    @include flex-center(true);
+
+    // height: var(--button-height);
+    padding-inline: 35px;
+    font-size: 20px;
+    color: var(--color-dark);
+    background: var(--color-light);
+
+    border: 2px solid var(--color-border-light);
+    border-radius: var(--border-radius-small);
+    cursor: pointer;
+    transition: all 1s ease;
+    box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.25);
+    padding: 20px 30px;
+    border-radius: 34px;
+
+    @include hover {
+        box-shadow: inset 0 0 10px var(--color-btn);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    &--transparent {
+        color: var(--color-dark);
+        background: transparent;
+        border-color: #7E3FE0;
+
+        @include hover {
+            color: var(--color-light);
+            background: var(--color-accent-dark);
+            border-color: var(--color-accent-dark);
+        }
+    }
+
+    &--accent {
+        color: var(--color-light);
+        background: linear-gradient(45deg, #8D4AFF, #7E3FE0);
+
+        @include hover {
+            color: var(--color-light);
+            background: var(--color-accent-dark);
+        }
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        height: var(--button-height-small);
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
+}
+
+// BUTTON
+
+// BUTTON-SECOND
+.button-second {
+    @include flex-center(true);
+    padding: 18px 20px;
+    @include fluid-text(16, 9);
+    color: var(--color-light);
+    background: linear-gradient(90deg, #46caf5 0%, #46d3dd 100%);
+    border: var(--border);
+    border-radius: var(--border-radius-small);
+    border-color: var(--color-light);
+    cursor: pointer;
+
+    @include hover {
+        color: var(--color-accent);
+        background-color: var(--color-light);
+    }
+
+    &--transparent {
+        color: var(--color-dark);
+        background-color: transparent;
+    }
+
+    &--accent {
+        color: var(--color-dark);
+        background-color: var(--color-accent);
+
+        @include hover {
+            color: var(--color-accent);
+            background-color: var(--color-dark);
+        }
+    }
+
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        height: var(--button-height-small);
+    }
+
+    @media (max-width: 480px) {
+        font-size: 1rem;
+    }
+}
+
+// BUTTON-SECOND
+
+// BUTTON-SMALL
+.button-small {
+    @include flex-center(true);
+
+    height: var(--button-height-small);
+    padding-inline: 35px;
+    font-size: 16px;
+    color: var(--color-light);
+    background: linear-gradient(45deg, #a26efb 0%, #7E3FE0 50%, #532a94 100%);
+    border: var(--border);
+    border-radius: var(--border-radius-small);
+    border-color: transparent;
+    transition: all 0.3s ease;
+
+    @include hover {
+
+        background: linear-gradient(45deg, #532a94 0%, #7E3FE0 50%, #a26efb 100%);
+        border-color: linear-gradient(45deg, #532a94 0%, #7E3FE0 50%, #a26efb 100%);
+        box-shadow: 0 3px 10px rgba(126, 63, 224, 0.3);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: none;
+    }
+
+    &--transparent {
+        color: var(--color-dark);
+        // background: transparent;
+        border-color: #7E3FE0;
+
+        @include hover {
+            color: var(--color-light);
+            background: var(--color-accent-dark);
+            border-color: var(--color-accent-dark);
+        }
+    }
+
+    &--accent {
+        color: var(--color-light);
+        background: linear-gradient(45deg, #8D4AFF, #7E3FE0);
+
+        @include hover {
+            color: var(--color-light);
+            background: var(--color-accent-dark);
+        }
+    }
+}
+
+// BUTTON-SMALL
+
+// BURGER BUTTON
+.burger-button {
+    @include reset-button;
+    @include square(48px);
+
+    position: relative;
+    border-radius: var(--border-radius-small);
+
+    @include hover {
+        background-color: var(--color-accent);
+        color: #fff;
+    }
+
+    &::after {
+        @include abs-center;
+
+        content: "";
+        width: 50%;
+        height: 2px;
+        background-color: var(--color-dark);
+        border-radius: 5px;
+        box-shadow:
+            0 -8px,
+            0 8px;
+    }
+}
+
+// BURGER BUTTON
+
+//CROSS BUTTON
+.cross-button {
+    @include reset-button;
+    @include square(48px);
+
+    position: relative;
+    border-radius: var(--border-radius-small);
+
+    @include hover {
+        background-color: var(--color-accent);
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 7px;
+        width: 70%;
+        height: 2px;
+        background-color: var(--color-dark);
+        border-radius: 5px;
+    }
+
+    &::before {
+        rotate: 45deg;
+    }
+
+    &::after {
+        rotate: -45deg;
+    }
+}
+
+//CROSS BUTTON
