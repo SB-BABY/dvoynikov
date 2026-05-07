@@ -1,35 +1,29 @@
 .slider {
-    padding-top: 60px;
+    background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
+    padding-top: 100px;
     padding-bottom: 30px;
     overflow: hidden;
 
     &__container {
-
         position: relative;
-        z-index: 10;
     }
 
     &__content {
-        border: 2px solid var(--color-border-light);
-        border-radius: 24px;
-        padding: 10px;
-        box-shadow: 0 9px 20px 0 rgba(0, 0, 0, 0.09);
-        background: var(--color-bg-accordion);
-        padding: 20px 0;
         position: relative;
-
-        @include mobile {
-            padding: 0;
-        }
     }
 
-    &__bg {
-        position: absolute;
-        transform: translate(-50%, -50%);
-        top: 20%;
-        left: 50%;
-        z-index: 1;
-        opacity: .6;
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 700;
+        @include fluid-text(83, 24);
+        text-transform: uppercase;
+    }
+
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 500;
+        @include fluid-text(22, 14);
+        text-transform: uppercase;
     }
 
     &__list {
@@ -65,22 +59,17 @@
 
     &__item {
         position: relative;
-        
+
 
         &-content {
-            border-radius: 17px;
-            padding: 170px 18px 58px;
-            box-shadow: 8px 9px 15px 0 rgba(0, 0, 0, 0.1);
-            background: var(--color-light);
-            margin-left: 20px;
-            margin-right: 20px;
+            border-radius: 78px;
+            padding: 110px 50px 50px;
+            background: linear-gradient(180deg, rgba(36, 41, 149, 0) 0%, #0b0d2f 67.31%);
+            // margin-left: 20px;
+            // margin-right: 20px;
             transform: scale(1);
-            border: 1px solid var(--color-border-light);
-
-            background-image: url('../img/slider/circle-1.png');
-            background-repeat: no-repeat;
-            background-size: 30%;
-            background-position: 100% 0;
+            border: 5px solid var(--color-light);
+            text-align: center;
         }
 
         &-title {
@@ -90,6 +79,7 @@
             line-height: 110%;
             text-transform: uppercase;
             color: var(--color-blue);
+            margin-bottom: 250px;
         }
 
         &-text {
@@ -108,16 +98,16 @@
         }
 
         &-btn {
-            margin-top: 30px;
-            padding: 12px 60px;
+            padding: 60px 80px;
             text-align: center;
+            font-family: var(--font-family);
+            font-weight: 500;
+            @include fluid-text(30, 18);
             text-transform: uppercase;
-            @include fluid-text(18, 10);
-            font-family: var(--font-family-regular);
-            color: var(--color-blue);
-            border: 1px solid var(--color-blue);
-            font-weight: 600;
-            background: var(--color-btn);
+            color: var(--color-light);
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 77px;
         }
     }
 
@@ -140,75 +130,8 @@
                 color: var(--color-title-second);
             }
 
-            &:not(.slick-center) .slider__item-btn{
-                opacity: 0;
-            }
+            
         }
-    }
-
-}
-
-.prev,
-.next {
-    position: absolute;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-    background: var(--color-arrow);
-
-    @include mobile {
-        top: 82% !important;
-    }
-}
-
-// внутри карточки
-.slick-center .prev {
-    left: 10px;
-}
-
-.slick-center .next {
-    right: 10px;
-}
-
-.prev {
-    left: 33%;
-    transform: translateX(-50%);
-
-    @include mobile {
-        left: 15% !important;
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        transform: translate(-50%, -50%) rotate(-135deg);
-        top: 50%;
-        left: 50%;
-        width: 15px;
-        height: 15px;
-        border: 2px solid #fff;
-        border-width: 2px 2px 0 0;
-    }
-}
-
-.next {
-    right: 30%;
-    transform: translateX(-50%);
-
-    @include mobile {
-        left: 85% !important;
-    }
-
-    &:before {
-        content: "";
-        position: absolute;
-        transform: translate(-50%, -50%) rotate(45deg);
-        top: 50%;
-        left: 50%;
-        width: 15px;
-        height: 15px;
-        border: 2px solid #fff;
-        border-width: 2px 2px 0 0;
     }
 
 }

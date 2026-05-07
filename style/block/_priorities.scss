@@ -1,0 +1,75 @@
+.priorities {
+    background: linear-gradient(180deg, #3d44fb 0%, #000016 100%);
+
+    &__content {
+        padding-top: 80px;
+        padding-bottom: 140px;
+        position: relative;
+        overflow: hidden;
+
+        &-bg {
+            display: inline-block;
+            position: absolute;
+            bottom: 23%;
+            left: 50%;
+            transform: translate(-50%, 50%);
+
+            font-family: var(--second-family);
+            font-weight: 700;
+            font-size: 704px;
+            text-transform: uppercase;
+            color: rgba(61, 68, 251, 0.06);
+        }
+    }
+
+    &__title {
+        text-align: right;
+        font-family: var(--second-family);
+        font-weight: 700;
+        @include fluid-text(83, 24);
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        & .one {
+            display: inline-block;
+            transform: rotate(35deg);
+        }
+
+        & .two {
+            display: inline-block;
+            transform: rotate(-18deg);
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: stretch;
+        gap: 42px;
+    }
+
+    &__item {
+        border-radius: 42px;
+        background-color: var(--color-light);
+        color: var(--color-black);
+        padding: 60px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+
+        &-title {
+            font-family: var(--font-family);
+            font-weight: 800;
+            @include fluid-text(37, 24);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        &-text {
+            font-family: var(--third-family);
+            font-weight: 400;
+            @include fluid-text(29, 19);
+        }
+    }
+}

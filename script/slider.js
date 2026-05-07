@@ -25,13 +25,13 @@ $(document).ready(function () {
         slidesToShow: 3,
         slidesToScroll: 1,
         speed: 500,
-        autoplay: false,
+        autoplay: true,
         autoplaySpeed: 2000,
         centerMode: true,
         centerPadding: '0px',
-        prevArrow: $('.prev'),
-        nextArrow: $('.next'),
-        arrows: true,
+        // prevArrow: $('.prev'),
+        // nextArrow: $('.next'),
+        arrows: false,
         responsive: [
             {
                 breakpoint: 768,
