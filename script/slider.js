@@ -109,5 +109,52 @@ $(document).ready(function () {
         ],
     });
 
+    $(".slider__parthner-slider").slick({
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: 600,
+        slidesToShow: 7,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        pauseOnHover: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    arrows: false,
+                },
+            },
+        ],
+    });
+
+    $('.team-slider').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: false,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        centerMode: false,          // на десктопе НЕТ centerMode
+        cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
+        responsive: [
+            {
+                breakpoint: 1100,
+                settings: { slidesToShow: 3, centerMode: false }
+            },
+            {
+                breakpoint: 768,
+                settings: { slidesToShow: 2, centerMode: false }
+            },
+            {
+                breakpoint: 480,
+                settings: { slidesToShow: 1, centerMode: true, centerPadding: '50px' }
+            }
+        ]
+    });
+
 
 });

@@ -1,0 +1,220 @@
+// ===================== SECTION =====================
+.team {
+    width: 100%;
+    padding: 60px 0 80px;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(180deg, #3d44fb 0%);
+
+    // ===================== TITLE =====================
+    &__title {
+        font-family: var(--second-family);
+        font-weight: 700;
+        font-size: 83px;
+        text-transform: uppercase;
+        color: #fff;
+        text-align: right;
+
+        span {
+            display: inline-block;
+            transform: rotate(19deg);
+        }
+    }
+
+    // ===================== SUBTEXT =====================
+    &__text {
+        font-family: var(--font-family);
+        font-weight: 500;
+        @include fluid-text(22, 18);
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
+
+    // ===================== CTA BUTTONS =====================
+    &__actions {
+        display: flex;
+        gap: 12px;
+        flex-shrink: 0;
+        align-self: flex-end;
+        padding-bottom: 50px;
+        justify-content: center;
+
+        @media (max-width: 768px) {
+            align-self: flex-start;
+        }
+
+        @media (max-width: 480px) {
+            flex-direction: column;
+            width: 100%;
+        }
+
+        &-btn {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            border: none;
+            border-radius: 78px;
+
+            font-family: var(--second-family);
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            text-align: center;
+            color: #fff;
+            padding: 28px;
+            cursor: pointer;
+
+            &:hover{
+                transform: scale(1.03);
+            }
+        }
+    }
+
+    // ===================== SLIDER WRAPPER =====================
+    &__slider-wrap {
+        position: relative;
+        overflow: hidden; // прячем всё лишнее
+        margin: 0 -50px; // «выезжаем» за контейнер на 50px
+        padding: 0 50px; // возвращаем padding чтобы пики влезли
+        background: linear-gradient(360deg, #000016 0%, #3d44fb 60.1%);
+        border-radius: 36px;
+
+        & .slick-list {
+            padding-top: 100px;
+            overflow: visible;
+        }
+    }
+}
+
+// ===================== BUTTONS =====================
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: 40px;
+    font-family: 'Unbounded', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    white-space: nowrap;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &--ghost {
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.4);
+        color: var(--color-light);
+
+        &:hover {
+            border-color: var(--color-light);
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1);
+        }
+    }
+
+    &--filled {
+        background: var(--color-light);
+        color: var(--color-second);
+        border: 2px solid var(--color-light);
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    &__arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: var(--color-second);
+        color: var(--color-light);
+        font-size: 0.8rem;
+        flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+        justify-content: center;
+    }
+}
+
+// ===================== CARD =====================
+.team-card {
+    padding: 0 12px;
+    outline: none;
+    opacity: 0.35; // «пики» по краям — прозрачные
+    transition: opacity 0.35s ease;
+
+    &.slick-active {
+        opacity: 1; // все 4 видимых — полностью непрозрачны
+    }
+
+    &__inner {
+        background: transparent;
+        border-radius: 24px;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 110px;
+        // transform: rotate(-1.5deg);
+        transition:
+            transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+            box-shadow 0.35s;
+
+        &:hover {
+            transform: rotate(0deg) scale(1.02) !important;
+            box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
+        }
+    }
+
+    // Alternate tilt for every second card
+    &:nth-child(even) &__inner {
+        // transform: rotate(1.5deg);
+    }
+
+    // Photo
+    &__photo {
+        width: 100%;
+        aspect-ratio: 3 / 4;
+        object-fit: cover;
+        display: block;
+        // filter: grayscale(1) contrast(1.1);
+    }
+
+    &__info {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        padding: 20px 20px 24px;
+    }
+
+    &__name {
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 34px;
+        text-transform: uppercase;
+    }
+
+    &__role {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 28px;
+        text-transform: uppercase;
+        color: #fff;
+    }
+
+    &__quote {
+        margin-top: 12px;
+        font-size: 0.82rem;
+        line-height: 1.55;
+        color: rgba(255, 255, 255, 0.75);
+        font-style: italic;
+    }
+}

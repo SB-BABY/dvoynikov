@@ -1,0 +1,176 @@
+/* =============================================
+   FAB Pill — растягивающаяся кнопка
+   ============================================= */
+
+.fab-pill-wrap {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.fab-pill {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 56px;
+  border-radius: 28px;
+  background: #ffffff;
+  border: 1.5px solid rgba(0, 0, 0, 0.11);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.09);
+  overflow: hidden;
+
+  /* Закрытое состояние — ширина только под кнопку */
+  width: 56px;
+  transition: width 0.42s cubic-bezier(0.34, 1.28, 0.64, 1);
+
+  animation: fab-pill-pulse 2.2s ease-in-out infinite;
+}
+
+.fab-pill.open {
+  width: 300px; /* подбери под количество иконок */
+  animation: none;
+}
+
+@keyframes fab-pill-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(80, 80, 80, 0.15), 0 2px 10px rgba(0, 0, 0, 0.09);
+  }
+  50% {
+    box-shadow: 0 0 0 7px rgba(80, 80, 80, 0.05), 0 2px 10px rgba(0, 0, 0, 0.09);
+  }
+}
+
+/* Кнопка-стрелка справа */
+.fab-pill-toggle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.15s;
+}
+
+.fab-pill-toggle:hover { background: rgba(0, 0, 0, 0.05); }
+
+.fab-pill-toggle i {
+  font-size: 24px;
+  color: #222222;
+  display: block;
+  transition: transform 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Стрелка поворачивается вправо при открытии */
+.fab-pill.open .fab-pill-toggle i {
+  transform: rotate(180deg);
+}
+
+/* Блок с иконками слева */
+.fab-pill-actions {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding-left: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s 0s ease;
+}
+
+.fab-pill.open .fab-pill-actions {
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.22s 0.20s ease; /* появляются после раскрытия */
+}
+
+/* Иконки-кнопки */
+.fab-pill-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  transition: background 0.15s;
+}
+
+.fab-pill-btn:hover  { background: rgba(0, 0, 0, 0.06); }
+.fab-pill-btn:active { transform: scale(0.90); }
+.fab-pill-btn i      { font-size: 20px; display: block; }
+
+/* Цвета иконок */
+.fab-pill-btn--top      i { color: #2563eb; }
+.fab-pill-btn--theme    i { color: #7c3aed; }
+.fab-pill-btn--telegram i { color: #0088cc; }
+.fab-pill-btn--vk       i { color: #0077ff; }
+.fab-pill-btn--phone    i { color: #16a34a; }
+
+/* Разделитель */
+.fab-pill-sep {
+  width: 1px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.10);
+  flex-shrink: 0;
+  margin: 0 2px;
+}
+
+/* Тултипы */
+.fab-pill-tooltip {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20, 20, 20, 0.80);
+  color: #ffffff;
+  font-size: 11px;
+  padding: 4px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.fab-pill-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 4px solid transparent;
+  border-top-color: rgba(20, 20, 20, 0.80);
+}
+.fab-pill-btn:hover .fab-pill-tooltip { opacity: 1; }
+
+/* Тёмная тема */
+[data-theme="dark"] .fab-pill {
+  background: #1e1e1e;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+[data-theme="dark"] .fab-pill-toggle i { color: #f0f0f0; }
+[data-theme="dark"] .fab-pill-btn:hover { background: rgba(255, 255, 255, 0.08); }
+[data-theme="dark"] .fab-pill-sep { background: rgba(255, 255, 255, 0.12); }
+
+@keyframes fab-pill-pulse-dark {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,200,200,0.12), 0 2px 10px rgba(0,0,0,0.35); }
+  50%       { box-shadow: 0 0 0 7px rgba(200,200,200,0.04), 0 2px 10px rgba(0,0,0,0.35); }
+}
+[data-theme="dark"] .fab-pill { animation: fab-pill-pulse-dark 2.2s ease-in-out infinite; }
+[data-theme="dark"] .fab-pill.open { animation: none; }
+
+/* Мобильные */
+@media (max-width: 600px) {
+  .fab-pill-wrap { bottom: 20px; right: 20px; }
+  .fab-pill-tooltip { display: none; }
+}
