@@ -25,7 +25,7 @@ $(document).ready(function () {
         slidesToShow: 3,
         slidesToScroll: 1,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 2000,
         centerMode: true,
         centerPadding: '0px',
@@ -136,7 +136,7 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 1500,
         centerMode: false,          // на десктопе НЕТ centerMode
         cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
