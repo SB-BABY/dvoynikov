@@ -88,3 +88,21 @@ h4,
 .h4 {
 	@include fluid-text(20, 18);
 }
+
+
+.slick-slider,
+.slick-list,
+.slick-track,
+.slick-slide {
+    min-width: 0;
+    min-height: 0;
+}
+
+.slick-track {
+    display: flex !important;
+    align-items: flex-start !important;
+}
+
+// .slick-slide {
+//     height: auto !important;
+// }
