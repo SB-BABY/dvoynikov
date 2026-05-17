@@ -16,7 +16,8 @@
 
             font-family: var(--second-family);
             font-weight: 700;
-            font-size: 704px;
+            // font-size: 704px;
+            @include fluid-text(550, 18);
             text-transform: uppercase;
             color: rgba(61, 68, 251, 0.06);
         }
@@ -26,7 +27,7 @@
         text-align: right;
         font-family: var(--second-family);
         font-weight: 700;
-        @include fluid-text(83, 24);
+        @include fluid-text(64, 24);
         text-transform: uppercase;
         margin-bottom: 20px;
 
@@ -46,13 +47,17 @@
         grid-template-columns: repeat(3, 1fr);
         align-items: stretch;
         gap: 42px;
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
 
     &__item {
         border-radius: 42px;
         background-color: var(--color-light);
         color: var(--color-black);
-        padding: 60px;
+        padding: 40px;
 
         display: flex;
         flex-direction: column;
@@ -61,7 +66,7 @@
         &-title {
             font-family: var(--font-family);
             font-weight: 800;
-            @include fluid-text(37, 24);
+            @include fluid-text(24, 18);
             text-transform: uppercase;
             margin-bottom: 30px;
         }
@@ -69,7 +74,7 @@
         &-text {
             font-family: var(--third-family);
             font-weight: 400;
-            @include fluid-text(29, 19);
+            @include fluid-text(18, 12);
         }
     }
 }

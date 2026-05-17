@@ -11,7 +11,7 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 700;
-        font-size: 83px;
+        @include fluid-text(64, 24);
         text-transform: uppercase;
         color: #fff;
         text-align: right;
@@ -26,7 +26,7 @@
     &__text {
         font-family: var(--font-family);
         font-weight: 500;
-        @include fluid-text(22, 18);
+        @include fluid-text(18, 12);
         text-transform: uppercase;
         margin-bottom: 50px;
     }
@@ -52,39 +52,63 @@
         &-btn {
             // background: rgba(255, 255, 255, 0.1);
             // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-            position: relative;
-            background: transparent;
-            border: none;
-            border-radius: 78px;
+            // position: relative;
+            // background: transparent;
+            // border: none;
+            // border-radius: 78px;
 
-            font-family: var(--second-family);
-            font-weight: 700;
-            font-size: 15px;
-            text-transform: uppercase;
-            text-align: center;
-            color: #fff;
-            padding: 28px;
+            // font-family: var(--second-family);
+            // font-weight: 700;
+            // @include fluid-text(15, 9);
+            // text-transform: uppercase;
+            // text-align: center;
+            // color: #fff;
+            // padding: 28px;
             cursor: pointer;
 
+            padding: 25px 25px;
+            text-align: center;
+            font-family: var(--font-family);
+            font-weight: 500;
+            @include fluid-text(15, 9);
+            text-transform: uppercase;
+            color: var(--color-light);
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 77px;
+            width: 100%;
 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            column-gap: 20px;
 
-            &-one {
-                background-image: url("../img/team/btn-1.png");
-                background-size: cover;
-                width: 267px;
-                height: 67px;
-            }
+            // &-one {
+            //     background-image: url("../img/team/btn-1.png");
+            //     background-size: contain;
+            //     background-repeat: no-repeat;
+            //     // width: 267px;
+            //     @include fluid-width(267, 160);
+            //     // height: 67px;
+            //     @include fluid-height(67, 56);
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: center;
+            // }
 
-            &-two {
-                background-image: url("../img/team/btn-2.png");
-                background-size: cover;
-                width: 315px;
-                height: 67px;
+            // &-two {
+            //     background-image: url("../img/team/btn-2.png");
+            //     background-size: contain;
+            //     background-repeat: no-repeat;
+            //     // width: 315px;
+            //     @include fluid-width(315, 200);
+            //     // height: 67px;
+            //     @include fluid-height(67, 30);
 
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-            }
+            //     display: flex;
+            //     align-items: center;
+            //     justify-content: space-between;
+            // }
 
             & span {
                 position: relative;
@@ -159,21 +183,24 @@
         position: relative;
         top: -45px;
         left: 0;
-        padding: 0px 20px;
+        padding: 0px 10px;
     }
 
     &__name {
         font-family: var(--font-family);
         font-weight: 700;
-        font-size: 34px;
+        // font-size: 34px;
+        @include fluid-text(26, 16);
         text-transform: uppercase;
     }
 
     &__role {
         font-family: var(--font-family);
         font-weight: 400;
-        font-size: 28px;
+        // font-size: 28px;
+        @include fluid-text(22, 16);
         text-transform: uppercase;
+        margin-top: 10px;
         color: #fff;
     }
 
@@ -183,7 +210,7 @@
 
         font-family: var(--third-family);
         font-weight: 400;
-        font-size: 22px;
+        @include fluid-text(16, 12);
         color: rgba(255, 255, 255, 0.7);
         max-width: 280px;
     }

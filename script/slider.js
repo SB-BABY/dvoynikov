@@ -121,9 +121,21 @@ $(document).ready(function () {
         pauseOnHover: true,
         responsive: [
             {
+                breakpoint: 1024,
+                settings: {
+                    slidesToShow: 5,
+                },
+            },
+            {
                 breakpoint: 768,
                 settings: {
-                    arrows: false,
+                    slidesToShow: 3,
+                },
+            },
+            {
+                breakpoint: 425,
+                settings: {
+                    slidesToShow: 1,
                 },
             },
         ],
@@ -151,7 +163,7 @@ $(document).ready(function () {
             },
             {
                 breakpoint: 480,
-                settings: { slidesToShow: 1, centerMode: true, centerPadding: '50px' }
+                settings: { slidesToShow: 1, centerMode: false }
             }
         ]
     });

@@ -6,7 +6,7 @@
     padding-bottom: 50px;
 
     @include mobile {
-        padding-bottom: 100px;
+        // padding-bottom: 100px;
     }
 
     &__content {
@@ -19,17 +19,22 @@
             #3035c1 100%
         );
         border-radius: 36px;
-        padding: 100px 63px 200px;
+        // padding: 100px 63px 200px;
+        padding: 50px 63px 100px;
 
         display: flex;
         justify-content: space-between;
         align-items: flex-end;
         overflow: hidden;
 
-        @include mobile{
+        @include mobile {
             flex-direction: column;
-            align-items: center;
-            padding-bottom: 100px;
+            align-items: flex-start;
+            padding-bottom: 50px;
+        }
+        
+        @include mobile {
+            padding: 25px 25px;
         }
     }
 
@@ -41,67 +46,97 @@
     &__title {
         font-weight: 500;
         text-transform: uppercase;
-        // @include fluid-text(75, 24);
-        font-size: 75px;
+        @include fluid-text(48, 24);
+        // font-size: 75px;
         letter-spacing: 0.04em;
         color: var(--color-light);
         margin-bottom: 10px;
 
         &-pixle {
             font-family: var(--font3);
-            @include fluid-text(42, 24);
+            @include fluid-text(26, 14);
         }
 
         &-right {
-            margin-left: 300px;
+            @include mobile-s-above {
+                margin-left: 150px;
+            }
+            @include mobile-above {
+                margin-left: 250px;
+            }
         }
     }
 
     &__text {
         font-family: var(--third-family);
         color: var(--color-gray);
-        @include fluid-text(25, 15);
+        @include fluid-text(18, 11);
         text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     }
 
     &__btns {
-        margin-top: 50px;
+        margin-top: 25px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        width: 60%;
+        gap: 15px;
+        width: 90%;
+
+        @include mobile{
+            grid-template-columns: repeat(1, 1fr);
+            width: 100%;
+        }
     }
 
     &__btn {
         // border-radius: 41px;
         // box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
         // background: rgba(255, 255, 255, 0.1);
+        
+        cursor: pointer;
+
+        padding: 25px 25px;
         text-align: center;
-        padding: 28px;
-
-        @include fluid-text(15, 12);
+        font-family: var(--font-family);
+        font-weight: 500;
+        @include fluid-text(15, 9);
         text-transform: uppercase;
+        color: var(--color-light);
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 77px;
+        width: 100%;
 
-        &-one {
-            background-image: url("../img/team/btn-1.png");
-            background-size: cover;
-            width: 267px;
-            height: 67px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 20px;
 
-        &-two {
-            background-image: url("../img/team/btn-2.png");
-            background-size: cover;
-            width: 315px;
-            height: 67px;
+        // &-one {
+        //     background-image: url("../img/team/btn-1.png");
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     // width: 267px;
+        //     @include fluid-width(267, 160);
+        //     // height: 67px;
+        //     @include fluid-height(67, 56);
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: center;
+        // }
 
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+        // &-two {
+        //     background-image: url("../img/team/btn-2.png");
+        //     background-size: contain;
+        //     background-repeat: no-repeat;
+        //     // width: 315px;
+        //     @include fluid-width(315, 200);
+        //     // height: 67px;
+        //     @include fluid-height(67, 30);
+
+        //     display: flex;
+        //     align-items: center;
+        //     justify-content: space-between;
+        // }
 
         &:hover {
             transform: scale(1.03);
@@ -119,14 +154,20 @@
 
         &-title {
             font-family: var(--second-family);
-            // @include fluid-text(118, 76);
-            font-size: 118px;
+            @include fluid-text(60, 24);
+            // font-size: 60px;
+            // font-size: 118px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
-            line-height: 0.9;
+            // line-height: 0.9;
+            line-height: 1.3;
 
             .one {
                 margin-left: 185px;
+
+                @include tablet {
+                    margin-left: 80px;
+                }
             }
         }
     }
@@ -134,9 +175,10 @@
     &__bg {
         position: absolute;
         top: 0%;
-        right: 0%;
+        right: -25%;
         width: 100%;
         height: 100%;
+        object-fit: contain;
         z-index: 6;
 
         @include tablet {

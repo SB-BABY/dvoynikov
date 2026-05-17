@@ -33,7 +33,7 @@
     &__title {
         font-family: var(--second-family);
         font-weight: 700;
-        @include fluid-text(83, 54);
+        @include fluid-text(64, 24);
         text-transform: uppercase;
         position: relative;
         z-index: 1;
@@ -47,7 +47,7 @@
     &__subtitle {
         font-family: var(--font-family);
         font-weight: 500;
-        @include fluid-text(25, 12);
+        @include fluid-text(24, 18);
         text-transform: uppercase;
         text-align: right;
         margin-bottom: 20px;
@@ -68,6 +68,11 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
+
+        @include mobile {
+            grid-template-columns: repeat(1, 1fr);
+            padding: 50px 25px;
+        }
     }
 
     &__left {
@@ -76,7 +81,7 @@
         &-title {
             font-family: var(--font-family);
             font-weight: 700;
-            @include fluid-text(96, 48);
+            @include fluid-text(64, 30);
             text-transform: uppercase;
         }
     }
@@ -236,19 +241,4 @@
     width: 1px;
     height: 1px;
     overflow: hidden;
-}
-
-/* Адаптив */
-
-@media (max-width: 768px) {
-    .form {
-        &__grid {
-            grid-template-columns: 1fr;
-        }
-
-        &__bottom {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-    }
 }
