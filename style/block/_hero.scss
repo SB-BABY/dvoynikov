@@ -12,22 +12,13 @@
     &__content {
         position: relative;
         padding-top: 100px;
-        background: linear-gradient(
-            180deg,
-            #000016 0%,
-            #3d44fb 67.48%,
-            #3035c1 100%
-        );
+        background: linear-gradient(180deg,
+                #000016 0%,
+                #3d44fb 67.48%,
+                #3035c1 100%);
         border-radius: 36px;
-        // padding: 100px 63px 200px;
-        // padding: 50px 63px 100px;
-        padding: 50px 63px;
-
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: flex-end;
+        padding: 50px 63px 0;
         overflow: hidden;
-        
 
         @include mobile {
             flex-direction: column;
@@ -40,14 +31,26 @@
         }
     }
 
-    &__left {
-        position: relative;
-        z-index: 5;
-        max-width: 57%;
-        @include mobile {
-            max-width: 100%;
-        }
+    &__cub{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        position: 1;
     }
+
+    &__logo{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        width: 60%;
+    }
+
+    // &__left {
+    //     position: relative;
+    //     z-index: 9;
+    // }
 
     &__title {
         font-weight: 500;
@@ -56,7 +59,9 @@
         // font-size: 75px;
         letter-spacing: 0.04em;
         color: var(--color-light);
-        margin-bottom: 10px;
+        margin-bottom: 120px;
+        position: relative;
+        z-index: 10;
 
         &-pixle {
             font-family: var(--font3);
@@ -64,20 +69,31 @@
         }
 
         &-right {
-            @include mobile-s-above {
-                margin-left: 150px;
-            }
-            @include mobile-above {
-                margin-left: 250px;
-            }
+            margin-left: 150px;
+        }
+    }
+
+    &__block {
+        text-align: justify;
+        margin-bottom: -1em !important;
+        
+        &:after {
+            content: "";
+            display: inline-block;
+            width: 100%;
         }
     }
 
     &__text {
-        font-family: var(--third-family);
-        color: var(--color-gray);
-        @include fluid-text(18, 11);
-        text-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        font-family: var(--second-family);
+        font-weight: 700;
+        // font-size: 215px;
+        @include fluid-text(132, 50);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.48);
+        position: relative;
+        z-index: 7;
     }
 
     &__btns {
@@ -175,54 +191,6 @@
                 flex-shrink: 0;
                 margin-right: 4px;
             }
-        }
-    }
-
-    &__left {
-        position: relative;
-        z-index: 10;
-    }
-
-    &__right {
-        position: relative;
-        z-index: 5;
-
-        &-title {
-            font-family: var(--second-family);
-            // @include fluid-text(60, 24);
-            font-size: 60px;
-            // font-size: 118px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            // line-height: 0.9;
-            line-height: 1.3;
-
-            .one {
-                margin-left: 185px;
-
-                @include tablet {
-                    margin-left: 80px;
-                }
-            }
-        }
-    }
-
-    &__bg {
-        position: absolute;
-        top: 0%;
-        // right: -25%;
-        right: -7%;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        z-index: 6;
-
-        // для параллакса
-        transition: transform 0.1s ease-out; // низкое значение = отзывчивость, высокое = инертность
-        will-change: transform;
-
-        @include tablet {
-            // top: -10%;
         }
     }
 }

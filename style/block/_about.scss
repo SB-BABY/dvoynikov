@@ -11,7 +11,7 @@
     &__content {
         position: relative;
         width: 100%;
-        overflow: hidden;
+        // overflow: hidden;
 
         &-bg {
             display: inline-block;
@@ -30,6 +30,19 @@
         }
     }
 
+    &__block {
+        position: relative;
+        display: inline-block;
+
+        &-bg {
+            position: absolute;
+            z-index: 10;
+            width: 60%;
+            top: -25%;
+            right: -40%;
+        }
+    }
+
     &__title {
         font-family: var(--second-family);
         text-transform: uppercase;
@@ -37,17 +50,7 @@
         font-weight: 700;
         margin-bottom: 58px;
         position: relative;
-        z-index: 10;
-
-        & .one{
-            display: inline-block;
-            transform: rotate(16deg);
-        }
-
-        & .two{
-            display: inline-block;
-            transform: rotate(35deg);
-        }
+        z-index: 1;
     }
 
     &__text {
