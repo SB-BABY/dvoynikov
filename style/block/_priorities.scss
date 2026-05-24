@@ -1,11 +1,11 @@
 .priorities {
     background: linear-gradient(180deg, #3d44fb 0%, #000016 100%);
-
+    overflow: hidden;
     &__content {
         padding-top: 80px;
         padding-bottom: 140px;
         position: relative;
-        overflow: hidden;
+        overflow: visvble;
 
         &-bg {
             display: inline-block;
@@ -63,18 +63,66 @@
         flex-direction: column;
         align-items: stretch;
 
+        position: relative;
+
+        &-bg {
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+            &-one {
+                top: 0%;
+                left: 15%;
+                width: 40%;
+                height: auto;
+
+                @include mobile {
+                    top: 0%;
+                    left: 5%;
+                    width: 15%;
+                }
+            }
+
+            &-two {
+                bottom: -50%;
+                right: -30%;
+                width: 40%;
+                height: auto;
+
+                @include mobile {
+                    right: -10%;
+                    width: 15%;
+                }
+            }
+
+            &-three {
+                top: 20%;
+                right: -15%;
+                width: 30%;
+                height: auto;
+                @include mobile {
+                    top: 33%;
+                    right: -8%;
+                    width: 15%;
+                }
+            }
+        }
+
         &-title {
             font-family: var(--font-family);
             font-weight: 800;
             @include fluid-text(24, 18);
             text-transform: uppercase;
             margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
         }
 
         &-text {
             font-family: var(--third-family);
             font-weight: 400;
             @include fluid-text(18, 12);
+            position: relative;
+            z-index: 10;
         }
     }
 }

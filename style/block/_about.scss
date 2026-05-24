@@ -3,6 +3,7 @@
     padding-top: 50px;
     padding-bottom: 50px;
     background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
+    overflow: hidden;
 
     &__container {
         position: relative;
@@ -17,7 +18,7 @@
             display: inline-block;
             position: absolute;
             bottom: 23%;
-            left: 50%;
+            left: 100%;
             transform: translate(-50%, 50%);
 
             font-family: var(--second-family);

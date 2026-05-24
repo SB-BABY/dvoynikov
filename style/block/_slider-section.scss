@@ -1,15 +1,41 @@
 .slider {
-    background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
+    // background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
+    background: radial-gradient(
+        55.72% 55.72% at 50% 50%,
+        #4d53f2 0%,
+        #000016 100%
+    );
     padding-top: 100px;
     padding-bottom: 30px;
     overflow: hidden;
 
     &__container {
         position: relative;
+        // background: radial-gradient(
+        //     55.72% 55.72% at 50% 50%,
+        //     #4d53f2 0%,
+        //     #000016 100%
+        // );
+        overflow: visible;
     }
 
     &__content {
         position: relative;
+
+        &-bg {
+            position: absolute;
+            transform: translate(-50%, -50%);
+
+            &-one {
+                bottom: -37%;
+                left: 11%;
+            }
+
+            &-two {
+                top: 10%;
+                right: -30%;
+            }
+        }
     }
 
     &__title {
@@ -17,6 +43,20 @@
         font-weight: 700;
         @include fluid-text(64, 24);
         text-transform: uppercase;
+        position: relative;
+        img {
+            width: 150px;
+            height: auto;
+            position: absolute;
+            top: 20%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+        }
+
+        h2 {
+            position: relative;
+            z-index: 10;
+        }
     }
 
     &__text {
@@ -57,14 +97,16 @@
                 transform: scale(1);
             }
         }
-
-
     }
 
     &__item {
         position: relative;
 
-        &-dekor{
+        &.bg-liquid-glass{
+            border-radius: 78px;
+        }
+
+        &-dekor {
             position: absolute;
             top: 0;
             right: 0;
@@ -78,7 +120,11 @@
         &-content {
             border-radius: 78px;
             padding: 110px 30px 50px;
-            background: linear-gradient(180deg, rgba(36, 41, 149, 0) 0%, #0b0d2f 67.31%);
+            background: linear-gradient(
+                180deg,
+                rgba(36, 41, 149, 0) 0%,
+                #0b0d2f 67.31%
+            );
             // margin-left: 20px;
             // margin-right: 20px;
             transform: scale(1);
@@ -92,20 +138,25 @@
             font-weight: 700;
             line-height: 110%;
             text-transform: uppercase;
-            color: var(--color-blue);
+            color: var(--color-light);
             // margin-bottom: 125px;
-            margin-bottom: 3em;
+            // margin-bottom: 3em;
+        }
+
+        &-img {
+            margin: 0 auto;
+            img {
+                margin: 0 auto;
+            }
+            margin-bottom: 40px;
         }
 
         &-text {
             @include fluid-text(15, 8);
-            line-height: 110%;
-            // opacity: .8;
-            font-weight: 700;
-            line-height: 110%;
-            text-transform: uppercase;
-            color: var(--color-blue);
-
+            font-family: var(--font-family);
+            font-weight: 500;
+            text-transform: capitalize;
+            margin-bottom: 40px;
         }
 
         &-button {
@@ -130,18 +181,17 @@
             justify-content: space-between;
             column-gap: 20px;
 
-            img{
+            img {
                 width: 10%;
             }
         }
     }
 
     .slick-active {
-
         @include mobile-above {
             &:not(.slick-center) .slider__item-content {
                 background: var(--color-bg-item);
-                background-image: url('../img/slider/circle-second.png');
+                background-image: url("../img/slider/circle-second.png");
                 background-repeat: no-repeat;
                 background-size: 50%;
                 background-position: 100% 0;
@@ -154,14 +204,11 @@
             &:not(.slick-center) .slider__item-text {
                 color: var(--color-title-second);
             }
-
-
         }
     }
 
     // ПАРТНЕРЫ
     &__parthner {
-
         &-title {
             font-family: var(--font-family);
             font-weight: 800;
@@ -177,12 +224,12 @@
             margin-top: 20px;
         }
 
-        &-img{
+        &-img {
             position: relative;
             width: 200px;
             height: 200px;
 
-            img{
+            img {
                 position: absolute;
                 top: 50%;
                 left: 50%;

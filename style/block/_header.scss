@@ -17,12 +17,12 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        column-gap: 20px;
         position: relative;
         z-index: 10;
     }
 
     &__logo {
-
         &-img {
             @include fluid-width(278, 150);
             @include fluid-height(70, 35);
@@ -34,7 +34,11 @@
         align-items: center;
         justify-content: space-between;
         column-gap: 50px;
-        @include mobile{
+        border: 1px solid var(--color-light);
+        border-radius: 56px;
+        padding: 18px 37px;
+
+        @include mobile {
             flex-direction: column;
             align-items: flex-end;
             row-gap: 10px;
@@ -42,14 +46,13 @@
         }
     }
 
-
     &__lists {
         display: flex;
         align-items: center;
         column-gap: 55px;
-        @include fluid-text(16, 6);
+        @include fluid-text(12, 6);
 
-        @include mobile{
+        @include mobile {
             column-gap: 20px;
         }
     }
@@ -63,7 +66,8 @@
         position: relative;
         display: flex;
         align-items: center;
-        background: var(--color-accent);
+        column-gap: 20px;
+        background: var(--color-blue);
         padding: 5px 30px;
         border-radius: 70px;
         text-transform: uppercase;
@@ -78,7 +82,7 @@
 
         @include fluid-text(12, 6);
         white-space: nowrap;
-        background: var(--color-accent); // тёмный фон — контраст
+        background: var(--color-blue); // тёмный фон — контраст
         color: var(--color-light);
         padding: 7px 14px;
         border-radius: 20px;
@@ -87,18 +91,20 @@
 
         opacity: 0;
         pointer-events: none;
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition:
+            opacity 0.25s ease,
+            transform 0.25s ease;
         z-index: 100;
 
         // маленький треугольник-стрелка вверх
         &::before {
-            content: '';
+            content: "";
             position: absolute;
             bottom: 100%;
             left: 50%;
             transform: translateX(-50%);
             border: 5px solid transparent;
-            border-bottom-color: var(--color-accent);
+            border-bottom-color: var(--color-blue);
         }
     }
 
@@ -108,5 +114,4 @@
         transform: translateX(50%) translateY(0);
         pointer-events: auto;
     }
-
 }
