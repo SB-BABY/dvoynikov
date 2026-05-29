@@ -667,15 +667,16 @@ h4,
 /* Стили для стрелок */
 .slick-arrow {
   position: absolute;
+  top: 50%;
   transform: translateY(-50%);
   z-index: 10;
   width: 40px;
   height: 40px;
   border: none;
   border-radius: 50%;
-  background: rgba(77, 141, 162, 0.6);
+  background: var(--color-light);
   border: 3px solid var(--color-border-light);
-  color: white;
+  color: var(--color-dark);
   font-size: 0;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -686,12 +687,12 @@ h4,
   transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
-  border: 2px solid white;
+  border: 2px solid var(--color-dark);
   border-width: 2px 2px 0 0;
 }
 
 .slick-prev {
-  left: -3%;
+  left: 0%;
 }
 .slick-prev:before {
   transform: translate(-50%, -50%) rotate(-135deg);
@@ -704,7 +705,7 @@ h4,
 }
 
 .slick-next {
-  right: -3%;
+  right: 0;
 }
 .slick-next:before {
   transform: translate(-50%, -50%) rotate(45deg);
@@ -714,6 +715,62 @@ h4,
 .slick-next:focus {
   background: rgba(77, 141, 162, 0.6);
   border: 3px solid var(--color-light);
+}
+
+.my-dots-wrap {
+  overflow: hidden;
+  width: 100%;
+  display: block;
+  margin-top: 16px;
+}
+
+.my-dots {
+  display: flex !important;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 8px;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+  position: absolute !important; /* ← абсолютно, начинаем с (0,0) враппера */
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%); /* ← это перебьётся JS, добавь translateY в JS тоже */
+  width: -moz-max-content !important;
+  width: max-content !important;
+}
+
+.my-dots li {
+  flex-shrink: 0;
+}
+
+.my-dots li button {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  font-size: 0;
+  color: transparent;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.35);
+  transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), height 0.35s cubic-bezier(0.4, 0, 0.2, 1), background 0.35s ease;
+}
+
+.my-dots li[data-dist="0"] button {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.my-dots li[data-dist="1"] button {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.my-dots li[data-dist="2"] button {
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.my-dots li[data-dist="3"] button {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .bg-liquid-glass {
@@ -743,7 +800,8 @@ h4,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   position: relative;
   z-index: 10;
 }
@@ -755,7 +813,8 @@ h4,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 50px;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
   border: 1px solid var(--color-light);
   border-radius: 56px;
   padding: 18px 37px;
@@ -765,18 +824,21 @@ h4,
     flex-direction: column;
     align-items: flex-end;
     row-gap: 10px;
-    column-gap: 10px;
+    -moz-column-gap: 10px;
+         column-gap: 10px;
   }
 }
 .header__lists {
   display: flex;
   align-items: center;
-  column-gap: 55px;
+  -moz-column-gap: 55px;
+       column-gap: 55px;
   font-size: clamp(6px, 0.8333333333vw, 12px);
 }
 @media (max-width: 767px) {
   .header__lists {
-    column-gap: 20px;
+    -moz-column-gap: 20px;
+         column-gap: 20px;
   }
 }
 .header__link {
@@ -787,7 +849,8 @@ h4,
   position: relative;
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   background: var(--color-blue);
   padding: 5px 30px;
   border-radius: 70px;
@@ -1698,7 +1761,8 @@ h4,
 .accordion__list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 16px;
+  -moz-column-gap: 16px;
+       column-gap: 16px;
   row-gap: 10px;
   margin-top: 20px;
   align-items: start;
@@ -1757,7 +1821,8 @@ h4,
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
   padding: 8px 8px 8px 20px;
 }
 .accordion__bottom-button .button-arrow {
@@ -1828,6 +1893,9 @@ h4,
 .slider__text-second {
   text-align: right;
 }
+.slider__lists {
+  position: relative;
+}
 .slider__list {
   position: relative;
   z-index: 5;
@@ -1874,11 +1942,12 @@ h4,
 }
 .slider__item-content {
   border-radius: 78px;
-  padding: 110px 30px 50px;
+  padding: 40px 30px 30px;
   background: linear-gradient(180deg, rgba(36, 41, 149, 0) 0%, #0b0d2f 67.31%);
   transform: scale(1);
   border: 5px solid var(--color-light);
   text-align: center;
+  position: relative;
 }
 .slider__item-title {
   font-size: clamp(14px, 3.3333333333vw, 48px);
@@ -1890,6 +1959,10 @@ h4,
 }
 .slider__item-img {
   margin: 0 auto;
+  max-width: 150px;
+  height: 150px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .slider__item-img img {
   margin: 0 auto;
@@ -1922,7 +1995,8 @@ h4,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .slider__item-btn img {
   width: 10%;
@@ -2028,7 +2102,8 @@ h4,
   display: flex;
   align-items: center;
   justify-content: space-between;
-  column-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
 }
 .team__actions-btn span {
   position: relative;
@@ -2075,7 +2150,8 @@ h4,
 .team-card__photo {
   width: 100%;
   aspect-ratio: 3/4;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   display: block;
 }
 .team-card__info {
@@ -2213,6 +2289,9 @@ h4,
 .form__group select:focus {
   outline: 2px solid #1d7fbf;
 }
+.form__group input::-moz-placeholder, .form__group select::-moz-placeholder {
+  color: var(--color-light);
+}
 .form__group input::placeholder,
 .form__group select::placeholder {
   color: var(--color-light);
@@ -2261,7 +2340,8 @@ h4,
 .form__political {
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
 }
 @media (max-width: 480px) {
   .form__political {
@@ -2283,7 +2363,9 @@ h4,
 }
 
 .checbox-input {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   position: relative;
   width: 30px;
   height: 30px;

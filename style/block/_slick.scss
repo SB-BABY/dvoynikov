@@ -6,16 +6,16 @@
 /* Стили для стрелок */
 .slick-arrow {
     position: absolute;
-    // top: 95%;
+    top: 50%;
     transform: translateY(-50%);
     z-index: 10;
     width: 40px;
     height: 40px;
     border: none;
     border-radius: 50%;
-    background: rgba(77, 141, 162, 0.6);
+    background: var(--color-light);
     border: 3px solid var(--color-border-light);
-    color: white;
+    color: var(--color-dark);
     font-size: 0;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -31,13 +31,13 @@
         transform: translate(-50%, -50%);
         width: 10px;
         height: 10px;
-        border: 2px solid white;
+        border: 2px solid var(--color-dark);
         border-width: 2px 2px 0 0;
     }
 }
 
 .slick-prev {
-    left: -3%;
+    left: 0%;
 
     &:before {
         transform: translate(-50%, -50%) rotate(-135deg);
@@ -52,7 +52,7 @@
 }
 
 .slick-next {
-    right: -3%;
+    right: 0;
 
     &:before {
         transform: translate(-50%, -50%) rotate(45deg);
@@ -66,3 +66,50 @@
         border: 3px solid var(--color-light);
     }
 }
+
+.my-dots-wrap {
+    overflow: hidden;
+    width: 100%;
+    display: block;
+    // justify-content: center;
+    margin-top: 16px;
+}
+
+.my-dots {
+    display: flex !important;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+    transition: transform 0.35s cubic-bezier(.4, 0, .2, 1);
+    will-change: transform;
+    position: absolute !important;  /* ← абсолютно, начинаем с (0,0) враппера */
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);    /* ← это перебьётся JS, добавь translateY в JS тоже */
+    width: max-content !important;
+}
+
+.my-dots li {
+    flex-shrink: 0;
+}
+
+.my-dots li button {
+    display: block;
+    border: none;
+    border-radius: 50%;
+    padding: 0;
+    font-size: 0;
+    color: transparent;
+    cursor: pointer;
+    background: rgba(255,255,255,0.35);
+    transition: width 0.35s cubic-bezier(.4,0,.2,1),
+                height 0.35s cubic-bezier(.4,0,.2,1),
+                background 0.35s ease;
+}
+
+.my-dots li[data-dist="0"] button { background: rgba(255,255,255,0.92); }
+.my-dots li[data-dist="1"] button { background: rgba(255,255,255,0.60); }
+.my-dots li[data-dist="2"] button { background: rgba(255,255,255,0.45); }
+.my-dots li[data-dist="3"] button { background: rgba(255,255,255,0.30); }
