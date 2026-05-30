@@ -22,11 +22,8 @@
     &__title {
         font-family: var(--font-family);
         font-weight: 500;
-        @include fluid-text(34, 18);
+        @include fluid-text(65, 18);
         text-transform: uppercase;
-        display: inline-flex;
-        align-items: flex-start;
-        gap: 200px;
         position: relative;
 
         span {
@@ -38,8 +35,9 @@
 
         &-bg {
             position: absolute;
-            top: -60px;
-            right: -40px;
+            transform: translate(-50%, -50%);
+            top: 0%;
+            left: 73%;
 
             @include mobile {
                 top: 0%;
@@ -56,9 +54,10 @@
     &__text {
         font-family: var(--font-family);
         font-weight: 500;
-        @include fluid-text(11, 9);
+        @include fluid-text(24, 18);
         text-transform: uppercase;
         margin-top: 20px;
+        max-width: 70%;
     }
 
     &__list {
@@ -89,34 +88,53 @@
 
     &__item {
         position: relative;
-        cursor: pointer;
+        // cursor: pointer;
         transition: all ease-in-out 0.3s;
 
         &:hover {
             transform: scale(1.02);
         }
 
-        &-next {
+        &-btn {
+            // background: linear-gradient(180deg, #000016 0%, #4f56ff 67.48%, #3b42f4 100%);
+            background-image: url("../img/services/square.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 70px;
+            height: 70px;
+
             position: absolute;
             z-index: 10;
-            padding: 30px 25px;
-            border-radius: 24px;
-            box-shadow: 0 2px 7px 2px rgba(0, 0, 0, 0.25);
-            background: rgba(217, 217, 217, 0.2);
-
+            // border-radius: 24px;
             transform: translate(-50%, -50%);
             top: 70px;
             right: 10px;
             transition: all ease-in-out 0.3s;
 
+            cursor: pointer;
             &:hover {
-                padding: 40px 35px;
+                width: 80px;
+                height: 80px;
             }
 
             @include mobile {
-                transform: scale(0.5);
-                top: 0;
+                width: 50px;
+                height: 50px;
+                top: 25%;
+                right: 0%;
             }
+        }
+
+        &-next {
+            background: none;
+            border: none;
+            // padding: 30px 25px;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            top: 50%;
+            left: 50%;
+            cursor: pointer;
         }
 
         &-bg {
@@ -206,7 +224,7 @@
         display: flex;
         // column-gap: 100px;
 
-        @include mobile{
+        @include mobile {
             flex-direction: column;
             row-gap: 20px;
         }
@@ -225,7 +243,7 @@
                 padding-left: 20px;
                 border: none;
 
-                @include mobile{
+                @include mobile {
                     width: 100%;
                 }
             }
@@ -245,7 +263,7 @@
             width: 100%;
         }
 
-        &-right{
+        &-right {
             width: 100%;
         }
 
@@ -309,7 +327,7 @@
             // font-size: 20px;
             @include fluid-text(20, 10);
             text-transform: uppercase;
-            color: var(--color-light)
+            color: var(--color-light);
         }
     }
 }

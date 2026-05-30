@@ -1,8 +1,10 @@
 .slider {
     // background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
-    background: radial-gradient(55.72% 55.72% at 50% 50%,
-            #4d53f2 0%,
-            #000016 100%);
+    background: radial-gradient(
+        55.72% 55.72% at 50% 50%,
+        #4d53f2 0%,
+        #000016 100%
+    );
     padding-top: 100px;
     padding-bottom: 30px;
     overflow: hidden;
@@ -69,7 +71,7 @@
         }
     }
 
-    &__lists{
+    &__lists {
         position: relative;
     }
 
@@ -123,9 +125,11 @@
         &-content {
             border-radius: 78px;
             padding: 40px 30px 30px;
-            background: linear-gradient(180deg,
-                    rgba(36, 41, 149, 0) 0%,
-                    #0b0d2f 67.31%);
+            background: linear-gradient(
+                180deg,
+                rgba(36, 41, 149, 0) 0%,
+                #0b0d2f 67.31%
+            );
             // margin-left: 20px;
             // margin-right: 20px;
             transform: scale(1);
@@ -134,8 +138,6 @@
 
             position: relative;
         }
-
-
 
         &-title {
             @include fluid-text(48, 14);
@@ -218,32 +220,33 @@
     }
 
     // ПАРТНЕРЫ
-    &__parthner {
-        &-title {
-            font-family: var(--font-family);
-            font-weight: 800;
-            @include fluid-text(22, 16);
-            text-transform: uppercase;
-        }
+    &__nav {
+        margin-top: 20px;
+        &-item {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            outline: none;
 
-        &-slider {
-            background: var(--color-black);
-            padding: 40px;
-            text-align: center;
-            border-radius: 41px;
-            margin-top: 20px;
-        }
+            &-img{
+                background: #000;
+            }
 
-        &-img {
-            position: relative;
-            width: 200px;
-            height: 200px;
+            & img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                object-fit: contain;
+                cursor: pointer;
+                // opacity: 0.5;
+                transition:
+                    opacity 0.3s ease,
+                    transform 0.3s ease;
+            }
 
-            img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
+            &.slick-center img {
+                opacity: 1;
+                transform: scale(1.1);
             }
         }
     }

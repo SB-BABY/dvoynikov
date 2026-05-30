@@ -1,5 +1,5 @@
 const hero = document.querySelector('.hero');
-const heroBg = document.querySelector('.hero__bg');
+const heroBg = document.querySelector('.hero__logo');
 
 if (hero && heroBg) {
     hero.addEventListener('mousemove', (e) => {

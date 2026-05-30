@@ -46,22 +46,22 @@
 
     &__logo {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        top: 10%;
+        left: 26%;
+        // transform: translate(-50%, -50%);
         z-index: 10;
-        width: 45%;
+        width: 60%;
     }
 
     &__left {
         position: relative;
-        z-index: 9;
+        z-index: 10;
 
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-items: center;
 
-        margin-bottom: 120px;
+        margin-bottom: 60px;
 
         @include mobile {
             grid-template-columns: repeat(1, 1fr);
@@ -86,7 +86,7 @@
 
         &-right {
             margin-left: 150px;
-            @include mobile-s{
+            @include mobile-s {
                 margin-left: 0;
             }
         }
@@ -131,10 +131,11 @@
         @include fluid-text(25, 15);
         text-transform: uppercase;
         color: var(--color-dark);
+        text-shadow: 0 0 7px 0 #464cff;
         background: var(--color-light);
         text-decoration: none;
         white-space: nowrap;
-        border-radius: 7px;
+        border-radius: 34px;
 
         position: relative; // важно для ::before
         display: inline-flex;
@@ -175,6 +176,10 @@
 
         span {
             padding: 20px;
+            background: linear-gradient(90deg, #0a12e8 0%, #181c81 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             @include mobile {
                 padding: 10px;
             }
