@@ -61,12 +61,10 @@
         border: 15px solid var(--color-dark);
         border-radius: 58px;
         box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-        background: linear-gradient(
-            180deg,
-            #000016 0%,
-            #3d44fb 67.48%,
-            #3035c1 100%
-        );
+        background: linear-gradient(180deg,
+                #000016 0%,
+                #3d44fb 67.48%,
+                #3035c1 100%);
         padding: 50px 90px;
 
         display: grid;
@@ -163,21 +161,32 @@
         justify-content: flex-end;
     }
 
+    &__btns {
+        background-image: url("../img/form/bg-btn.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
     &__button {
-        background: var(--color-light);
+        background: none;
         border: none;
         padding: 14px 28px;
         border-radius: 270px;
-        color: var(--color-dark);
+        color: var(--color-light);
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
         text-transform: uppercase;
 
-        &:hover {
-            background: var(--color-accent);
-            color: var(--color-light);
-        }
+        // &:hover {
+        //     background: var(--color-accent);
+        //     color: var(--color-light);
+        // }
     }
 
     &__political {
@@ -207,35 +216,57 @@
     }
 }
 
-.checbox-input {
-    appearance: none; //удаляет стандратную обвуодку
+.form__check {
     position: relative;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: 2px solid var(--color-light);
-    border-radius: 50%;
-    transition: 0.5s;
+    width: 40px;
+    height: 40px;
 
-    &::after {
-        content: "\2714";
+    // circle
+    label {
         position: absolute;
-        transform: translate(-50%, -50%);
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        font-size: 26px;
-        overflow: hidden;
-        transition: 0.5s;
-        color: var(--color-light);
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 40px;
+        background-color: var(--color-light);
+        border: 1px solid var(--color-light);
+        border-radius: 50%;
+        cursor: pointer;
+        transition:
+            background-color 300ms ease,
+            colour 300ms ease,
+            box-shadow 300ms ease;
+
+        // tick
+        &:after {
+            content: '';
+            position: absolute;
+            top: 38%;
+            left: 33%;
+            width: 29%;
+            height: 14%;
+            opacity: 0;
+            border-left: 2px solid var(--color-light);
+            border-bottom: 2px solid var(--color-light);
+            transform: rotate(-45deg);
+            transition: opacity 300ms ease;
+        }
     }
 
-    &:checked::after {
-        width: 30px;
-        height: 30px;
-        background: var(--color-blue);
-        border-radius: 5px;
+    input {
+        visibility: hidden;
+
+        // selected state bg
+        &:checked+label {
+            background-color: var(--color-accent-second);
+            border-color: var(--color-accent-second);
+            box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.4);
+
+            // selected state tick
+            &:after {
+                opacity: 1;
+            }
+        }
     }
 }
 

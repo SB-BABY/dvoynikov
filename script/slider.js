@@ -55,6 +55,32 @@ $(document).ready(function () {
         ],
     });
 
+    // функция для добавления классов
+    function updateNavScale() {
+        const $slides = $('.slider__nav-list .slick-slide');
+        const centerIndex = $('.slider__nav-list .slick-center').index('.slider__nav-list .slick-slide');
+
+        $slides.removeClass('is-near is-far');
+
+        $slides.each(function (i) {
+            const diff = Math.abs(i - centerIndex);
+            if (diff === 1) {
+                $(this).addClass('is-near');
+            } else if (diff > 1) {
+                $(this).addClass('is-far');
+            }
+        });
+    }
+
+    // Вызывай при каждом переключении
+    $('.slider__nav-list').on('afterChange', function () {
+        updateNavScale();
+    });
+
+    // И сразу при инициализации
+    updateNavScale();
+
+    // функция для стрелок
     function moveArrows() {
         const isMobile = window.innerWidth <= 768;
 

@@ -71,6 +71,7 @@
     background: none;
     cursor: pointer;
     color: var(--color-);
+    z-index: 100 !important;
 }
 
 body.modal-open {
