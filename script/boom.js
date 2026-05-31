@@ -18,9 +18,19 @@ if (heroBtn) {
 function triggerHeroPop() {
     heroBtn.classList.add('is-popping');
 
+    // Блокируем скролл
+    document.body.classList.add('modal-open');
+
+    // Показываем оверлей
     heroFormOverlay.style.display = 'block';
     requestAnimationFrame(() => heroFormOverlay.classList.add('is-visible'));
 
+    // После анимации хлопка — прячем кнопку навсегда
+    setTimeout(() => {
+        heroBtn.style.display = 'none';
+    }, 400);
+
+    // Открываем форму
     setTimeout(() => {
         heroFormPopup.style.display = 'block';
         requestAnimationFrame(() => heroFormPopup.classList.add('is-open'));
@@ -31,12 +41,13 @@ function closeHeroPopup() {
     heroFormOverlay.classList.remove('is-visible');
     heroFormPopup.classList.remove('is-open');
 
+    // Разблокируем скролл
+    document.body.classList.remove('modal-open');
+
     setTimeout(() => {
         heroFormOverlay.style.display = 'none';
         heroFormPopup.style.display = 'none';
-        heroBtn.classList.remove('is-popping');
-        heroBtn.style.opacity = '1';
-        heroBtn.style.transform = 'scale(1)';
+        // Кнопку НЕ восстанавливаем — она исчезла навсегда
     }, 300);
 }
 

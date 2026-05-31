@@ -80,6 +80,12 @@
                     left: 5%;
                     width: 15%;
                 }
+
+                @include mobile-s {
+                    top: 10%;
+                    left: 10%;
+                    width: 15%;
+                }
             }
 
             &-two {
@@ -89,6 +95,12 @@
                 height: auto;
 
                 @include mobile {
+                    right: -10%;
+                    width: 15%;
+                }
+
+                @include mobile-s {
+                    bottom: -25%;
                     right: -10%;
                     width: 15%;
                 }
@@ -104,6 +116,10 @@
                     right: -8%;
                     width: 15%;
                 }
+
+                @include mobile {
+                    top: 10%;
+                }
             }
         }
 
@@ -114,7 +130,7 @@
             text-transform: uppercase;
             margin-bottom: 30px;
             position: relative;
-            z-index: 10;
+            z-index: 9;
         }
 
         &-text {
@@ -122,7 +138,7 @@
             font-weight: 400;
             @include fluid-text(18, 12);
             position: relative;
-            z-index: 10;
+            z-index: 9;
         }
     }
 }

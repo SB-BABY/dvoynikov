@@ -37,7 +37,7 @@
 
         &-bg {
             position: absolute;
-            z-index: 10;
+            z-index: 9;
             width: 60%;
             top: -25%;
             right: -40%;
@@ -51,7 +51,7 @@
         font-weight: 700;
         margin-bottom: 58px;
         position: relative;
-        z-index: 11;
+        z-index: 9;
     }
 
     &__text {
@@ -59,7 +59,7 @@
         @include fluid-text(24, 18);
         margin-bottom: 100px;
         position: relative;
-        z-index: 10
+        z-index: 9
     }
 
 }
