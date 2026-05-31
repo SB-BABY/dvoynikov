@@ -2972,6 +2972,11 @@ body.modal-open {
   text-transform: uppercase;
   max-width: 28%;
 }
+@media (max-width: 767px) {
+  .footer__text {
+    max-width: 70%;
+  }
+}
 .footer__list {
   display: flex;
   align-items: center;

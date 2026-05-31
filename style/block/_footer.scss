@@ -27,6 +27,9 @@
         @include fluid-text(22, 16);
         text-transform: uppercase;
         max-width: 28%;
+        @include mobile{
+            max-width: 70%;
+        }
     }
 
     &__list {
