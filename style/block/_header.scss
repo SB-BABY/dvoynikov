@@ -52,6 +52,10 @@
         column-gap: 55px;
         @include fluid-text(12, 6);
 
+        @include tablet {
+            column-gap: 35px;
+        }
+
         @include mobile {
             column-gap: 20px;
         }
@@ -62,29 +66,44 @@
         text-transform: uppercase;
     }
 
-    &__btns{        
-        background: linear-gradient(180deg, #000016 0%, #4f56ff 67.48%, #3b42f4 100%);
-        border-radius: 70px;
+    &__btns {
+
         transition: all .3s ease-in-out;
         cursor: pointer;
-        &:hover{
+
+        &:hover {
             transform: scale(1.05);
         }
     }
 
     &__phone {
+        background-image: url("../img/header//btn.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+
         position: relative;
         display: flex;
         align-items: center;
         column-gap: 20px;
-        padding: 20px;
+        padding: 25px;
         border-radius: 70px;
         text-transform: uppercase;
         @include fluid-text(16, 6);
-        @include tablet{
-            column-gap: 10px;
+
+        &-bg {
+            max-width: 100%;
+
+            @include tablet {
+                display: none;
+            }
         }
-        @include mobile{
+
+        @include tablet {
+            column-gap: 5px;
+        }
+
+        @include mobile {
             padding: 10px 20px;
         }
 
