@@ -279,13 +279,15 @@
     }
 
     &__bottom {
+        display: flex;
+        flex-wrap: wrap;
         gap: 20px;
         align-items: center;
         justify-content: flex-end;
-        flex-direction: row;
-
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        @include mobile {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     &__btns {

@@ -22,7 +22,7 @@ $(document).ready(function () {
     // Сначала инициализируй навигационный слайдер
     $(".slider__nav-list").slick({
         infinite: true,
-        slidesToShow: 7, // центральный + по 1 с каждой стороны
+        slidesToShow: 5, // центральный + по 1 с каждой стороны
         slidesToScroll: 1,
         speed: 500,
         centerMode: true,
