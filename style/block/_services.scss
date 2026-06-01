@@ -173,7 +173,7 @@
 
         &-two {
             grid-area: 1 / 3 / 2 / 6;
-            line-height: 30px;
+            line-height: 40px;
             @include mobile-s {
                 grid-area: auto;
             }
@@ -207,7 +207,7 @@
 
         &-five {
             grid-area: 3 / 1 / 4 / 6;
-            line-height: 30px;
+            line-height: 40px;
             position: relative;
             z-index: 2;
 
