@@ -6,9 +6,11 @@
     &__content {
         background: linear-gradient(
             90deg,
-            #000016 1.92%,
-            #050582 59.13%,
-            #000016 100%
+            rgba(0, 0, 22, 0.9) 1.92%,
+            rgba(59, 66, 244, 0.9) 40.38%,
+            rgba(60, 67, 237, 0.9) 51.92%,
+            rgba(59, 66, 244, 0.9) 63.46%,
+            rgba(0, 0, 22, 0.9) 100%
         );
         border-radius: 36px;
     }
@@ -26,7 +28,7 @@
             row-gap: 0;
         }
 
-        @include mobile-s{
+        @include mobile-s {
             grid-template-columns: repeat(2, 1fr);
             padding: 20px;
         }

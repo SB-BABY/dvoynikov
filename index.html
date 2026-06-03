@@ -146,6 +146,7 @@
                             src="./img/hero/bg-hero-logo.png"
                             alt="фоновое изображение"
                             class="hero__logo hidden-mobile"
+                            id="heroBtn"
                         />
 
                         <div class="hero__left">
@@ -160,11 +161,11 @@
                                 <span class="hero__title-pixle">клиентов</span>
                             </h1>
 
-                            <div class="hero__btns">
+                            <!-- <div class="hero__btns">
                                 <a href="#" class="hero__btn" id="heroBtn">
                                     <span>Обсудить проект</span>
                                 </a>
-                            </div>
+                            </div> -->
                         </div>
 
                         <div class="hero__block">
@@ -386,7 +387,7 @@
                             <div class="services__item services__item-one">
                                 <div
                                     class="services__item-btn open-modal-btn"
-                                    data-modal="modal-1"
+                                    data-modal="modal-2"
                                 >
                                     <button class="services__item-next">
                                         <img
@@ -855,126 +856,175 @@
             <!-- SLIDER -->
 
             <!-- TEAM -->
-            <!-- <section class="team" id="team">
-            <div class="team__container container">
-                <div class="team__content">
-                    <h2 class="team__title">Ко<span>м</span>анда</h2>
+            <section class="team" id="team">
+                <div class="team__container container">
+                    <div class="team__content">
+                        <h2 class="team__title">Ко<span>м</span>анда</h2>
 
-                    <p class="team__text">
-                        Объединяем стратегию, дизайн и <br />
-                        продвижение, чтобы создавать проекты, <br />
-                        которые приносят прибыль.
-                    </p>
+                        <!-- <p class="team__text">
+                            Объединяем стратегию, дизайн и <br />
+                            продвижение, чтобы создавать проекты, <br />
+                            которые приносят прибыль.
+                        </p> -->
 
-                    <div class="team__slider-wrap">
-                        <div class="team-slider">
+                        <div class="team__slider-wrap">
+                            <div class="team__slider-close">
+                                <div class="team__slider-close-banner">
+                                    <img
+                                        src="./img/team/arrows-bg.png"
+                                        alt="стрелки"
+                                        class="team__slider-close-bg"
+                                    />
 
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/1.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Дима
+                                    <div class="team__slider-close-content">
+                                        <img
+                                            src="./img/team/face.png"
+                                            alt="top secret"
+                                        />
+
+                                        <div class="team__slider-close-text">
+                                            <p class="team__slider-close-title">
+                                                Тссс...
+                                            </p>
+                                            <span
+                                                >Наши агенты не раскрывают своих
+                                                имён</span
+                                            >
                                         </div>
-                                        <div class="team-card__role">
-                                            Маркетолог
+                                    </div>
+                                </div>
+
+                                <a href="#" class="team__slider-close-btn"
+                                    >разыскиваются новые лица</a
+                                >
+                            </div>
+
+                            <div class="team-slider">
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/1.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Дима
+                                            </div>
+                                            <div class="team-card__role">
+                                                Маркетолог
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Окей, давайте разберёмся, почему
+                                                реклама не масштабируется.
+                                            </p>
                                         </div>
-                                        <p class="team-card__quote">
-                                            Окей, давайте разберёмся, почему
-                                            реклама не масштабируется.
-                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/2.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Олег
+                                            </div>
+                                            <div class="team-card__role">
+                                                IT-стратег
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Да ну что вы? <br />
+                                                Это не баг, а фича.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/3.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Катя
+                                            </div>
+                                            <div class="team-card__role">
+                                                UI/UX-дизайнер
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Можно сделать красиво. А можно —
+                                                красиво и чтобы продавало.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/4.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Даша
+                                            </div>
+                                            <div class="team-card__role">
+                                                SMM
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Подождите, я тут тренд для
+                                                тик-тока нашла. Срочно берём в
+                                                контент.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/1.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Артём
+                                            </div>
+                                            <div class="team-card__role">
+                                                SEO-специалист
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Трафик органический, а результат
+                                                — настоящий.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/2.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Олег
-                                        </div>
-                                        <div class="team-card__role">
-                                            IT-стратег
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Да ну что вы? <br />
-                                            Это не баг, а фича.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/3.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Катя
-                                        </div>
-                                        <div class="team-card__role">
-                                            UI/UX-дизайнер
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Можно сделать красиво. А можно —
-                                            красиво и чтобы продавало.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/4.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Даша
-                                        </div>
-                                        <div class="team-card__role">
-                                            SMM
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Подождите, я тут тренд для
-                                            тик-тока нашла. Срочно берём в
-                                            контент.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/1.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Артём
-                                        </div>
-                                        <div class="team-card__role">
-                                            SEO-специалист
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Трафик органический, а результат
-                                            — настоящий.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="team__actions">
-                            <button class="team__actions-btn team__actions-btn-one">
-                                <span>Посмотреть кейсы</span>
-                            </button>
-                            <button class="team__actions-btn team__actions-btn-two">
-                                <span>Подобрать специалиста</span>
-                                <img src="./img/team/arrow.svg" alt="" class="btn__arrow" />
-                            </button>
+                            <!-- <div class="team__actions">
+                                <button class="team__actions-btn team__actions-btn-one">
+                                    <span>Посмотреть кейсы</span>
+                                </button>
+                                <button class="team__actions-btn team__actions-btn-two">
+                                    <span>Подобрать специалиста</span>
+                                    <img src="./img/team/arrow.svg" alt="" class="btn__arrow" />
+                                </button>
+                            </div> -->
                         </div>
                     </div>
-
                 </div>
-            </div>
-        </section> -->
+            </section>
             <!-- TEAM -->
 
             <!-- FORM -->
@@ -997,7 +1047,7 @@
                             class="form__content-bg form__content-bg-three"
                         />
 
-                        <h2 class="form__title">
+                        <h2 class="form__title" id="form__title">
                             ваш маркетинг работает на вас? 
                         </h2>
 
@@ -1425,54 +1475,41 @@
             <div class="modal" id="modal-2">
                 <div class="modal__overlay"></div>
 
-                <div class="modal__content modal__content-slider">
-                    <!-- <img
-                        src="./img/modal/circle.png"
+                <div class="modal__content">
+                    <img
+                        src="./img/modal/shape.png"
                         alt="фоновое изображение"
                         class="modal__content-img"
-                    /> -->
+                    />
                     <button class="modal__close">&times;</button>
 
-                    <h2 class="modal__title">Кейс 1</h2>
+                    <h2 class="modal__title">стратегия</h2>
 
-                    <h3 class="modal__subtitle">
-                        Разработка стратегии развития компании с вовлечением
-                        команды
-                    </h3>
-
-                    <div class="moda__text">
+                    <div class="modal__text">
                         <p>
-                            Компания обратилась с задачей разработать стратегию
-                            развития до 2030 года с учётом специфики рынка и
-                            одновременно вовлечь команду в её создание, усилив
-                            корпоративную культуру и готовность к изменениям.
+                            Маркетинговая стратегия &mdash;
+                            это долгосрочный план развития бизнеса, нацеленный на&nbsp;привлечение клиентов и&nbsp;рост 
+                            прибыли.
                         </p>
 
                         <p>
-                            В процессе работы мы провели диагностику команды и
-                            сформировали её управленческий портрет, на основе
-                            которого дали рекомендации по корректировке
-                            оргструктуры, развитию сотрудников и выстраиванию
-                            корпоративной среды. Через серию рабочих сессий и
-                            стратегическую сессию с федеральными экспертами
-                            команда проработала текущие процессы и сформировала
-                            стратегию как набор конкретных проектов развития.
+                            Обычно её&nbsp;разрабатывают на&nbsp;3-5&nbsp;лет, но 
+                            для малого и&nbsp;среднего бизнеса оптимальнеепланировать на&nbsp;срок до&nbsp;года так проще 
+                            адаптироваться к&nbsp;изменениям на&nbsp;рынке.
+                            Стратегия систематизирует ресурсы
+                            компании и&nbsp;помогает перераспределить их
+                            на&nbsp;более эффективные каналы продвижения.
                         </p>
+                    </div>
 
-                        <p>
-                            В результате у компании появилась рабочая стратегия
-                            до 2028 года с понятными ориентирами и
-                            управленческими решениями. В её основе - 5 проектов
-                            развития, направленных на рост прибыли, усиление
-                            позиций на ключевых рынках и выход в новые
-                            направления. Команда при этом понимает свою роль в
-                            реализации и уже начала внедрять изменения в работе.
-                        </p>
+                    <div class="modal__btns">
+                        <a href="#" class="modal__preza">
+                            скачать презентацию
+                        </a>
 
-                        <p>
-                            Стратегия не осталась документом, она сразу стала
-                            частью управления и опорой для дальнейшего роста.
-                        </p>
+                        <a href="#" class="modal__active">
+                            хочу поработать с вами
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1770,6 +1807,7 @@
         <script src="https://cdn.jsdelivr.net/npm/fitty/dist/fitty.min.js"></script>
         <script>
             fitty("#hero__text");
+            fitty("#form__title");
         </script>
         <!-- SCRIPT -->
     </body>

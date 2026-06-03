@@ -32,7 +32,7 @@
     &__menu {
         display: flex;
         align-items: center;
-        column-gap: 20px;
+        column-gap: 40px;
 
         @include mobile {
             position: absolute;
@@ -106,10 +106,15 @@
         border-radius: 400px;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        // justify-content: space-between;
+        justify-content: space-around;
         column-gap: 20px;
         position: relative;
         z-index: 10;
+
+        @include mobile {
+            justify-content: space-between;
+        }
     }
 
     &__logo {
@@ -125,7 +130,7 @@
         justify-content: space-between;
         column-gap: 50px;
         border-radius: 56px;
-        padding: 18px 37px;
+        // padding: 18px 37px;
 
         @include mobile {
             flex-direction: column;
@@ -138,8 +143,8 @@
     &__lists {
         display: flex;
         align-items: center;
-        column-gap: 55px;
-        @include fluid-text(12, 6);
+        column-gap: 60px;
+        @include fluid-text(16, 14);
         font-style: 12px;
 
         @include tablet {

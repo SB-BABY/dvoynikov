@@ -44,21 +44,24 @@
 
 .modal__content {
     position: relative;
-    // width: 100%;
-    // max-width: 600px;
+    width: fit-content;
+    max-width: 60vw;
+    padding: 90px;
 
-    background: var(--color-dark);
-    padding: 30px;
-    border-radius: 12px;
+    box-shadow: 0 4px 27px 19px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.95) 0%,
+        rgba(77, 83, 240, 0.95) 100%
+    );
+    border-radius: 40px;
+    border: 2px solid var(--color-light);
 
     max-height: 90vh;
     overflow-y: auto;
 
-    &-slider {
-        max-width: 482px;
-        padding-top: 68px;
-        padding-bottom: 42px;
-        border: 1px solid var(--color-border-light);
+    @include tablet {
+        padding: 50px;
     }
 }
 
@@ -79,25 +82,83 @@ body.modal-open {
 }
 
 .modal__title {
-    @include fluid-text(32, 17);
-    color: var(--color-blue);
-    line-height: 110%;
+    position: relative;
+    z-index: 2;
+    font-family: var(--font3);
+    font-weight: 500;
+    font-size: 64px;
+    @include fluid-text(48, 32);
     text-transform: uppercase;
-    font-weight: bold;
+    color: var(--color-light);
 }
 
-.modal__subtitle{
-    @include fluid-text(24, 14);
-    color: var(--color-blue);
-    line-height: 110%;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
+.modal__text {
+    position: relative;
+    z-index: 2;
+    margin-top: 50px;
+    font-family: var(--third-family);
+    font-weight: 400;
+    // font-size: 48px;
+    @include fluid-text(24, 16);
+    line-height: 105%;
+    letter-spacing: 0.1em;
+    color: #fff;
 
-.modal__content-img{
+    p {
+        display: inline-block;
+        // max-width: 60%;
+    }
+}
+.modal__content-img {
     width: 70%;
     height: auto;
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
+    z-index: 1;
+}
+
+.modal__btns {
+    position: relative;
+    z-index: 2;
+    margin-top: 100px;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    @include tablet {
+        margin-top: 50px;
+    }
+
+    @include mobile{
+        flex-direction: column;
+        text-align: left;
+        margin-top: 20px;
+    }
+}
+
+.modal__preza {
+    background-image: url("../img/header//btn.svg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+
+    position: relative;
+    column-gap: 20px;
+    padding: 37px 40px 45px;
+    border-radius: 70px;
+    text-transform: uppercase;
+    @include fluid-text(16, 6);
+}
+
+.modal__active {
+    font-family: var(--font-family);
+    font-weight: 500;
+    @include fluid-text(16, 6);
+    text-transform: uppercase;
+    color: var(--color-dark);
+
+    box-shadow: -5px 6px 14px 0 rgba(0, 0, 0, 0.48);
+    background: #fff;
+    border-radius: 95px;
+    padding: 10px 20px;
 }

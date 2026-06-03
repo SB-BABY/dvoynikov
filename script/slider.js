@@ -156,7 +156,7 @@ $(document).ready(function () {
         dots: false,
         infinite: true,
         speed: 500,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 1500,
         centerMode: false, // на десктопе НЕТ centerMode
         cssEase: "cubic-bezier(0.4, 0, 0.2, 1)",
