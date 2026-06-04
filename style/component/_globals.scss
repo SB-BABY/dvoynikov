@@ -7,6 +7,14 @@
  
  */
 // глобальные стили для большинства элементов
+:root {
+  --sticky-nav-h: 98px; /* высота липкой навигации */
+}
+
+[id] {
+  scroll-margin-top: calc(var(--sticky-nav-h) + 12px);
+}
+
 .none {
 	display: none;
 }

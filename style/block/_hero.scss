@@ -70,10 +70,12 @@
     &__content {
         position: relative;
         padding-top: 100px;
-        background: linear-gradient(180deg,
-                #000016 0%,
-                #3d44fb 67.48%,
-                #3035c1 100%);
+        background: linear-gradient(
+            180deg,
+            #000016 0%,
+            #4f56ff 67.48%,
+            #3b42f4 100%
+        );
         border-radius: 36px;
         padding: 50px 63px 0;
         overflow: hidden;
@@ -217,7 +219,6 @@
             transform 0.2s ease,
             filter 0.2s ease;
 
-
         span {
             padding: 20px;
             background: linear-gradient(90deg, #0a12e8 0%, #181c81 100%);
@@ -260,7 +261,7 @@
     z-index: 9998;
     opacity: 0;
     transition: opacity 0.3s ease;
-    
+
     &.is-visible {
         opacity: 1;
     }
@@ -278,7 +279,7 @@
     &.is-open {
         animation: form-expand 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
     }
-    
+
     // Сюда вставляешь стили твоей формы .form__container
     .form__container {
         position: relative;

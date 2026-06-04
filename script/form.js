@@ -327,6 +327,17 @@ document.addEventListener("DOMContentLoaded", () => {
             const modal = document.getElementById(modalId);
             if (!modal) return;
 
+            // Найти текущую открытую модалку
+            const currentModal = btn.closest(".modal");
+
+            if (currentModal) {
+                currentModal.classList.remove("active");
+            }
+
+            // Открыть новую
+            modal.classList.add("active");
+            document.body.classList.add("modal-open");
+
             modal.classList.add("active");
             document.body.classList.add("modal-open");
 

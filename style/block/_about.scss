@@ -5,6 +5,10 @@
     background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
     overflow: hidden;
 
+    @include mobile{
+        padding-bottom: 0;
+    }
+
     &__container {
         position: relative;
     }
@@ -57,7 +61,7 @@
     &__text {
         font-family: var(--third-family);
         @include fluid-text(24, 18);
-        margin-bottom: 100px;
+        margin-bottom: 50px;
         position: relative;
         z-index: 9
     }

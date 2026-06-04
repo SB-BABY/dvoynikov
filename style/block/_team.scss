@@ -42,6 +42,17 @@
         left: 50%;
         text-align: center;
         backdrop-filter: blur(10px);
+        z-index: 5;
+
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+
+        @include mobile{
+            gap: 20px;
+        }
+        
 
         &-bg {
             position: absolute;
@@ -60,6 +71,10 @@
             background: rgba(0, 0, 0, 0.5);
 
             padding: 85px 110px;
+
+            @include mobile{
+                padding: 50px 80px;
+            }
         }
 
         &-content {
@@ -70,11 +85,17 @@
             border: 10px solid #fff;
             border-radius: 68px;
             padding: 60px 30px;
+
+            @include mobile{
+                grid-template-columns: repeat(1, 1fr);
+                row-gap: 20px;
+                padding: 30px 30px;
+            }
         }
 
         &-text {
             margin-left: 100px;
-            text-align-last: left;
+            text-align: left;
             span {
                 display: inline-block;
                 font-family: var(--font-family);
@@ -83,6 +104,10 @@
                 text-align: left;
                 width: 70%;
                 margin-top: 20px;
+            }
+            @include mobile{
+                margin-left: 0;
+                text-align: center;
             }
         }
 
@@ -94,6 +119,7 @@
         }
 
         &-btn {
+            display: inline-block;
             border-radius: 39px;
             box-shadow: 0 0 8px 7px rgba(255, 255, 255, 0.47);
             background: #fff;
@@ -101,6 +127,7 @@
             font-family: var(--font-family);
             font-weight: 500;
             font-size: 30px;
+            @include fluid-text(30, 16);
             text-transform: uppercase;
             color: #242995;
             padding: 15px 22px;

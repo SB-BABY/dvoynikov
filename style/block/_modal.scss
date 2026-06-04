@@ -63,6 +63,10 @@
     @include tablet {
         padding: 50px;
     }
+
+    @include mobile {
+        padding: 25px;
+    }
 }
 
 .modal__close {
@@ -87,7 +91,7 @@ body.modal-open {
     font-family: var(--font3);
     font-weight: 500;
     font-size: 64px;
-    @include fluid-text(48, 32);
+    @include fluid-text(48, 14);
     text-transform: uppercase;
     color: var(--color-light);
 }
@@ -99,7 +103,7 @@ body.modal-open {
     font-family: var(--third-family);
     font-weight: 400;
     // font-size: 48px;
-    @include fluid-text(24, 16);
+    @include fluid-text(24, 12);
     line-height: 105%;
     letter-spacing: 0.1em;
     color: #fff;
@@ -122,7 +126,7 @@ body.modal-open {
     position: relative;
     z-index: 2;
     margin-top: 100px;
-    display: inline-flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     @include tablet {
@@ -147,13 +151,13 @@ body.modal-open {
     padding: 37px 40px 45px;
     border-radius: 70px;
     text-transform: uppercase;
-    @include fluid-text(16, 6);
+    @include fluid-text(16, 10);
 }
 
 .modal__active {
     font-family: var(--font-family);
     font-weight: 500;
-    @include fluid-text(16, 6);
+    @include fluid-text(16, 10);
     text-transform: uppercase;
     color: var(--color-dark);
 
