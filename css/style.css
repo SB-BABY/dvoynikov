@@ -885,6 +885,17 @@ h4,
 .header__link {
   font-weight: 500;
   text-transform: uppercase;
+  background: linear-gradient(180deg, #fff 0%, #8c9df4 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+}
+.header__link:hover {
+  background: #8c9df4;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .header__btns {
   transition: all 0.3s ease-in-out;
@@ -2939,7 +2950,7 @@ h4,
   position: relative;
   width: fit-content;
   max-width: 60vw;
-  padding: 90px;
+  padding: 60px;
   box-shadow: 0 4px 27px 19px rgba(0, 0, 0, 0.25);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.95) 0%, rgba(77, 83, 240, 0.95) 100%);
   border-radius: 40px;
@@ -2980,7 +2991,7 @@ body.modal-open {
   font-family: var(--font3);
   font-weight: 500;
   font-size: 64px;
-  font-size: clamp(14px, 3.3333333333vw, 48px);
+  font-size: clamp(14px, 2.2222222222vw, 32px);
   text-transform: uppercase;
   color: var(--color-light);
 }
@@ -3007,6 +3018,9 @@ body.modal-open {
   bottom: 0;
   right: 0;
   z-index: 1;
+}
+.modal__content-img-four {
+  left: 0;
 }
 
 .modal__btns {
@@ -3053,6 +3067,7 @@ body.modal-open {
   background: #fff;
   border-radius: 95px;
   padding: 10px 20px;
+  background: linear-gradient(180deg, #99abcb 0%, #fff 28.85%, #f8fbff 60.58%, #86b0ff 100%);
 }
 
 .popup__container {
