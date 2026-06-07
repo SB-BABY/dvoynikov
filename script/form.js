@@ -57,19 +57,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /* =============================================
-       КНОПКА «ГДЕ УДОБНО СВЯЗАТЬСЯ»
-       Тогл блока с соцсетями в основной форме
-    ============================================= */
+   КНОПКА «ГДЕ УДОБНО СВЯЗАТЬСЯ»
+============================================= */
 
-    const socialToggleBtn = document.getElementById("socialToggleBtn");
-    const socialChecksBlock = document.getElementById("socialChecksBlock");
+    document.querySelectorAll(".js-contact-form").forEach((form) => {
+        const socialToggleBtn = form.querySelector(".form__group-btn");
+        const socialChecksBlock = form.querySelector(".form__group-social");
+        const socialError = form.querySelector(".social-error");
 
-    if (socialToggleBtn && socialChecksBlock) {
+        if (!socialToggleBtn || !socialChecksBlock) return;
+
         // Скрываем блок изначально
         socialChecksBlock.style.display = "none";
 
         socialToggleBtn.addEventListener("click", () => {
             const isOpen = socialChecksBlock.style.display !== "none";
+
             socialChecksBlock.style.display = isOpen ? "none" : "grid";
             socialToggleBtn.classList.toggle("active", !isOpen);
         });
@@ -79,19 +82,22 @@ document.addEventListener("DOMContentLoaded", () => {
             .querySelectorAll('input[type="checkbox"]')
             .forEach((cb) => {
                 cb.addEventListener("change", () => {
-                    const socialError = document.getElementById("socialError");
                     const anyChecked = [
                         ...socialChecksBlock.querySelectorAll(
                             'input[type="checkbox"]',
                         ),
                     ].some((c) => c.checked);
-                    if (anyChecked && socialError) {
-                        socialError.style.display = "none";
+
+                    if (anyChecked) {
+                        if (socialError) {
+                            socialError.style.display = "none";
+                        }
+
                         socialToggleBtn.style.outline = "";
                     }
                 });
             });
-    }
+    });
 
     /* =============================================
        ОБЩАЯ ОБРАБОТКА ВСЕХ ФОРМ
@@ -181,25 +187,29 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // 4. Соцсети (только в основной форме #form)
-            const mainForm = form.closest("#form");
-            if (mainForm) {
-                const socialBlock = form.querySelector("#socialChecksBlock");
-                const socialError = form.querySelector("#socialError");
-                const socialVisible =
-                    socialBlock && socialBlock.style.display !== "none";
+            // 4. Соцсети
+            const socialBlock = form.querySelector(".form__group-social");
+            const socialError = form.querySelector(".social-error");
+            const socialToggleBtn = form.querySelector(".form__group-btn");
 
-                if (socialVisible) {
-                    const anyChecked = [
-                        ...form.querySelectorAll(
-                            '#socialChecksBlock input[type="checkbox"]',
-                        ),
-                    ].some((c) => c.checked);
-                    if (!anyChecked) {
-                        if (socialError) socialError.style.display = "block";
-                        if (socialToggleBtn)
-                            socialToggleBtn.style.outline = "2px solid red";
-                        hasErrors = true;
+            const socialVisible =
+                socialBlock && socialBlock.style.display !== "none";
+
+            if (socialVisible) {
+                const anyChecked = [
+                    ...socialBlock.querySelectorAll('input[type="checkbox"]'),
+                ].some((c) => c.checked);
+
+                if (!anyChecked) {
+                    if (socialError) {
+                        socialError.style.display = "block";
                     }
+
+                    if (socialToggleBtn) {
+                        socialToggleBtn.style.outline = "2px solid red";
+                    }
+
+                    hasErrors = true;
                 }
             }
 
