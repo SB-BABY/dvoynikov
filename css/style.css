@@ -1202,6 +1202,9 @@ h4,
   animation: btn-pop 0.4s ease-in forwards;
   pointer-events: none;
 }
+.hero__logo-video {
+  pointer-events: none;
+}
 .hero__left {
   position: relative;
   z-index: 10;
