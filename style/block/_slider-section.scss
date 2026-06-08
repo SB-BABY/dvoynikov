@@ -39,10 +39,6 @@
     }
 
     &__title {
-        font-family: var(--second-family);
-        font-weight: 700;
-        @include fluid-text(64, 24);
-        text-transform: uppercase;
         position: relative;
         z-index: 9;
 
@@ -56,6 +52,10 @@
         }
 
         h2 {
+            font-family: var(--second-family);
+            font-weight: 700;
+            @include fluid-text(64, 24);
+            text-transform: uppercase;
             position: relative;
             z-index: 10;
         }

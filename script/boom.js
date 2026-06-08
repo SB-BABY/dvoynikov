@@ -1,41 +1,36 @@
-const heroSection = document.querySelector(".hero__container"); // секция
+// POPUP — кнопка из hero
 const heroBtn = document.getElementById("heroBtn");
 const heroFormOverlay = document.getElementById("heroFormOverlay");
 const heroFormPopup = document.getElementById("heroFormPopup");
 const heroFormClose = document.getElementById("heroFormClose");
 
-let heroCooldown = false;
-let hoverTimer = null;
-
 if (heroBtn) {
-    heroBtn.pause();
-    heroBtn.currentTime = 0;
-}
+    setTimeout(() => {
+        heroBtn.classList.add("is-pulsing");
 
-if (heroSection) {
-    heroSection.addEventListener("mouseenter", () => {
-        if (heroCooldown) return;
-        if (hoverTimer) return; // уже запущен — не перезапускаем
-
-        heroBtn.currentTime = 0;
-        heroBtn.play();
-
-        hoverTimer = setTimeout(() => {
-            hoverTimer = null;
-            heroBtn.pause();
+        setTimeout(() => {
+            // heroBtn.classList.remove("is-pulsing");
             triggerHeroPop();
-        }, 4000);
-    });
+        }, 2100);
+    }, 800);
 }
 
 function triggerHeroPop() {
-    heroCooldown = true;
+    heroBtn.classList.add("is-popping");
 
+    // Блокируем скролл
     document.body.classList.add("modal-open");
 
+    // Показываем оверлей
     heroFormOverlay.style.display = "block";
     requestAnimationFrame(() => heroFormOverlay.classList.add("is-visible"));
 
+    // После анимации хлопка — прячем кнопку навсегда
+    setTimeout(() => {
+        heroBtn.style.display = "none";
+    }, 400);
+
+    // Открываем форму
     setTimeout(() => {
         heroFormPopup.style.display = "block";
         requestAnimationFrame(() => heroFormPopup.classList.add("is-open"));
@@ -45,18 +40,16 @@ function triggerHeroPop() {
 function closeHeroPopup() {
     heroFormOverlay.classList.remove("is-visible");
     heroFormPopup.classList.remove("is-open");
+
+    // Разблокируем скролл
     document.body.classList.remove("modal-open");
 
     setTimeout(() => {
         heroFormOverlay.style.display = "none";
         heroFormPopup.style.display = "none";
-
-        heroBtn.currentTime = 0;
-        heroBtn.pause();
-
-        setTimeout(() => {
-            heroCooldown = false;
-        }, 5000);
+        // Кнопку НЕ восстанавливаем — она исчезла навсегда
+        heroBtn.classList.remove("is-popping");
+        heroBtn.style.display = "block";
     }, 300);
 }
 

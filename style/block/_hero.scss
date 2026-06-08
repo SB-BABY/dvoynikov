@@ -109,6 +109,7 @@
         // transform: translate(-50%, -50%);
         z-index: 9;
         width: 60%;
+        pointer-events: none;
 
         &:active {
             transform: scale(0.98);

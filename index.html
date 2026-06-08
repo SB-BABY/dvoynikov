@@ -109,19 +109,14 @@
         <!-- HERO -->
         <section class="hero">
             <div class="hero__container container">
-
-                <!-- <video autoplay muted loop playsinline>
-                    <source src="./video/0607.webm" type="video/webm">
-                </video> -->
-
                 
                 <div class="hero__content">
                     <img src="./img/hero/bg-cub.png" alt="фоновое изображение" class="hero__cub" />
-                    <!-- <img src="./img/hero/bg-hero-logo.png" alt="фоновое изображение" class="hero__logo" id="heroBtn" /> -->
+                    <img src="./img/hero/bg-hero-logo.png" alt="фоновое изображение" class="hero__logo" id="heroBtn" />
 
-                    <video muted playsinline class="hero__logo hero__logo-video" id="heroBtn">
+                    <!-- <video muted playsinline class="hero__logo hero__logo-video" id="heroBtn">
                         <source src="./video/0607.webm" type="video/webm">
-                    </video>
+                    </video> -->
 
                     <div class="hero__left">
                         <h1 class="hero__title">
@@ -264,7 +259,7 @@
                     <ul class="priorities__list">
                         <li class="priorities__item">
                             <img src="./img/priorities/2.svg" alt="Фоновое изображение"
-                                class="priorities__item-bg priorities__item-bg-one" />
+                                class="priorities__item-bg priorities__item-bg-1" />
 
                             <h3 class="priorities__item-title">
                                 Стратегия, а&nbsp;не&nbsp;хаос
@@ -278,7 +273,7 @@
 
                         <li class="priorities__item">
                             <img src="./img/priorities/1.svg" alt="Фоновое изображение"
-                                class="priorities__item-bg priorities__item-bg-two" />
+                                class="priorities__item-bg priorities__item-bg-2" />
 
                             <h3 class="priorities__item-title">
                                 фокус на&nbsp;результат
@@ -292,7 +287,7 @@
 
                         <li class="priorities__item">
                             <img src="./img/priorities/3.svg" alt="Фоновое изображение"
-                                class="priorities__item-bg priorities__item-bg-three" />
+                                class="priorities__item-bg priorities__item-bg-3" />
 
                             <h3 class="priorities__item-title">
                                 прозразность
@@ -630,9 +625,10 @@
                                 </div>
                             </li>
                         </ul>
-
+                        
                         <div class="prev slick-prev"></div>
                         <div class="next slick-next"></div>
+                        
                     </div>
 
                     <!-- второй слайдер -->
@@ -998,7 +994,7 @@
                             <input type="radio" id="hero-option-three" name="selector" />
                             <label for="option-three">бренд</label>
                             <input type="radio" id="hero-option-four" name="selector" />
-                            <label for="option-four">не знаю пока</label>
+                            <label for="option-four" class="no-ligatures">не знаю пока</label>
                         </div>
 
                         <div class="services__form-bottom">
@@ -1057,7 +1053,7 @@
                             <input type="radio" id="m1-option-three" name="selector" />
                             <label for="m1-option-three">бренд</label>
                             <input type="radio" id="m1-option-four" name="selector" />
-                            <label for="m1-option-four">не знаю пока</label>
+                            <label for="m1-option-four" class="no-ligatures">не знаю пока</label>
                         </div>
 
                         <div class="services__form-bottom">
@@ -1075,8 +1071,8 @@
 
             <div class="form__container container">
                 <div class="form__content">
-                    <img src="./img/form/form-bg.png" alt="фоновое изображение"
-                        class="form__content-bg form__content-bg-three" />
+                    <!-- <img src="./img/form/form-bg.png" alt="фоновое изображение"
+                        class="form__content-bg form__content-bg-three" /> -->
                     <button class="modal__close">&times;</button>
 
                     <form class="form__body js-contact-form" id="modalContactForm" novalidate>
@@ -1216,8 +1212,8 @@
                 </div>
 
                 <div class="modal__btns">
-                    <a href="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx"
-                        target="_blank" class="modal__preza">
+                    <a href="./documents/Продукт стратегия от Двойников маркетинг.pptx"
+                        download="./documents/Продукт стратегия от Двойников маркетинг.pptx" target="_blank" class="modal__preza open-modal-btn" data-modal="modal-11">
                         скачать презентацию
                     </a>
 
@@ -1250,7 +1246,7 @@
                 </div>
 
                 <div class="modal__btns">
-                    <a href="./documents/Продукт стратегия от Двойников маркетинг.pptx" target="_blank" class="modal__preza">
+                    <a href="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx" download="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx" target="_blank" class="modal__preza open-modal-btn" data-modal="modal-11">
                         скачать презентацию
                     </a>
 
@@ -1268,27 +1264,20 @@
                     class="modal__content-img modal__content-img-three" />
                 <button class="modal__close">&times;</button>
 
-                <h2 class="modal__title">стратегия</h2>
+                <h2 class="modal__title">перфоманс</h2>
 
                 <div class="modal__text">
                     <p>
-                        Маркетинговая стратегия &mdash;
-                        это долгосрочный план развития бизнеса, нацеленный на&nbsp;привлечение клиентов и&nbsp;рост
-                        прибыли.
+                        Перформанс&nbsp;&mdash; это маркетинг, который платит за&nbsp;результат. Мы&nbsp;запускаем рекламные кампании в&nbsp;цифровых каналах и&nbsp;фиксируем каждое целевое действие: заявку, звонок, покупку.
                     </p>
 
                     <p>
-                        Обычно её&nbsp;разрабатывают на&nbsp;3-5&nbsp;лет, но
-                        для малого и&nbsp;среднего бизнеса оптимальнеепланировать на&nbsp;срок до&nbsp;года так проще
-                        адаптироваться к&nbsp;изменениям на&nbsp;рынке.
-                        Стратегия систематизирует ресурсы
-                        компании и&nbsp;помогает перераспределить их
-                        на&nbsp;более эффективные каналы продвижения.
+                        Обычно первые результаты видны уже через 3&ndash;7 дней после запуска. Главное отличие от&nbsp;классической рекламы&nbsp;&mdash; вы&nbsp;платите не&nbsp;за&nbsp;показы, а&nbsp;за&nbsp;реальный результат. Все метрики прозрачны: стоимость лида, ROMI, конверсии в&nbsp;каждой кампании.
                     </p>
                 </div>
 
                 <div class="modal__btns">
-                    <a href="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx" target="_blank" class="modal__preza">
+                    <a href="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx" download="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx" class="modal__preza open-modal-btn" data-modal="modal-11">
                         скачать презентацию
                     </a>
 
@@ -1306,27 +1295,20 @@
                     class="modal__content-img modal__content-img-four" />
                 <button class="modal__close">&times;</button>
 
-                <h2 class="modal__title">стратегия</h2>
+                <h2 class="modal__title">комплекс</h2>
 
                 <div class="modal__text">
                     <p>
-                        Маркетинговая стратегия &mdash;
-                        это долгосрочный план развития бизнеса, нацеленный на&nbsp;привлечение клиентов и&nbsp;рост
-                        прибыли.
+                        Комплекс&nbsp;&mdash; это полное маркетинговое сопровождение под ключ. Мы&nbsp;забираем на&nbsp;себя всё: стратегию, рекламу, SMM, брендинг, сайт, аналитику и&nbsp;отчёты.
                     </p>
 
                     <p>
-                        Обычно её&nbsp;разрабатывают на&nbsp;3-5&nbsp;лет, но
-                        для малого и&nbsp;среднего бизнеса оптимальнеепланировать на&nbsp;срок до&nbsp;года так проще
-                        адаптироваться к&nbsp;изменениям на&nbsp;рынке.
-                        Стратегия систематизирует ресурсы
-                        компании и&nbsp;помогает перераспределить их
-                        на&nbsp;более эффективные каналы продвижения.
+                        Для бизнеса это означает одного подрядчика вместо пяти. Вы&nbsp;получаете единую команду, общую цель и&nbsp;понятный бюджет. Комплекс подходит компаниям, которые хотят передать маркетинг полностью и&nbsp;сфокусироваться на&nbsp;продукте.
                     </p>
                 </div>
 
                 <div class="modal__btns">
-                    <a href="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx" target="_blank" class="modal__preza">
+                    <a href="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx" download="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx" target="_blank" class="modal__preza open-modal-btn" data-modal="modal-11">
                         скачать презентацию
                     </a>
 

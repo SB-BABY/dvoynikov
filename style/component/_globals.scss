@@ -15,6 +15,11 @@
   scroll-margin-top: calc(var(--sticky-nav-h) + 12px);
 }
 
+.no-ligatures {
+    font-variant-ligatures: none; /* Отключает лигатуры */
+    font-kerning: none;          /* Отключает кернинг */
+}
+
 .none {
 	display: none;
 }
