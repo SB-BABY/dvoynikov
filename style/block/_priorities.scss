@@ -6,30 +6,15 @@
         padding-bottom: 140px;
         position: relative;
         overflow: visvble;
-
-        &-bg {
-            display: inline-block;
-            position: absolute;
-            bottom: 23%;
-            left: 50%;
-            transform: translate(-50%, 50%);
-
-            font-family: var(--second-family);
-            font-weight: 700;
-            // font-size: 704px;
-            @include fluid-text(550, 18);
-            text-transform: uppercase;
-            color: rgba(61, 68, 251, 0.06);
-        }
     }
 
     &__title {
         text-align: right;
-        font-family: var(--second-family);
-        font-weight: 700;
+        font-family: var(--font-family);
+        font-weight: 400;
         @include fluid-text(64, 24);
         text-transform: uppercase;
-        margin-bottom: 20px;
+        margin-bottom: 60px;
 
         & .one {
             display: inline-block;
@@ -89,7 +74,7 @@
             }
 
             &-2 {
-                bottom: -50%;
+                bottom: -70%;
                 right: -30%;
                 width: 40%;
                 height: auto;
@@ -107,9 +92,9 @@
             }
 
             &-3 {
-                top: 20%;
-                right: -15%;
-                width: 30%;
+                top: 0%;
+                right: -30%;
+                width: 35%;
                 height: auto;
                 @include mobile {
                     top: 33%;
@@ -125,18 +110,19 @@
 
         &-title {
             font-family: var(--font-family);
-            font-weight: 800;
+            font-weight: 400;
             @include fluid-text(24, 18);
             text-transform: uppercase;
             margin-bottom: 30px;
             position: relative;
             z-index: 9;
+            white-space: nowrap;
         }
 
         &-text {
             font-family: var(--third-family);
             font-weight: 400;
-            @include fluid-text(18, 12);
+            @include fluid-text(16, 12);
             position: relative;
             z-index: 9;
         }

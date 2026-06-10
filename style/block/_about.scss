@@ -5,7 +5,7 @@
     background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
     overflow: hidden;
 
-    @include mobile{
+    @include mobile {
         padding-bottom: 0;
     }
 
@@ -49,21 +49,20 @@
     }
 
     &__title {
-        font-family: var(--second-family);
+        font-family: var(--font-family);
+        font-weight: 400;
         text-transform: uppercase;
         @include fluid-text(64, 24);
-        font-weight: 700;
         margin-bottom: 58px;
         position: relative;
         z-index: 9;
     }
 
     &__text {
-        font-family: var(--third-family);
+        font-family: var(--font-family);
         @include fluid-text(24, 18);
         margin-bottom: 50px;
         position: relative;
-        z-index: 9
+        z-index: 9;
     }
-
 }

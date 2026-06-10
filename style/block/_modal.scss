@@ -153,7 +153,7 @@ body.modal-open {
 }
 
 .modal__preza {
-    background-image: url("../img/header//btn.svg");
+    background-image: url("../img/services/btn.svg");
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
@@ -167,9 +167,9 @@ body.modal-open {
 }
 
 .modal__active {
-    font-family: var(--font-family);
+    font-family: var(--font3);
     font-weight: 500;
-    @include fluid-text(16, 10);
+    @include fluid-text(10, 8);
     text-transform: uppercase;
     color: var(--color-dark);
 

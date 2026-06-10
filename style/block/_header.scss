@@ -123,7 +123,7 @@
         column-gap: 50px;
         border-radius: 56px;
         border: 2px solid var(--color-light);
-        padding: 18px 37px;
+        padding: 8px 25px;
 
         @include tablet {
             padding: 10px 20px;
@@ -141,7 +141,7 @@
     &__lists {
         display: flex;
         align-items: center;
-        column-gap: 45px;
+        column-gap: 40px;
         @include fluid-text(16, 10);
         font-style: 12px;
 
@@ -190,7 +190,7 @@
         display: flex;
         align-items: center;
         column-gap: 20px;
-        padding: 20px 25px 25px;
+        padding: 25px 25px 25px;
         border-radius: 70px;
         text-transform: uppercase;
         @include fluid-text(16, 6);

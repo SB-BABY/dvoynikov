@@ -43,7 +43,7 @@ $(document).ready(function () {
         centerPadding: "0px",
         prevArrow: $(".prev"),
         nextArrow: $(".next"),
-        asNavFor: ".slider__nav-list", // ← связь с навигационным
+        // asNavFor: ".slider__nav-list", // ← связь с навигационным
         responsive: [
             {
                 breakpoint: 768,

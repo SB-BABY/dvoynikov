@@ -21,17 +21,10 @@
 
     &__title {
         font-family: var(--font-family);
-        font-weight: 500;
-        @include fluid-text(65, 18);
+        font-weight: 400;
+        @include fluid-text(60, 18);
         text-transform: uppercase;
         position: relative;
-
-        span {
-            font-family: var(--font3);
-            font-weight: 500;
-            @include fluid-text(34, 18);
-            text-transform: uppercase;
-        }
 
         &-bg {
             position: absolute;
@@ -53,9 +46,8 @@
 
     &__text {
         font-family: var(--font-family);
-        font-weight: 500;
+        font-weight: 400;
         @include fluid-text(24, 18);
-        text-transform: uppercase;
         margin-top: 20px;
         max-width: 70%;
     }

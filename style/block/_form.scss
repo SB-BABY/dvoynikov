@@ -34,31 +34,18 @@
             position: absolute;
             width: 18%;
 
-            &-one {
-                bottom: -14%;
-                left: -2%;
-                z-index: 9;
-            }
-
-            &-two {
-                top: 20%;
-                right: -8%;
-                width: 25%;
-                z-index: 9;
-            }
-
             &-three {
-                width: 80%;
+                width: 100%;
                 z-index: 8;
-                top: -8%;
-                left: -5%;
+                top: 0%;
+                left: 0%;
             }
         }
     }
 
     &__title {
-        font-family: var(--font-family);
-        font-weight: 700;
+        font-family: var(--font3);
+        font-weight: 500;
         @include fluid-text(66, 24);
         text-transform: uppercase;
         position: relative;
@@ -89,19 +76,31 @@
             grid-template-columns: repeat(1, 1fr);
             padding: 50px 25px;
         }
+
+        &-bg {
+            position: absolute;
+            z-index: 5;
+            top: 77%;
+            left: 46%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: auto;
+        }
     }
 
     &__left {
         position: relative;
-
+        z-index: 6;
         &-text {
             font-family: var(--font-family);
-            @include fluid-text(36, 24);
+            @include fluid-text(24, 12);
             text-transform: uppercase;
         }
     }
 
     &__right {
+        position: relative;
+        z-index: 6;
         margin-left: 80px;
         @include tablet {
             margin-left: 0;
@@ -112,7 +111,6 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
-        margin-top: 50px;
         margin-bottom: 25px;
     }
 
@@ -311,7 +309,7 @@
     &__btns {
         background-image: url("../img/form/bg-btn.svg");
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 100%;
         transition: all 0.3s ease-in-out;
 
         &:hover {
@@ -322,24 +320,27 @@
     &__button {
         background: none;
         border: none;
-        padding: 14px 28px;
+        padding: 18px 28px;
         border-radius: 270px;
         color: var(--color-light);
+        @include fluid-text(14, 10);
         font-weight: 600;
         cursor: pointer;
         transition: 0.3s;
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
 
-        // &:hover {
-        //     background: var(--color-accent);
-        //     color: var(--color-light);
-        // }
+        &-star {
+            width: 50%;
+        }
     }
 
     &__political {
         display: flex;
         align-items: center;
-        column-gap: 30px;
+        column-gap: 10px;
 
         @include mobile-s {
             // flex-direction: column;

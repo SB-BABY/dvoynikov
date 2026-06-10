@@ -9,17 +9,11 @@
 
     // ===================== TITLE =====================
     &__title {
-        font-family: var(--second-family);
-        font-weight: 700;
+        font-family: var(--font-family);
+        font-weight: 400;
         @include fluid-text(64, 24);
         text-transform: uppercase;
         color: #fff;
-        text-align: right;
-
-        span {
-            display: inline-block;
-            transform: rotate(19deg);
-        }
     }
 
     // ===================== SUBTEXT =====================
@@ -49,10 +43,9 @@
         align-items: center;
         gap: 40px;
 
-        @include mobile{
+        @include mobile {
             gap: 20px;
         }
-        
 
         &-bg {
             position: absolute;
@@ -72,7 +65,7 @@
 
             padding: 85px 110px;
 
-            @include mobile{
+            @include mobile {
                 padding: 50px 80px;
             }
         }
@@ -80,22 +73,42 @@
         &-content {
             position: relative;
             z-index: 2;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            // display: grid;
+            // grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 100px;
+            text-align: center;
             border: 10px solid #fff;
             border-radius: 68px;
             padding: 60px 30px;
+            flex-wrap: nowrap;
 
-            @include mobile{
-                grid-template-columns: repeat(1, 1fr);
+            @include mobile {
+                flex-direction: column;
                 row-gap: 20px;
                 padding: 30px 30px;
             }
         }
 
+        &-face {
+            width: 35%;
+            height: auto;
+        }
+
+        &-lock {
+            width: 7%;
+            height: auto;
+        }
+
         &-text {
-            margin-left: 100px;
+            // margin-left: 100px;
             text-align: left;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
             span {
                 display: inline-block;
                 font-family: var(--font-family);
@@ -105,7 +118,7 @@
                 width: 70%;
                 margin-top: 20px;
             }
-            @include mobile{
+            @include mobile {
                 margin-left: 0;
                 text-align: center;
             }
@@ -118,19 +131,41 @@
             text-transform: uppercase;
         }
 
+        &-open {
+            border: none;
+            background: none;
+            background-image: url("../img/team/btn.png");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+
+            font-family: var(--font-family);
+            font-weight: 400;
+            color: #3b42f4;
+
+            position: relative;
+            column-gap: 20px;
+            padding: 37px 40px 45px;
+            border-radius: 70px;
+            text-transform: uppercase;
+            @include fluid-text(16, 10);
+        }
+
         &-btn {
             display: inline-block;
-            border-radius: 39px;
-            box-shadow: 0 0 8px 7px rgba(255, 255, 255, 0.47);
-            background: #fff;
+            background: none;
+            background-image: url("../img/team/btn-close.svg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
 
             font-family: var(--font-family);
             font-weight: 500;
             font-size: 30px;
-            @include fluid-text(30, 16);
+            @include fluid-text(24, 16);
             text-transform: uppercase;
             color: #242995;
-            padding: 15px 22px;
+            padding: 35px 47px 45px;
 
             text-align: center;
         }
@@ -188,9 +223,9 @@
     // ===================== SLIDER WRAPPER =====================
     &__slider-wrap {
         position: relative;
-        overflow: hidden; // прячем всё лишнее
+        overflow: visible; // прячем всё лишнее
         // padding: 0 50px;
-        padding: 50px 50px; // возвращаем padding чтобы пики влезли
+        padding: 50px 0px; // возвращаем padding чтобы пики влезли
 
         // background: linear-gradient(360deg, #000016 0%, #3d44fb 60.1%);
         // border-radius: 36px;
@@ -198,6 +233,32 @@
         & .slick-list {
             padding-top: 130px;
             overflow: visible;
+        }
+    }
+
+    // LETTERS
+    &__letter {
+        position: absolute;
+        z-index: 4;
+
+        &-d {
+            bottom: 14%;
+            left: -9%;
+            width: 30%;
+            height: auto;
+            @include tablet {
+                display: none;
+            }
+        }
+
+        &-v {
+            top: -13%;
+            right: 3%;
+            width: 35%;
+            height: auto;
+            @include tablet {
+                display: none;
+            }
         }
     }
 

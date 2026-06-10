@@ -1,415 +1,538 @@
 <!doctype html>
 <html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <meta name="viewport" content="width=1798px" /> -->
+        <!-- SLIDER -->
+        <!-- Добавляем стили из CDN -->
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"
+        />
+        <!-- SLIDER -->
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.min.css?v=1" />
+        <!-- CSS -->
+        <!-- ICON -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.30.0/tabler-icons.min.css"
+        />
+        <!-- ICON -->
+        <title>Центр комплексного развития компетенций</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <meta name="viewport" content="width=1798px" /> -->
-    <!-- SLIDER -->
-    <!-- Добавляем стили из CDN -->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <!-- SLIDER -->
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/style.min.css?v=1" />
-    <!-- CSS -->
-    <!-- ICON -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.30.0/tabler-icons.min.css" />
-    <!-- ICON -->
-    <title>Центр комплексного развития компетенций</title>
-</head>
+    <body>
+        <!-- GLASS -->
+        <svg style="display: none">
+            <filter id="displacementFilter">
+                <feImage
+                    href="data:image/png;base64,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"
+                    preserveAspectRatio="none"
+                />
 
-<body>
-    <!-- GLASS -->
-    <svg style="display: none">
-        <filter id="displacementFilter">
-            <feImage
-                href="data:image/png;base64,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"
-                preserveAspectRatio="none" />
+                <feDisplacementMap
+                    in="SourceGraphic"
+                    in2="turbulence"
+                    scale="600"
+                    xChannelSelector="R"
+                    yChannelSelector="G"
+                />
+            </filter>
+        </svg>
+        <!-- GLASS -->
 
-            <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="600" xChannelSelector="R"
-                yChannelSelector="G" />
-        </filter>
-    </svg>
-    <!-- GLASS -->
+        <!-- HEADER -->
+        <header class="header">
+            <div class="container header__container">
+                <div class="header__content">
+                    <div class="header__logo">
+                        <a
+                            href="javascript:location.reload();"
+                            class="header__logo-link"
+                        >
+                            <img
+                                src="./img/header/logo.svg"
+                                alt="Логотип"
+                                width="278"
+                                height="70"
+                                class="header__logo-img"
+                            />
+                        </a>
+                    </div>
+                    <!-- BURGER -->
+                    <button class="header__burger" aria-label="Открыть меню">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- BURGER -->
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container header__container">
-            <div class="header__content">
-                <div class="header__logo">
-                    <a href="javascript:location.reload();" class="header__logo-link">
-                        <img src="./img/header/logo.svg" alt="Логотип" width="278" height="70"
-                            class="header__logo-img" />
-                    </a>
-                </div>
-                <!-- BURGER -->
-                <button class="header__burger" aria-label="Открыть меню">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-                <!-- BURGER -->
+                    <div class="header__menu">
+                        <nav class="header__nav">
+                            <ul class="header__lists">
+                                <li class="header__item">
+                                    <a href="#about" class="header__link"
+                                        >О нас</a
+                                    >
+                                </li>
+                                <li class="header__item">
+                                    <a href="#priorities" class="header__link"
+                                        >Приоритеты</a
+                                    >
+                                </li>
+                                <li class="header__item">
+                                    <a href="#services" class="header__link"
+                                        >Услуги</a
+                                    >
+                                </li>
+                                <li class="header__item">
+                                    <a href="#case" class="header__link"
+                                        >Кейсы</a
+                                    >
+                                </li>
+                                <li class="header__item">
+                                    <a href="#team" class="header__link"
+                                        >Команда</a
+                                    >
+                                </li>
+                            </ul>
+                        </nav>
 
-                <div class="header__menu">
-                    <nav class="header__nav">
-                        <ul class="header__lists">
-                            <li class="header__item">
-                                <a href="#about" class="header__link">О нас</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#priorities" class="header__link">Приоритеты</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#services" class="header__link">Услуги</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#case" class="header__link">Кейсы</a>
-                            </li>
-                            <li class="header__item">
-                                <a href="#team" class="header__link">Команда</a>
-                            </li>
-                        </ul>
-                    </nav>
+                        <div class="header__btns">
+                            <div class="header__phone">
+                                <img
+                                    src="./img/header/star.svg"
+                                    alt="звезда"
+                                    class="header__phone-bg header__phone-bg-one hidden-mobile"
+                                />
+                                <span> связаться </span>
+                                <img
+                                    src="./img/header/star.svg"
+                                    alt="звезда"
+                                    class="header__phone-bg header__phone-bg-one hidden-mobile"
+                                />
 
-                    <div class="header__btns">
-                        <div class="header__phone">
-                            <img src="./img/header/star.svg" alt="звезда"
-                                class="header__phone-bg header__phone-bg-one hidden-mobile" />
-                            <span> связаться </span>
-                            <img src="./img/header/star.svg" alt="звезда"
-                                class="header__phone-bg header__phone-bg-one hidden-mobile" />
-
-                            <div class="header__phone-social">
-                                <a href="tel:79952941530" class="header__phone-number">
-                                    8(995) 294 15-30
-                                </a>
-                                <a href="https://t.me/DVMarketing24" target="_blank" class="header__phone-link">
-                                    <img src="./img/footer/telega.svg" alt="Телеграм">
-                                </a>
-                                <a target="_blank" class="header__phone-link">
-                                    <img src="./img/footer/max.svg" alt="Max">
-                                </a>
-                                <a href="https://vk.com/dvm_agency?w=club235903218" target="_blank"
-                                    class="header__phone-link">
-                                    <img src="./img/footer/vk.svg" alt="Вконтакте">
-                                </a>
+                                <div class="header__phone-social">
+                                    <a
+                                        href="tel:79952941530"
+                                        class="header__phone-number"
+                                    >
+                                        8(995) 294 15-30
+                                    </a>
+                                    <a
+                                        href="https://t.me/DVMarketing24"
+                                        target="_blank"
+                                        class="header__phone-link"
+                                    >
+                                        <img
+                                            src="./img/footer/telega.svg"
+                                            alt="Телеграм"
+                                        />
+                                    </a>
+                                    <a
+                                        target="_blank"
+                                        class="header__phone-link"
+                                    >
+                                        <img
+                                            src="./img/footer/max.svg"
+                                            alt="Max"
+                                        />
+                                    </a>
+                                    <a
+                                        href="https://vk.com/dvm_agency?w=club235903218"
+                                        target="_blank"
+                                        class="header__phone-link"
+                                    >
+                                        <img
+                                            src="./img/footer/vk.svg"
+                                            alt="Вконтакте"
+                                        />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </header>
-    <!-- HEADER -->
+        </header>
+        <!-- HEADER -->
 
-    <!-- MAIN -->
-    <main class="main">
-        <!-- HERO -->
-        <section class="hero">
-            <div class="hero__container container">
-                
-                <div class="hero__content">
-                    <img src="./img/hero/bg-cub.png" alt="фоновое изображение" class="hero__cub" />
-                    <img src="./img/hero/bg-hero-logo.png" alt="фоновое изображение" class="hero__logo" id="heroBtn" />
+        <!-- MAIN -->
+        <main class="main">
+            <!-- HERO -->
+            <section class="hero">
+                <div class="hero__container container">
+                    <div class="hero__content">
+                        <img
+                            src="./img/hero/bg-cub.png"
+                            alt="фоновое изображение"
+                            class="hero__cub"
+                        />
+                        <img
+                            src="./img/hero/bg-hero-logo.png"
+                            alt="фоновое изображение"
+                            class="hero__logo"
+                            id="heroBtn"
+                        />
 
-                    <!-- <video muted playsinline class="hero__logo hero__logo-video" id="heroBtn">
+                        <!-- <video muted playsinline class="hero__logo hero__logo-video" id="heroBtn">
                         <source src="./video/0607.webm" type="video/webm">
                     </video> -->
 
-                    <div class="hero__left">
-                        <h1 class="hero__title">
-                            От идеи
-                            <span class="hero__title-pixle">до</span> <br />
-                            <span class="hero__title-right">стабильного</span>
-                            <br />
-                            потока
-                            <span class="hero__title-pixle">клиентов</span>
-                        </h1>
+                        <div class="hero__left">
+                            <h1 class="hero__title">
+                                От идеи
+                                <span class="hero__title-pixle">до</span> <br />
+                                <span class="hero__title-right"
+                                    >стабильного</span
+                                >
+                                <br />
+                                потока
+                                <span class="hero__title-pixle">клиентов</span>
+                            </h1>
 
-                        <!-- <div class="hero__btns">
+                            <!-- <div class="hero__btns">
                                 <a href="#" class="hero__btn" id="heroBtn">
                                     <span>Обсудить проект</span>
                                 </a>
                             </div> -->
-                    </div>
+                        </div>
 
-                    <div class="hero__block">
-                        <p class="hero__text" id="hero__text">
-                            DVOYNIKOV<br />MARKETING
-                        </p>
+                        <div class="hero__block">
+                            <p class="hero__text" id="hero__text">
+                                DVOYNIKOV<br />MARKETING
+                            </p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- HERO -->
+            </section>
+            <!-- HERO -->
 
-        <!-- ADVANTAGES -->
-        <section class="advantages" id="advantages">
-            <div class="advantages__container container">
-                <div class="advantages__content">
-                    <h2 class="advantages__title visually-hidden">
-                        Преимущества
-                    </h2>
+            <!-- ADVANTAGES -->
+            <section class="advantages" id="advantages">
+                <div class="advantages__container container">
+                    <div class="advantages__content">
+                        <h2 class="advantages__title visually-hidden">
+                            Преимущества
+                        </h2>
 
-                    <ul class="advantages__list">
-                        <li class="advantages__item">
-                            <h3 class="advantages__item-title">
-                                <span>120</span>
-                            </h3>
-                            <p class="advantages__item-text">
-                                реализованных <br />
-                                проектов
-                            </p>
-                        </li>
+                        <ul class="advantages__list">
+                            <li class="advantages__item">
+                                <h3 class="advantages__item-title">
+                                    <span>120</span>+
+                                </h3>
+                                <p class="advantages__item-text">
+                                    реализованных <br />
+                                    проектов
+                                </p>
+                            </li>
 
-                        <li class="advantages__item">
-                            <h3 class="advantages__item-title">
-                                <span>6</span>
-                            </h3>
-                            <p class="advantages__item-text">
-                                лет <br />
-                                в маркетинге
-                            </p>
-                        </li>
+                            <li class="advantages__item">
+                                <h3 class="advantages__item-title">
+                                    <span>6</span>
+                                </h3>
+                                <p class="advantages__item-text">
+                                    лет <br />
+                                    в маркетинге
+                                </p>
+                            </li>
 
-                        <li class="advantages__item">
-                            <h3 class="advantages__item-title">
-                                <span>87</span>%
-                            </h3>
-                            <p class="advantages__item-text">
-                                клиентов работают <br />
-                                с нами более года
-                            </p>
-                        </li>
+                            <li class="advantages__item">
+                                <h3 class="advantages__item-title">
+                                    <span>87</span>%
+                                </h3>
+                                <p class="advantages__item-text">
+                                    клиентов работают <br />
+                                    с нами более года
+                                </p>
+                            </li>
 
-                        <li class="advantages__item">
-                            <h3 class="advantages__item-title">
-                                <span>3</span>-<span>6</span>
-                            </h3>
-                            <p class="advantages__item-text">
-                                средний срок <br />
-                                роста показателей
-                            </p>
-                        </li>
+                            <li class="advantages__item">
+                                <h3 class="advantages__item-title">
+                                    <span>3</span>-<span>6</span>
+                                </h3>
+                                <p class="advantages__item-text">
+                                    средний срок <br />
+                                    роста показателей
+                                </p>
+                            </li>
 
-                        <li class="advantages__item">
-                            <h3 class="advantages__item-title">
-                                <span>15</span>
-                            </h3>
-                            <p class="advantages__item-text">
-                                специалистов <br />
-                                в команде
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- ADVANTAGES -->
-
-        <!-- ABOUT -->
-        <section class="about" id="about">
-            <div class="about__container container">
-                <div class="about__content">
-                    <!-- <span class="about__content-bg"> маркет </span> -->
-
-                    <img src="./img/about/bg-group.png" alt="фоновое изображение" class="about__content-bg" />
-
-                    <div class="about__block">
-                        <h2 class="about__title">О нас</h2>
-
-                        <img src="./img/about/bg.svg" alt="фоновое изображение" class="about__block-bg" />
+                            <li class="advantages__item">
+                                <h3 class="advantages__item-title">
+                                    <span>15</span>
+                                </h3>
+                                <p class="advantages__item-text">
+                                    специалистов <br />
+                                    в команде
+                                </p>
+                            </li>
+                        </ul>
                     </div>
+                </div>
+            </section>
+            <!-- ADVANTAGES -->
 
-                    <div class="about__text">
-                        <p>
-                            Мы команда Двойников маркетинг — помогаем
-                            компаниям и экспертам находить рабочие
+            <!-- ABOUT -->
+            <section class="about" id="about">
+                <div class="about__container container">
+                    <div class="about__content">
+                        <!-- <span class="about__content-bg"> маркет </span> -->
+
+                        <img
+                            src="./img/about/bg-group.png"
+                            alt="фоновое изображение"
+                            class="about__content-bg"
+                        />
+
+                        <div class="about__block">
+                            <h2 class="about__title">О нас</h2>
+
+                            <img
+                                src="./img/about/bg.svg"
+                                alt="фоновое изображение"
+                                class="about__block-bg"
+                            />
+                        </div>
+
+                        <div class="about__text">
+                            <p>
+                                Мы команда Двойников маркетинг — помогаем
+                                компаниям и экспертам находить рабочие
+                                маркетинговые инструменты, чтобы расти быстрее,
+                                смелее и выходить на новый уровень.
+                            </p>
+
+                            <p>
+                                Работаем по принципу «один подрядчик вместо
+                                пяти». Стратегия, реклама, бренд, аналитика — не
+                                по отдельности у разных людей, а вместе, с общей
+                                целью и понятным отчётом каждый месяц. Мы знаем,
+                                сколько стоит привлечение каждого вашего
+                                клиента, где бюджет работает, а где просто
+                                тратиться, и честно говорить об этом.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- ABOUT -->
+
+            <!-- PRIORITIES -->
+            <section class="priorities" id="priorities">
+                <div class="priorities__container container">
+                    <div class="priorities__content">
+                        <h2 class="priorities__title">наши приоритеты</h2>
+
+                        <ul class="priorities__list">
+                            <li class="priorities__item">
+                                <img
+                                    src="./img/priorities/2.svg"
+                                    alt="Фоновое изображение"
+                                    class="priorities__item-bg priorities__item-bg-1"
+                                />
+
+                                <h3 class="priorities__item-title">
+                                    Стратегия, а&nbsp;не&nbsp;хаос
+                                </h3>
+
+                                <p class="priorities__item-text">
+                                    Перед запуском рекламы мы&nbsp;анализируем
+                                    рынок, конкурентов и&nbsp;целевую аудиторию.
+                                </p>
+                            </li>
+
+                            <li class="priorities__item">
+                                <img
+                                    src="./img/priorities/1.svg"
+                                    alt="Фоновое изображение"
+                                    class="priorities__item-bg priorities__item-bg-2"
+                                />
+
+                                <h3 class="priorities__item-title">
+                                    фокус на&nbsp;результат
+                                </h3>
+
+                                <p class="priorities__item-text">
+                                    Работаем с&nbsp;метриками: заявки, стоимость
+                                    лида, ROMI.
+                                </p>
+                            </li>
+
+                            <li class="priorities__item">
+                                <img
+                                    src="./img/priorities/3.svg"
+                                    alt="Фоновое изображение"
+                                    class="priorities__item-bg priorities__item-bg-3"
+                                />
+
+                                <h3 class="priorities__item-title">
+                                    прозразность
+                                </h3>
+
+                                <p class="priorities__item-text">
+                                    Предоставляем понятные отчёты и&nbsp;всегда
+                                    на&nbsp;связи.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- PRIORITIES -->
+
+            <!-- SERVICES -->
+            <section class="services" id="services">
+                <div class="services__container container">
+                    <img
+                        src="./img/services/services__bg.png"
+                        alt="фоновое изображение"
+                        class="services__bg"
+                    />
+                    <div class="services__content">
+                        <h2 class="services__title no-ligatures">
+                            Услуги Нашего агентства
+                            <img
+                                src="./img/services/Star1.svg"
+                                alt="звезда"
+                                class="services__title-bg"
+                            />
+                        </h2>
+
+                        <p class="services__text">
+                            Помогаем компаниям и экспертам находить свои рабочие
                             маркетинговые инструменты, чтобы расти быстрее,
-                            смелее и выходить на новый уровень.
+                            смелее и выходить на новый уровень
                         </p>
 
-                        <p>
-                            Работаем по принципу «один подрядчик вместо
-                            пяти». Стратегия, реклама, бренд, аналитика — не
-                            по отдельности у разных людей, а вместе, с общей
-                            целью и понятным отчётом каждый месяц. Мы знаем,
-                            сколько стоит привлечение каждого вашего
-                            клиента, где бюджет работает, а где просто
-                            тратиться, и честно говорить об этом.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- ABOUT -->
-
-        <!-- PRIORITIES -->
-        <section class="priorities" id="priorities">
-            <div class="priorities__container container">
-                <div class="priorities__content">
-                    <span class="priorities__content-bg hidden-mobile">
-                        смм
-                    </span>
-
-                    <h2 class="priorities__title">наши приоритеты</h2>
-
-                    <ul class="priorities__list">
-                        <li class="priorities__item">
-                            <img src="./img/priorities/2.svg" alt="Фоновое изображение"
-                                class="priorities__item-bg priorities__item-bg-1" />
-
-                            <h3 class="priorities__item-title">
-                                Стратегия, а&nbsp;не&nbsp;хаос
-                            </h3>
-
-                            <p class="priorities__item-text">
-                                Перед запуском рекламы мы&nbsp;анализируем
-                                рынок, конкурентов и&nbsp;целевую аудиторию.
-                            </p>
-                        </li>
-
-                        <li class="priorities__item">
-                            <img src="./img/priorities/1.svg" alt="Фоновое изображение"
-                                class="priorities__item-bg priorities__item-bg-2" />
-
-                            <h3 class="priorities__item-title">
-                                фокус на&nbsp;результат
-                            </h3>
-
-                            <p class="priorities__item-text">
-                                Работаем с&nbsp;метриками: заявки, стоимость
-                                лида, ROMI.
-                            </p>
-                        </li>
-
-                        <li class="priorities__item">
-                            <img src="./img/priorities/3.svg" alt="Фоновое изображение"
-                                class="priorities__item-bg priorities__item-bg-3" />
-
-                            <h3 class="priorities__item-title">
-                                прозразность
-                            </h3>
-
-                            <p class="priorities__item-text">
-                                Предоставляем понятные отчёты и&nbsp;всегда
-                                на&nbsp;связи.
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!-- PRIORITIES -->
-
-        <!-- SERVICES -->
-        <section class="services" id="services">
-            <div class="services__container container">
-                <img src="./img/services/services__bg.png" alt="фоновое изображение" class="services__bg" />
-                <div class="services__content">
-                    <h2 class="services__title">
-                        Услуги <span>Нашего агентства</span>
-                        <img src="./img/services/Star1.svg" alt="звезда" class="services__title-bg" />
-                    </h2>
-
-                    <p class="services__text">
-                        Помогаем компаниям и экспертам находить свои рабочие
-                        маркетинговые инструменты, чтобы расти быстрее,
-                        смелее и выходить на новый уровень
-                    </p>
-
-                    <div class="services__list">
-                        <img src="./img/services/Star2.svg" alt="звезда" class="services__list-bg" />
-                        <div class="services__item services__item-one">
-                            <div class="services__item-btn open-modal-btn" data-modal="modal-2">
-                                <button class="services__item-next">
-                                    <img src="./img/services/arrow.svg" alt="стрелка" />
-                                </button>
+                        <div class="services__list">
+                            <img
+                                src="./img/services/Star2.svg"
+                                alt="звезда"
+                                class="services__list-bg"
+                            />
+                            <div
+                                class="services__item services__item-one open-modal-btn"
+                                data-modal="modal-2"
+                            >
+                                <img
+                                    src="./img/services/bg1.png"
+                                    alt="фоновое"
+                                    class="services__item-bg"
+                                />
+                                <h3 class="services__item-title">Стратегия</h3>
                             </div>
-                            <img src="./img/services/bg1.png" alt="фоновое" class="services__item-bg" />
-                            <h3 class="services__item-title">Стратегия</h3>
-                        </div>
-                        <div class="services__item services__item-two">
-                            <div class="services__item-btn open-modal-btn" data-modal="modal-3">
-                                <button class="services__item-next">
-                                    <img src="./img/services/arrow.svg" alt="стрелка" />
-                                </button>
+                            <div
+                                class="services__item services__item-two open-modal-btn"
+                                data-modal="modal-3"
+                            >
+                                <img
+                                    src="./img/services/bg2.png"
+                                    alt="фоновое"
+                                    class="services__item-bg"
+                                />
+                                <h3 class="services__item-title">
+                                    стимулирующие акции
+                                </h3>
                             </div>
-                            <img src="./img/services/bg2.png" alt="фоновое" class="services__item-bg" />
-                            <h3 class="services__item-title">
-                                стимулирующие акции
-                            </h3>
-                        </div>
-                        <div class="services__item services__item-three">
-                            <img src="./img/services/Star3.svg" alt="звезда" class="services__item-three-bg" />
-                            <div class="services__item-btn open-modal-btn" data-modal="modal-4">
-                                <button class="services__item-next">
-                                    <img src="./img/services/arrow.svg" alt="стрелка" />
-                                </button>
+                            <div
+                                class="services__item services__item-three open-modal-btn"
+                                data-modal="modal-4"
+                            >
+                                <img
+                                    src="./img/services/Star3.svg"
+                                    alt="звезда"
+                                    class="services__item-three-bg"
+                                />
+                                <img
+                                    src="./img/services/bg3.png"
+                                    alt="фоновое"
+                                    class="services__item-bg"
+                                />
+                                <h3 class="services__item-title">перформанс</h3>
                             </div>
-                            <img src="./img/services/bg3.png" alt="фоновое" class="services__item-bg" />
-                            <h3 class="services__item-title">перформанс</h3>
-                        </div>
-                        <div class="services__item services__item-four">
-                            <div class="services__item-btn open-modal-btn" data-modal="modal-6">
-                                <button class="services__item-next">
-                                    <img src="./img/services/arrow.svg" alt="стрелка" />
-                                </button>
+                            <div
+                                class="services__item services__item-four open-modal-btn"
+                                data-modal="modal-6"
+                            >
+                                <img
+                                    src="./img/services/bg4.png"
+                                    alt="фоновое"
+                                    class="services__item-bg"
+                                />
+                                <h3 class="services__item-title">комплекс</h3>
                             </div>
-                            <img src="./img/services/bg4.png" alt="фоновое" class="services__item-bg" />
-                            <h3 class="services__item-title">комплекс</h3>
-                        </div>
 
-                        <div class="services__item services__item-five">
-                            <div class="services__item-btn open-modal-btn" data-modal="modal-1">
-                                <button class="services__item-next">
-                                    <img src="./img/services/arrow.svg" alt="стрелка" />
-                                </button>
+                            <div
+                                class="services__item services__item-five open-modal-btn"
+                                data-modal="modal-1"
+                            >
+                                <img
+                                    src="./img/services/bg5.png"
+                                    alt="фоновое"
+                                    class="services__item-bg"
+                                />
+                                <h3 class="services__item-title">
+                                    индивидуальное предложение
+                                </h3>
                             </div>
-                            <img src="./img/services/bg5.png" alt="фоновое" class="services__item-bg" />
-                            <h3 class="services__item-title">
-                                индивидуальное предложение
-                            </h3>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- SERVICES -->
+            </section>
+            <!-- SERVICES -->
 
-        <!-- SLIDER -->
-        <section class="slider" id="case">
-            <div class="slider__container container">
-                <div class="slider__content">
-                    <img src="./img/case/1.png" alt="кубик фоновый" class="slider__content-bg slider__content-bg-one" />
-                    <img src="./img/case/2.png" alt="кубик фоновый" class="slider__content-bg slider__content-bg-two" />
+            <!-- SLIDER -->
+            <section class="slider" id="case">
+                <div class="slider__container container">
+                    <div class="slider__content">
+                        <img
+                            src="./img/case/1.png"
+                            alt="кубик фоновый"
+                            class="slider__content-bg slider__content-bg-one"
+                        />
+                        <img
+                            src="./img/case/2.png"
+                            alt="кубик фоновый"
+                            class="slider__content-bg slider__content-bg-two"
+                        />
 
-                    <div class="slider__title">
-                        <h2>Кейсы</h2>
-                        <img src="./img/case/bg-title.png" alt="Фоновое изображение" />
-                    </div>
+                        <div class="slider__title">
+                            <h2>Кейсы</h2>
+                            <img
+                                src="./img/case/bg-title.png"
+                                alt="Фоновое изображение"
+                            />
+                        </div>
 
-                    <div class="slider__lists">
-                        <ul class="slider__list">
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
+                        <div class="slider__lists">
+                            <ul class="slider__list">
+                                <li class="slider__item bg-liquid-glass">
+                                    
 
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            мегатор
+                                        </h3>
 
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
+                                        <p class="slider__item-text">
+                                            Энергетическое оборудование
+                                        </p>
 
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/1.svg" alt="Партнер" />
-                                    </div>
+                                        <img
+                                            src="./img/parthners/1.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
 
-                                    <!-- <button
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -419,26 +542,28 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/2.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            мишутка и друзья
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Кондитерская
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/2.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -448,26 +573,28 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/3.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            ЗапСибHOЦ
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Научно-образовательный центр
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/3.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -477,26 +604,28 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/4.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            VS-design
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Студия промышленного дизайна
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/4.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -506,26 +635,27 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/5.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            AИР ТО
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Агентство инфраструктурного развития Тюменской области
+                                        </p>
+                                        <img
+                                            src="./img/parthners/5.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -535,26 +665,28 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/6.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            Тюменский технопарк
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/6.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -564,26 +696,28 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/7.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            АНО АИ 
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Агентство инноваций
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/7.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -593,26 +727,28 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-
-                            <li class="slider__item bg-liquid-glass">
-                                <div class="slider__item-dekor"></div>
-
-                                <div class="slider__item-content">
-                                    <h3 class="slider__item-title">
-                                        название
-                                    </h3>
-
-                                    <p class="slider__item-text">
-                                        Энергетическое оборудование
-                                    </p>
-
-                                    <div class="slider__item-img">
-                                        <img src="./img/parthners/1.svg" alt="Партнер" />
                                     </div>
+                                </li>
 
-                                    <!-- <button
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            Монострой 11
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Акционерное общество
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/8.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
                                             class="open-modal-btn button slider__item-btn"
                                             data-modal="modal-2"
                                         >
@@ -622,192 +758,335 @@
                                                 alt=""
                                             />
                                         </button> -->
-                                </div>
-                            </li>
-                        </ul>
-                        
-                        <div class="prev slick-prev"></div>
-                        <div class="next slick-next"></div>
-                        
-                    </div>
+                                    </div>
+                                </li>
 
-                    <!-- второй слайдер -->
-                    <div class="slider__nav hidden-mobile">
-                        <ul class="slider__nav-list">
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/1.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/2.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/3.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/4.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/5.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/6.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/7.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                            <li class="slider__nav-item">
-                                <div class="slider__nav-img">
-                                    <img src="./img/parthners/1.svg" alt="Партнер" />
-                                </div>
-                            </li>
-                        </ul>
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            72.ru
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Премия
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/9.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
+                                            class="open-modal-btn button slider__item-btn"
+                                            data-modal="modal-2"
+                                        >
+                                            <span>Посмотреть проект</span>
+                                            <img
+                                                src="./img/case/arrow.svg"
+                                                alt=""
+                                            />
+                                        </button> -->
+                                    </div>
+                                </li>
+
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            INNoweek
+                                        </h3>
+
+                                        <p class="slider__item-text">
+                                            Инвестиции, зания, возможности
+                                        </p>
+
+                                        <img
+                                            src="./img/parthners/10.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
+                                            class="open-modal-btn button slider__item-btn"
+                                            data-modal="modal-2"
+                                        >
+                                            <span>Посмотреть проект</span>
+                                            <img
+                                                src="./img/case/arrow.svg"
+                                                alt=""
+                                            />
+                                        </button> -->
+                                    </div>
+                                </li>
+
+                                <li class="slider__item bg-liquid-glass">
+                                    
+
+                                    <div class="slider__item-content">
+                                        <h3 class="slider__item-title">
+                                            Тюмень Сити Молл
+                                        </h3>
+
+                                        <img
+                                            src="./img/parthners/11.png"
+                                            alt="Партнер"
+                                            class="slider__item-img"
+                                        />
+
+                                        <!-- <button
+                                            class="open-modal-btn button slider__item-btn"
+                                            data-modal="modal-2"
+                                        >
+                                            <span>Посмотреть проект</span>
+                                            <img
+                                                src="./img/case/arrow.svg"
+                                                alt=""
+                                            />
+                                        </button> -->
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div class="prev slick-prev"></div>
+                            <div class="next slick-next"></div>
+                        </div>
+
+                        <!-- второй слайдер -->
+                        <!-- <div class="slider__nav hidden-mobile">
+                            <ul class="slider__nav-list">
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/1.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/2.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/3.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/4.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/5.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/6.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/7.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                                <li class="slider__nav-item">
+                                    <div class="slider__nav-img">
+                                        <img
+                                            src="./img/parthners/1.svg"
+                                            alt="Партнер"
+                                        />
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> -->
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- SLIDER -->
+            </section>
+            <!-- SLIDER -->
 
-        <!-- TEAM -->
-        <section class="team" id="team">
-            <div class="team__container container">
-                <div class="team__content">
-                    <h2 class="team__title">Команда</h2>
+            <!-- TEAM -->
+            <section class="team" id="team">
+                <div class="team__container container">
+                    <div class="team__content">
+                        <h2 class="team__title">Команда</h2>
 
-                    <!-- <p class="team__text">
+                        <!-- <p class="team__text">
                             Объединяем стратегию, дизайн и <br />
                             продвижение, чтобы создавать проекты, <br />
                             которые приносят прибыль.
                         </p> -->
 
-                    <div class="team__slider-wrap">
-                        <div class="team__slider-close">
-                            <div class="team__slider-close-banner">
-                                <img src="./img/team/arrows-bg.png" alt="стрелки" class="team__slider-close-bg" />
+                        <div class="team__slider-wrap">
+                            <div class="team__slider-close">
+                                <div class="team__slider-close-banner">
+                                    <img
+                                        src="./img/team/arrows-bg.png"
+                                        alt="стрелки"
+                                        class="team__slider-close-bg"
+                                    />
 
-                                <div class="team__slider-close-content">
-                                    <img src="./img/team/face.png" alt="top secret" />
+                                    <div class="team__slider-close-content">
+                                        <img
+                                            src="./img/team/face.png"
+                                            alt="top secret"
+                                            class="team__slider-close-face"
+                                        />
 
-                                    <div class="team__slider-close-text">
-                                        <p class="team__slider-close-title">
-                                            Тссс...
-                                        </p>
-                                        <span>Наши агенты не раскрывают своих
-                                            имён</span>
+                                        <img
+                                            src="./img/team/lock.png"
+                                            alt="top secret"
+                                            class="team__slider-close-lock"
+                                        />
+
+                                        <div class="team__slider-close-text">
+                                            <div class="team__slider-close-info">
+                                                <p class="team__slider-close-title">
+                                                    Тссс...
+                                                </p>
+                                                <span
+                                                    >Наши агенты не раскрывают своих
+                                                    имён</span
+                                                >
+                                            </div>
+
+                                            <button class="team__slider-close-open">раскрыть личности</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a class="team__slider-close-btn open-modal-btn" data-modal="modal-100"
+                                    >разыскиваются новые лица</a
+                                >
+                            </div>
+
+                            <img
+                                src="./img/team/d.png"
+                                alt="буква D"
+                                class="team__letter team__letter-d"
+                            />
+                            <img
+                                src="./img/team/v.png"
+                                alt="буква V"
+                                class="team__letter team__letter-v"
+                            />
+
+                            <div class="team-slider">
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/1.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Дима
+                                            </div>
+                                            <div class="team-card__role">
+                                                Маркетолог
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Окей, давайте разберёмся, почему
+                                                реклама не масштабируется.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/2.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Олег
+                                            </div>
+                                            <div class="team-card__role">
+                                                IT-стратег
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Да ну что вы? <br />
+                                                Это не баг, а фича.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/3.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Катя
+                                            </div>
+                                            <div class="team-card__role">
+                                                UI/UX-дизайнер
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Можно сделать красиво. А можно —
+                                                красиво и чтобы продавало.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="team-card">
+                                    <div class="team-card__inner">
+                                        <img
+                                            src="./img/team/4.png"
+                                            alt=""
+                                            class="team-card__photo"
+                                        />
+                                        <div class="team-card__info">
+                                            <div class="team-card__name">
+                                                Даша
+                                            </div>
+                                            <div class="team-card__role">
+                                                SMM
+                                            </div>
+                                            <p class="team-card__quote">
+                                                Подождите, я тут тренд для
+                                                тик-тока нашла. Срочно берём в
+                                                контент.
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <a href="#" class="team__slider-close-btn">разыскиваются новые лица</a>
-                        </div>
-
-                        <div class="team-slider">
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/1.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Дима
-                                        </div>
-                                        <div class="team-card__role">
-                                            Маркетолог
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Окей, давайте разберёмся, почему
-                                            реклама не масштабируется.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/2.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Олег
-                                        </div>
-                                        <div class="team-card__role">
-                                            IT-стратег
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Да ну что вы? <br />
-                                            Это не баг, а фича.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/3.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Катя
-                                        </div>
-                                        <div class="team-card__role">
-                                            UI/UX-дизайнер
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Можно сделать красиво. А можно —
-                                            красиво и чтобы продавало.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/4.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Даша
-                                        </div>
-                                        <div class="team-card__role">
-                                            SMM
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Подождите, я тут тренд для
-                                            тик-тока нашла. Срочно берём в
-                                            контент.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="team-card">
-                                <div class="team-card__inner">
-                                    <img src="./img/team/1.png" alt="" class="team-card__photo" />
-                                    <div class="team-card__info">
-                                        <div class="team-card__name">
-                                            Артём
-                                        </div>
-                                        <div class="team-card__role">
-                                            SEO-специалист
-                                        </div>
-                                        <p class="team-card__quote">
-                                            Трафик органический, а результат
-                                            — настоящий.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- <div class="team__actions">
+                            <!-- <div class="team__actions">
                                 <button class="team__actions-btn team__actions-btn-one">
                                     <span>Посмотреть кейсы</span>
                                 </button>
@@ -816,574 +1095,1154 @@
                                     <img src="./img/team/arrow.svg" alt="" class="btn__arrow" />
                                 </button>
                             </div> -->
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-        <!-- TEAM -->
+            </section>
+            <!-- TEAM -->
 
-        <!-- FORM -->
-        <section class="form" id="form">
-            <div class="form__container container">
-                <div class="form__content">
-                    <img src="./img/form/d.png" alt="буква d"
-                        class="form__content-bg form__content-bg-one hidden-mobile" />
-                    <img src="./img/form/v.png" alt="буква v"
-                        class="form__content-bg form__content-bg-two hidden-mobile" />
-                    <img src="./img/form/form-bg.png" alt="фоновое изображение"
-                        class="form__content-bg form__content-bg-three" />
+            <!-- FORM -->
+            <section class="form" id="form">
+                <div class="form__container container">
+                    <div class="form__content">
+                        <img
+                            src="./img/form/form-bg.png"
+                            alt="фоновое изображение"
+                            class="form__content-bg form__content-bg-three"
+                        />
 
-                    <h2 class="form__title" id="form__title">
-                        ваш маркетинг работает на вас? 
-                    </h2>
+                        <h2 class="form__title" id="form__title">
+                            ваш маркетинг работает на вас? 
+                        </h2>
 
-                    <form class="form__body js-contact-form" id="contactForm" novalidate>
-                        <div class="form__left">
-                            <span class="form__left-text">
-                                Пора считать деньги, а не клики <br />
-                                оставляйте заявку — <br />
-                                покажем, где вы теряете и <br />
-                                как это исправить
-                            </span>
+                        <form
+                            class="form__body js-contact-form"
+                            id="contactForm"
+                            novalidate
+                        >
+
+                            <img src="./img/form/form-logo.png" alt="фоновое изображение" class="form__body-bg hidden-mobile">
+
+                            <div class="form__left">
+                                <span class="form__left-text">
+                                    <p>Пора считать деньги, а не клики</p>
+                                    <p>
+                                        оставляйте заявку — покажем, где вы
+                                        теряете и как это исправить
+                                    </p>
+                                </span>
+                            </div>
+
+                            <div class="form__right">
+                                <!-- honeypot антиспам -->
+                                <div class="form__honeypot">
+                                    <input
+                                        type="text"
+                                        name="qwerty123"
+                                        autocomplete="off"
+                                    />
+                                    <input
+                                        type="text"
+                                        name="123qwerty"
+                                        autocomplete="off"
+                                    />
+                                </div>
+
+                                <div class="form__grid">
+                                    <div class="form__group">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Имя"
+                                            autocomplete="name"
+                                            required
+                                            class="bg-liquid-glass"
+                                        />
+                                        <span class="form__error"></span>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            placeholder="Номер телефона"
+                                            maxlength="12"
+                                            autocomplete="tel"
+                                            inputmode="tel"
+                                            required
+                                        />
+                                        <span class="form__error"></span>
+                                    </div>
+
+                                    <div class="form__group">
+                                        <button
+                                            type="button"
+                                            class="form__group-btn"
+                                        >
+                                            где удобно связаться?
+                                        </button>
+
+                                        <div class="form__group-social">
+                                            <label class="social-check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="contact_telegram"
+                                                    value="telegram"
+                                                />
+                                                <span class="social-check__box">
+                                                    <img
+                                                        src="./img/form/tg.svg"
+                                                        alt="Телеграм"
+                                                        width="25"
+                                                        height="25"
+                                                    />
+                                                    Telegram
+                                                </span>
+                                            </label>
+
+                                            <label class="social-check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="contact_max"
+                                                    value="max"
+                                                />
+                                                <span class="social-check__box">
+                                                    <img
+                                                        src="./img/form/max.svg"
+                                                        alt="макс"
+                                                        width="25"
+                                                        height="25"
+                                                    />
+                                                    MAX
+                                                </span>
+                                            </label>
+
+                                            <label class="social-check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="contact_vk"
+                                                    value="vk"
+                                                />
+                                                <span class="social-check__box">
+                                                    <img
+                                                        src="./img/form/vk.svg"
+                                                        alt="вконтакте"
+                                                        width="25"
+                                                        height="25"
+                                                    />
+                                                    ВКонтакте
+                                                </span>
+                                            </label>
+
+                                            <span
+                                                class="social-error form__error"
+                                                style="display: none"
+                                            >
+                                                Выберите удобный способ связи
+                                            </span>
+                                        </div>
+                                        <span class="form__error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form__bottom">
+                                    <div class="form__btns">
+                                        <button
+                                            type="submit"
+                                            class="form__button"
+                                        >
+                                            <img src="./img/form/star.svg" alt="" class="form__button-star">
+                                            <span>Отправить</span>
+                                            <img src="./img/form/star.svg" alt="" class="form__button-star">
+                                        </button>
+                                    </div>
+
+                                    <div class="form__political">
+                                        <div
+                                            class="form__check-wrap"
+                                            data-tooltip="Даю согласие на сбор персональных данных"
+                                        >
+                                            <div class="form__check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="agree_data"
+                                                    id="a"
+                                                    required
+                                                    class="checbox-input"
+                                                />
+                                                <label
+                                                    class="form__checkbox"
+                                                    for="a"
+                                                ></label>
+                                                <span
+                                                    class="form__error"
+                                                ></span>
+                                            </div>
+                                            <span class="form__check-tip"
+                                                >Даю согласие на сбор
+                                                персональных данных</span
+                                            >
+                                        </div>
+
+                                        <div
+                                            class="form__check-wrap"
+                                            data-tooltip="Согласен с политикой конфиденциальности"
+                                        >
+                                            <div class="form__check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="agree_policy"
+                                                    id="b"
+                                                    required
+                                                    class="checbox-input"
+                                                />
+                                                <label
+                                                    class="form__checkbox"
+                                                    for="b"
+                                                ></label>
+                                                <span
+                                                    class="form__error"
+                                                ></span>
+                                            </div>
+                                            <span class="form__check-tip"
+                                                >Согласен с политикой
+                                                конфиденциальности</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <!-- FORM -->
+
+            <!-- ПОПАП ДЛЯ КНОПКИ HERO -->
+            <!-- Оверлей -->
+            <div class="hero-form-overlay" id="heroFormOverlay"></div>
+            <!-- Попап с формой -->
+            <div class="hero-form-popup container" id="heroFormPopup">
+                <!-- Вставь сюда свой .form__container с формой -->
+                <div class="form__container">
+                    <button class="modal__close" id="heroFormClose">
+                        &times;
+                    </button>
+
+                    <img
+                        src="./img/services/bg6.png"
+                        alt="фоновое"
+                        class="services__item-bg"
+                    />
+                    <form
+                        class="services__form js-contact-form"
+                        id="contactForm"
+                        novalidate
+                    >
+                        <div class="services__form-left">
+                            <h3 class="services__form-title">
+                                Что сейчас актуально?
+                            </h3>
+
+                            <div class="services__form-grid">
+                                <div class="services__form-group">
+                                    <div class="services__form-group-list">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Имя"
+                                            autocomplete="name"
+                                            required
+                                            class="bg-liquid-glass"
+                                        />
+                                        <span class="form__error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="services__form-group">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Номер телефона"
+                                        maxlength="12"
+                                        autocomplete="tel"
+                                        inputmode="tel"
+                                        required
+                                    />
+                                    <span class="form__error"></span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form__right">
-                            <!-- honeypot антиспам -->
+                        <div class="services__form-right">
                             <div class="form__honeypot">
-                                <input type="text" name="qwerty123" autocomplete="off" />
-                                <input type="text" name="123qwerty" autocomplete="off" />
+                                <input
+                                    type="text"
+                                    name="qwerty123"
+                                    autocomplete="off"
+                                />
+                                <input
+                                    type="text"
+                                    name="123qwerty"
+                                    autocomplete="off"
+                                />
                             </div>
 
-                            <div class="form__grid">
-                                <div class="form__group">
-                                    <input type="text" name="name" placeholder="Имя" autocomplete="name" required
-                                        class="bg-liquid-glass" />
-                                    <span class="form__error"></span>
-                                </div>
-
-                                <div class="form__group">
-                                    <input type="tel" name="phone" placeholder="Номер телефона" maxlength="12"
-                                        autocomplete="tel" inputmode="tel" required />
-                                    <span class="form__error"></span>
-                                </div>
-
-                                <div class="form__group">
-                                    <button type="button" class="form__group-btn ">
-                                        где удобно связаться?
-                                    </button>
-
-                                    <div class="form__group-social">
-                                        <label class="social-check">
-                                            <input type="checkbox" name="contact_telegram" value="telegram" />
-                                            <span class="social-check__box">
-                                                <img src="./img/form/tg.svg" alt="Телеграм" width="25" height="25" />
-                                                Telegram
-                                            </span>
-                                        </label>
-
-                                        <label class="social-check">
-                                            <input type="checkbox" name="contact_max" value="max" />
-                                            <span class="social-check__box">
-                                                <img src="./img/form/max.svg" alt="макс" width="25" height="25" />
-                                                MAX
-                                            </span>
-                                        </label>
-
-                                        <label class="social-check">
-                                            <input type="checkbox" name="contact_vk" value="vk" />
-                                            <span class="social-check__box">
-                                                <img src="./img/form/vk.svg" alt="вконтакте" width="25" height="25" />
-                                                ВКонтакте
-                                            </span>
-                                        </label>
-
-                                        <span class="social-error form__error" style="display: none">
-                                            Выберите удобный способ связи
-                                        </span>
-                                    </div>
-                                    <span class="form__error"></span>
-                                </div>
+                            <div class="services__form-radio-group">
+                                <input
+                                    type="radio"
+                                    id="hero-option-one"
+                                    name="selector"
+                                />
+                                <label for="option-one">стратегия</label>
+                                <input
+                                    type="radio"
+                                    id="hero-option-two"
+                                    name="selector"
+                                />
+                                <label for="option-two">реклама</label>
+                                <input
+                                    type="radio"
+                                    id="hero-option-three"
+                                    name="selector"
+                                />
+                                <label for="option-three">бренд</label>
+                                <input
+                                    type="radio"
+                                    id="hero-option-four"
+                                    name="selector"
+                                />
+                                <label for="option-four" class="no-ligatures"
+                                    >не знаю пока</label
+                                >
                             </div>
 
-                            <div class="form__bottom">
-                                <div class="form__btns">
-                                    <button type="submit" class="form__button">
-                                        ОТправить
-                                    </button>
-                                </div>
-
-                                <div class="form__political">
-                                    <div class="form__check-wrap"
-                                        data-tooltip="Даю согласие на сбор персональных данных">
-                                        <div class="form__check">
-                                            <input type="checkbox" name="agree_data" id="a" required
-                                                class="checbox-input" />
-                                            <label class="form__checkbox" for="a"></label>
-                                            <span class="form__error"></span>
-                                        </div>
-                                        <span class="form__check-tip">Даю согласие на сбор
-                                            персональных данных</span>
-                                    </div>
-
-                                    <div class="form__check-wrap"
-                                        data-tooltip="Согласен с политикой конфиденциальности">
-                                        <div class="form__check">
-                                            <input type="checkbox" name="agree_policy" id="b" required
-                                                class="checbox-input" />
-                                            <label class="form__checkbox" for="b"></label>
-                                            <span class="form__error"></span>
-                                        </div>
-                                        <span class="form__check-tip">Согласен с политикой
-                                            конфиденциальности</span>
-                                    </div>
-                                </div>
+                            <div class="services__form-bottom">
+                                <button
+                                    type="submit"
+                                    class="services__form-button"
+                                >
+                                    Поделиться
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </section>
-        <!-- FORM -->
+            <!-- ПОПАП ДЛЯ КНОПКИ HERO -->
 
-        <!-- ПОПАП ДЛЯ КНОПКИ HERO -->
-        <!-- Оверлей -->
-        <div class="hero-form-overlay" id="heroFormOverlay"></div>
-        <!-- Попап с формой -->
-        <div class="hero-form-popup container" id="heroFormPopup">
-            <!-- Вставь сюда свой .form__container с формой -->
-            <div class="form__container">
-                <button class="modal__close" id="heroFormClose">
-                    &times;
-                </button>
+            <!-- МОДАЛКА УСЛУГ С ФОРМОЙ -->
+            <div class="modal container" id="modal-1">
+                <div class="modal__overlay"></div>
 
-                <img src="./img/services/bg6.png" alt="фоновое" class="services__item-bg" />
-                <form class="services__form js-contact-form" id="contactForm" novalidate>
-                    <div class="services__form-left">
-                        <h3 class="services__form-title">
-                            Что сейчас актуально?
-                        </h3>
-
-                        <div class="services__form-grid">
-                            <div class="services__form-group">
-                                <div class="services__form-group-list">
-                                    <input type="text" name="name" placeholder="Имя" autocomplete="name" required
-                                        class="bg-liquid-glass" />
-                                    <span class="form__error"></span>
-                                </div>
-                            </div>
-
-                            <div class="services__form-group">
-                                <input type="tel" name="phone" placeholder="Номер телефона" maxlength="12"
-                                    autocomplete="tel" inputmode="tel" required />
-                                <span class="form__error"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="services__form-right">
-                        <div class="form__honeypot">
-                            <input type="text" name="qwerty123" autocomplete="off" />
-                            <input type="text" name="123qwerty" autocomplete="off" />
-                        </div>
-
-                        <div class="services__form-radio-group">
-                            <input type="radio" id="hero-option-one" name="selector" />
-                            <label for="option-one">стратегия</label>
-                            <input type="radio" id="hero-option-two" name="selector" />
-                            <label for="option-two">реклама</label>
-                            <input type="radio" id="hero-option-three" name="selector" />
-                            <label for="option-three">бренд</label>
-                            <input type="radio" id="hero-option-four" name="selector" />
-                            <label for="option-four" class="no-ligatures">не знаю пока</label>
-                        </div>
-
-                        <div class="services__form-bottom">
-                            <button type="submit" class="services__form-button">
-                                Поделиться
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-        <!-- ПОПАП ДЛЯ КНОПКИ HERO -->
-
-        <!-- МОДАЛКА УСЛУГ С ФОРМОЙ -->
-        <div class="modal container" id="modal-1">
-            <div class="modal__overlay"></div>
-
-            <div class="form__container">
-                <button class="modal__close">&times;</button>
-
-                <img src="./img/services/bg6.png" alt="фоновое" class="services__item-bg" />
-                <form class="services__form js-contact-form" id="contactForm" novalidate>
-                    <div class="services__form-left">
-                        <h3 class="services__form-title">
-                            Что сейчас актуально?
-                        </h3>
-
-                        <div class="services__form-grid">
-                            <div class="services__form-group">
-                                <div class="services__form-group-list">
-                                    <input type="text" name="name" placeholder="Имя" autocomplete="name" required
-                                        class="bg-liquid-glass" />
-                                    <span class="form__error"></span>
-                                </div>
-                            </div>
-
-                            <div class="services__form-group">
-                                <input type="tel" name="phone" placeholder="Номер телефона" maxlength="12"
-                                    autocomplete="tel" inputmode="tel" required />
-                                <span class="form__error"></span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="services__form-right">
-                        <div class="form__honeypot">
-                            <input type="text" name="qwerty123" autocomplete="off" />
-                            <input type="text" name="123qwerty" autocomplete="off" />
-                        </div>
-
-                        <div class="services__form-radio-group">
-                            <input type="radio" id="m1-option-one" name="selector" />
-                            <label for="m1-option-one">стратегия</label>
-                            <input type="radio" id="m1-option-two" name="selector" />
-                            <label for="m1-option-two">реклама</label>
-                            <input type="radio" id="m1-option-three" name="selector" />
-                            <label for="m1-option-three">бренд</label>
-                            <input type="radio" id="m1-option-four" name="selector" />
-                            <label for="m1-option-four" class="no-ligatures">не знаю пока</label>
-                        </div>
-
-                        <div class="services__form-bottom">
-                            <button type="submit" class="services__form-button">
-                                Поделиться
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-
-        <div class="modal container" id="modal-11">
-            <div class="modal__overlay"></div>
-
-            <div class="form__container container">
-                <div class="form__content">
-                    <!-- <img src="./img/form/form-bg.png" alt="фоновое изображение"
-                        class="form__content-bg form__content-bg-three" /> -->
+                <div class="form__container">
                     <button class="modal__close">&times;</button>
 
-                    <form class="form__body js-contact-form" id="modalContactForm" novalidate>
-                        <div class="form__left">
-                            <span class="form__left-text">
-                                Пора считать деньги, а не клики <br />
-                                оставляйте заявку — <br />
-                                покажем, где вы теряете и <br />
-                                как это исправить
-                            </span>
+                    <img
+                        src="./img/services/bg6.png"
+                        alt="фоновое"
+                        class="services__item-bg"
+                    />
+                    <form
+                        class="services__form js-contact-form"
+                        id="contactForm"
+                        novalidate
+                    >
+                        <div class="services__form-left">
+                            <h3 class="services__form-title">
+                                Что сейчас актуально?
+                            </h3>
+
+                            <div class="services__form-grid">
+                                <div class="services__form-group">
+                                    <div class="services__form-group-list">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Имя"
+                                            autocomplete="name"
+                                            required
+                                            class="bg-liquid-glass"
+                                        />
+                                        <span class="form__error"></span>
+                                    </div>
+                                </div>
+
+                                <div class="services__form-group">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        placeholder="Номер телефона"
+                                        maxlength="12"
+                                        autocomplete="tel"
+                                        inputmode="tel"
+                                        required
+                                    />
+                                    <span class="form__error"></span>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="form__right">
-                            <!-- honeypot антиспам -->
+                        <div class="services__form-right">
                             <div class="form__honeypot">
-                                <input type="text" name="qwerty123" autocomplete="off" />
-                                <input type="text" name="123qwerty" autocomplete="off" />
+                                <input
+                                    type="text"
+                                    name="qwerty123"
+                                    autocomplete="off"
+                                />
+                                <input
+                                    type="text"
+                                    name="123qwerty"
+                                    autocomplete="off"
+                                />
                             </div>
 
-                            <div class="form__grid">
-                                <div class="form__group">
-                                    <input type="text" name="name" placeholder="Имя" autocomplete="name" required
-                                        class="bg-liquid-glass" />
-                                    <span class="form__error"></span>
-                                </div>
-
-                                <div class="form__group">
-                                    <input type="tel" name="phone" placeholder="Номер телефона" maxlength="12"
-                                        autocomplete="tel" inputmode="tel" required />
-                                    <span class="form__error"></span>
-                                </div>
-
-                                <div class="form__group">
-                                    <button type="button" class="form__group-btn ">
-                                        где удобно связаться?
-                                    </button>
-
-                                    <div class="form__group-social">
-                                        <label class="social-check">
-                                            <input type="checkbox" name="contact_telegram" value="telegram" />
-                                            <span class="social-check__box">
-                                                <img src="./img/form/tg.svg" alt="Телеграм" width="25" height="25" />
-                                                Telegram
-                                            </span>
-                                        </label>
-
-                                        <label class="social-check">
-                                            <input type="checkbox" name="contact_max" value="max" />
-                                            <span class="social-check__box">
-                                                <img src="./img/form/max.svg" alt="макс" width="25" height="25" />
-                                                MAX
-                                            </span>
-                                        </label>
-
-                                        <label class="social-check">
-                                            <input type="checkbox" name="contact_vk" value="vk" />
-                                            <span class="social-check__box">
-                                                <img src="./img/form/vk.svg" alt="вконтакте" width="25" height="25" />
-                                                ВКонтакте
-                                            </span>
-                                        </label>
-
-                                        <span class="social-error form__error" style="display: none">
-                                            Выберите удобный способ связи
-                                        </span>
-                                    </div>
-                                    <span class="form__error"></span>
-                                </div>
+                            <div class="services__form-radio-group">
+                                <input
+                                    type="radio"
+                                    id="m1-option-one"
+                                    name="selector"
+                                />
+                                <label for="m1-option-one">стратегия</label>
+                                <input
+                                    type="radio"
+                                    id="m1-option-two"
+                                    name="selector"
+                                />
+                                <label for="m1-option-two">реклама</label>
+                                <input
+                                    type="radio"
+                                    id="m1-option-three"
+                                    name="selector"
+                                />
+                                <label for="m1-option-three">бренд</label>
+                                <input
+                                    type="radio"
+                                    id="m1-option-four"
+                                    name="selector"
+                                />
+                                <label for="m1-option-four" class="no-ligatures"
+                                    >не знаю пока</label
+                                >
                             </div>
 
-                            <div class="form__bottom">
-                                <div class="form__btns">
-                                    <button type="submit" class="form__button">
-                                        ОТправить
-                                    </button>
-                                </div>
-
-                                <div class="form__political">
-                                    <div class="form__check-wrap"
-                                        data-tooltip="Даю согласие на сбор персональных данных">
-                                        <div class="form__check">
-                                            <input type="checkbox" name="agree_data" id="modal-a" required
-                                                class="checbox-input" />
-                                            <label class="form__checkbox" for="modal-a"></label>
-                                            <span class="form__error"></span>
-                                        </div>
-                                        <span class="form__check-tip">Даю согласие на сбор
-                                            персональных данных</span>
-                                    </div>
-
-                                    <div class="form__check-wrap"
-                                        data-tooltip="Согласен с политикой конфиденциальности">
-                                        <div class="form__check">
-                                            <input type="checkbox" name="agree_policy" id="modal-b" required
-                                                class="checbox-input" />
-                                            <label class="form__checkbox" for="modal-b"></label>
-                                            <span class="form__error"></span>
-                                        </div>
-                                        <span class="form__check-tip">Согласен с политикой
-                                            конфиденциальности</span>
-                                    </div>
-                                </div>
+                            <div class="services__form-bottom">
+                                <button
+                                    type="submit"
+                                    class="services__form-button"
+                                >
+                                    Поделиться
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
-        <!-- МОДАЛКИ УСЛУГ С ФОРМОЙ-->
 
-        <!-- МОДАЛКА КЕЙСЫ -->
-        <div class="modal" id="modal-2">
-            <div class="modal__overlay"></div>
+            <div class="modal container" id="modal-11">
+                <div class="modal__overlay"></div>
 
-            <div class="modal__content">
-                <img src="./img/modal/shape.png" alt="фоновое изображение"
-                    class="modal__content-img modal__content-img-one" />
-                <button class="modal__close">&times;</button>
+                <div class="form__container container">
+                    <div class="form__content">
+                        <img
+                            src="./img/form/form-bg.png"
+                            alt="фоновое изображение"
+                            class="form__content-bg form__content-bg-three"
+                        />
 
-                <h2 class="modal__title">стратегия</h2>
+                        <h2 class="form__title" id="form__title">
+                            ваш маркетинг работает на вас? 
+                        </h2>
 
-                <div class="modal__text">
-                    <p>
-                        Маркетинговая стратегия &mdash;
-                        это долгосрочный план развития бизнеса, нацеленный на&nbsp;привлечение клиентов и&nbsp;рост
-                        прибыли.
-                    </p>
+                        <form
+                            class="form__body js-contact-form"
+                            id="contactForm"
+                            novalidate
+                        >
+                            
+                            <button class="modal__close">&times;</button>
+                            <img src="./img/form/form-logo.png" alt="фоновое изображение" class="form__body-bg">
 
-                    <p>
-                        Обычно её&nbsp;разрабатывают на&nbsp;3-5&nbsp;лет, но
-                        для малого и&nbsp;среднего бизнеса оптимальнеепланировать на&nbsp;срок до&nbsp;года так проще
-                        адаптироваться к&nbsp;изменениям на&nbsp;рынке.
-                        Стратегия систематизирует ресурсы
-                        компании и&nbsp;помогает перераспределить их
-                        на&nbsp;более эффективные каналы продвижения.
-                    </p>
-                </div>
+                            <div class="form__left">
+                                <span class="form__left-text">
+                                    <p>Пора считать деньги, а не клики</p>
+                                    <p>
+                                        оставляйте заявку — покажем, где вы
+                                        теряете и как это исправить
+                                    </p>
+                                </span>
+                            </div>
 
-                <div class="modal__btns">
-                    <a href="./documents/Продукт стратегия от Двойников маркетинг.pptx"
-                        download="./documents/Продукт стратегия от Двойников маркетинг.pptx" target="_blank" class="modal__preza open-modal-btn" data-modal="modal-11">
-                        скачать презентацию
-                    </a>
+                            <div class="form__right">
+                                <!-- honeypot антиспам -->
+                                <div class="form__honeypot">
+                                    <input
+                                        type="text"
+                                        name="qwerty123"
+                                        autocomplete="off"
+                                    />
+                                    <input
+                                        type="text"
+                                        name="123qwerty"
+                                        autocomplete="off"
+                                    />
+                                </div>
 
-                    <a class="open-modal-btn modal__active" data-modal="modal-11">
-                        хочу поработать с вами
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="modal" id="modal-3">
-            <div class="modal__overlay"></div>
+                                <div class="form__grid">
+                                    <div class="form__group">
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            placeholder="Имя"
+                                            autocomplete="name"
+                                            required
+                                            class="bg-liquid-glass"
+                                        />
+                                        <span class="form__error"></span>
+                                    </div>
 
-            <div class="modal__content">
-                <img src="./img/modal/shape2.png" alt="фоновое изображение"
-                    class="modal__content-img modal__content-img-two" />
-                <button class="modal__close">&times;</button>
+                                    <div class="form__group">
+                                        <input
+                                            type="tel"
+                                            name="phone"
+                                            placeholder="Номер телефона"
+                                            maxlength="12"
+                                            autocomplete="tel"
+                                            inputmode="tel"
+                                            required
+                                        />
+                                        <span class="form__error"></span>
+                                    </div>
 
-                <h2 class="modal__title">Стимулирующие акции</h2>
+                                    <div class="form__group">
+                                        <button
+                                            type="button"
+                                            class="form__group-btn"
+                                        >
+                                            где удобно связаться?
+                                        </button>
 
-                <div class="modal__text">
-                    <p>
-                        Стимулирующие акции&nbsp;&mdash; это точечные механики, которые разгоняют продажи здесь
-                        и&nbsp;сейчас: скидки, конкурсы, бонусы, подарки за&nbsp;покупку.
-                    </p>
+                                        <div class="form__group-social">
+                                            <label class="social-check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="contact_telegram"
+                                                    value="telegram"
+                                                />
+                                                <span class="social-check__box">
+                                                    <img
+                                                        src="./img/form/tg.svg"
+                                                        alt="Телеграм"
+                                                        width="25"
+                                                        height="25"
+                                                    />
+                                                    Telegram
+                                                </span>
+                                            </label>
 
-                    <p>
-                        Они не&nbsp;заменяют стратегию, а&nbsp;работают как ускоритель. Акции особенно эффективны, когда
-                        нужно привлечь новых клиентов, активировать &laquo;спящую&raquo; базу или увеличить средний чек.
-                    </p>
-                </div>
+                                            <label class="social-check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="contact_max"
+                                                    value="max"
+                                                />
+                                                <span class="social-check__box">
+                                                    <img
+                                                        src="./img/form/max.svg"
+                                                        alt="макс"
+                                                        width="25"
+                                                        height="25"
+                                                    />
+                                                    MAX
+                                                </span>
+                                            </label>
 
-                <div class="modal__btns">
-                    <a href="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx" download="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx" target="_blank" class="modal__preza open-modal-btn" data-modal="modal-11">
-                        скачать презентацию
-                    </a>
+                                            <label class="social-check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="contact_vk"
+                                                    value="vk"
+                                                />
+                                                <span class="social-check__box">
+                                                    <img
+                                                        src="./img/form/vk.svg"
+                                                        alt="вконтакте"
+                                                        width="25"
+                                                        height="25"
+                                                    />
+                                                    ВКонтакте
+                                                </span>
+                                            </label>
 
-                    <a class="open-modal-btn modal__active" data-modal="modal-11">
-                        хочу поработать с вами
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="modal" id="modal-4">
-            <div class="modal__overlay"></div>
+                                            <span
+                                                class="social-error form__error"
+                                                style="display: none"
+                                            >
+                                                Выберите удобный способ связи
+                                            </span>
+                                        </div>
+                                        <span class="form__error"></span>
+                                    </div>
+                                </div>
 
-            <div class="modal__content">
-                <img src="./img/modal/shape3.png" alt="фоновое изображение"
-                    class="modal__content-img modal__content-img-three" />
-                <button class="modal__close">&times;</button>
+                                <div class="form__bottom">
+                                    <div class="form__btns">
+                                        <button
+                                            type="submit"
+                                            class="form__button"
+                                        >
+                                            <img src="./img/form/star.svg" alt="" class="form__button-star">
+                                            <span>Отправить</span>
+                                            <img src="./img/form/star.svg" alt="" class="form__button-star">
+                                        </button>
+                                    </div>
 
-                <h2 class="modal__title">перфоманс</h2>
+                                    <div class="form__political">
+                                        <div
+                                            class="form__check-wrap"
+                                            data-tooltip="Даю согласие на сбор персональных данных"
+                                        >
+                                            <div class="form__check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="agree_data"
+                                                    id="a"
+                                                    required
+                                                    class="checbox-input"
+                                                />
+                                                <label
+                                                    class="form__checkbox"
+                                                    for="a"
+                                                ></label>
+                                                <span
+                                                    class="form__error"
+                                                ></span>
+                                            </div>
+                                            <span class="form__check-tip"
+                                                >Даю согласие на сбор
+                                                персональных данных</span
+                                            >
+                                        </div>
 
-                <div class="modal__text">
-                    <p>
-                        Перформанс&nbsp;&mdash; это маркетинг, который платит за&nbsp;результат. Мы&nbsp;запускаем рекламные кампании в&nbsp;цифровых каналах и&nbsp;фиксируем каждое целевое действие: заявку, звонок, покупку.
-                    </p>
-
-                    <p>
-                        Обычно первые результаты видны уже через 3&ndash;7 дней после запуска. Главное отличие от&nbsp;классической рекламы&nbsp;&mdash; вы&nbsp;платите не&nbsp;за&nbsp;показы, а&nbsp;за&nbsp;реальный результат. Все метрики прозрачны: стоимость лида, ROMI, конверсии в&nbsp;каждой кампании.
-                    </p>
-                </div>
-
-                <div class="modal__btns">
-                    <a href="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx" download="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx" class="modal__preza open-modal-btn" data-modal="modal-11">
-                        скачать презентацию
-                    </a>
-
-                    <a class="open-modal-btn modal__active" data-modal="modal-11">
-                        хочу поработать с вами
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="modal" id="modal-6">
-            <div class="modal__overlay"></div>
-
-            <div class="modal__content">
-                <img src="./img/modal/shape4.png" alt="фоновое изображение"
-                    class="modal__content-img modal__content-img-four" />
-                <button class="modal__close">&times;</button>
-
-                <h2 class="modal__title">комплекс</h2>
-
-                <div class="modal__text">
-                    <p>
-                        Комплекс&nbsp;&mdash; это полное маркетинговое сопровождение под ключ. Мы&nbsp;забираем на&nbsp;себя всё: стратегию, рекламу, SMM, брендинг, сайт, аналитику и&nbsp;отчёты.
-                    </p>
-
-                    <p>
-                        Для бизнеса это означает одного подрядчика вместо пяти. Вы&nbsp;получаете единую команду, общую цель и&nbsp;понятный бюджет. Комплекс подходит компаниям, которые хотят передать маркетинг полностью и&nbsp;сфокусироваться на&nbsp;продукте.
-                    </p>
-                </div>
-
-                <div class="modal__btns">
-                    <a href="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx" download="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx" target="_blank" class="modal__preza open-modal-btn" data-modal="modal-11">
-                        скачать презентацию
-                    </a>
-
-                    <a class="open-modal-btn modal__active" data-modal="modal-11">
-                        хочу поработать с вами
-                    </a>
-                </div>
-            </div>
-        </div>
-        <!-- МОДАЛКА КЕЙСЫ -->
-    </main>
-    <!-- MAIN -->
-
-    <!-- FOOTER -->
-    <footer class="footer" id="footer">
-        <div class="footer__container container">
-            <div class="footer__content">
-                <div class="footer__logo">
-                    <a href="#" class="footer__logo-link">
-                        <img src="./img/footer/logo.svg" alt="Логотип" width="370" height="92"
-                            class="footer__logo-img" />
-                    </a>
-                </div>
-
-                <div class="footer__bottom">
-                    <p class="footer__text">
-                        Помогаем компаниям и&nbsp; экспертам находить свои
-                        рабочие маркетинговые инструменты, чтобы расти
-                        быстрее, смелее и выходить на&nbsp;новый уровень
-                    </p>
-
-                    <div class="footer__icons">
-                        <ul class="footer__list">
-                            <li class="footer__item">
-                                <a href="https://t.me/DVMarketing24" class="footer__link" target="_blank">
-                                    <img src="./img/footer/telega.svg" alt="Мессенджер Телеграм" />
-                                </a>
-                            </li>
-                            <li class="footer__item">
-                                <a class="footer__link" target="_blank">
-                                    <img src="./img/footer/max.svg" alt="Мессенджер МАКС" />
-                                </a>
-                            </li>
-                            <li class="footer__item">
-                                <a href="https://vk.com/dvm_agency?w=club235903218" class="footer__link"
-                                    target="_blank">
-                                    <img src="./img/footer/vk.svg" alt="Мессенджер Вконтакте" />
-                                </a>
-                            </li>
-                        </ul>
+                                        <div
+                                            class="form__check-wrap"
+                                            data-tooltip="Согласен с политикой конфиденциальности"
+                                        >
+                                            <div class="form__check">
+                                                <input
+                                                    type="checkbox"
+                                                    name="agree_policy"
+                                                    id="b"
+                                                    required
+                                                    class="checbox-input"
+                                                />
+                                                <label
+                                                    class="form__checkbox"
+                                                    for="b"
+                                                ></label>
+                                                <span
+                                                    class="form__error"
+                                                ></span>
+                                            </div>
+                                            <span class="form__check-tip"
+                                                >Согласен с политикой
+                                                конфиденциальности</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <!-- FOOTER -->
+            <!-- МОДАЛКИ УСЛУГ С ФОРМОЙ-->
 
-    <!-- SCROLL UP -->
-    <div class="fab-pill-wrap">
-        <div class="fab-pill" id="fabPill">
-            <div class="fab-pill-actions" id="fabPillActions">
-                <button class="fab-pill-btn fab-pill-btn--top" onclick="
+            <!-- МОДАЛКА КЕЙСЫ -->
+            <div class="modal" id="modal-2">
+                <div class="modal__overlay"></div>
+
+                <div class="modal__content">
+                    <img
+                        src="./img/modal/shape.png"
+                        alt="фоновое изображение"
+                        class="modal__content-img modal__content-img-one"
+                    />
+                    <button class="modal__close">&times;</button>
+
+                    <h2 class="modal__title">стратегия</h2>
+
+                    <div class="modal__text">
+                        <p>
+                            Маркетинговая стратегия &mdash; это долгосрочный
+                            план развития бизнеса, нацеленный
+                            на&nbsp;привлечение клиентов и&nbsp;рост прибыли.
+                        </p>
+
+                        <p>
+                            Обычно её&nbsp;разрабатывают на&nbsp;3-5&nbsp;лет,
+                            но для малого и&nbsp;среднего бизнеса
+                            оптимальнеепланировать на&nbsp;срок до&nbsp;года так
+                            проще адаптироваться к&nbsp;изменениям
+                            на&nbsp;рынке. Стратегия систематизирует ресурсы
+                            компании и&nbsp;помогает перераспределить их
+                            на&nbsp;более эффективные каналы продвижения.
+                        </p>
+                    </div>
+
+                    <div class="modal__btns">
+                        
+
+                        <a
+                            class="open-modal-btn modal__active"
+                            data-modal="modal-11"
+                        >
+                            хочу поработать с вами
+                        </a>
+
+                        <a
+                            href="./documents/Продукт стратегия от Двойников маркетинг.pptx"
+                            download="./documents/Продукт стратегия от Двойников маркетинг.pptx"
+                            target="_blank"
+                            class="modal__preza open-modal-btn"
+                            data-modal="modal-11"
+                        >
+                            скачать презентацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="modal-3">
+                <div class="modal__overlay"></div>
+
+                <div class="modal__content">
+                    <img
+                        src="./img/modal/shape2.png"
+                        alt="фоновое изображение"
+                        class="modal__content-img modal__content-img-two"
+                    />
+                    <button class="modal__close">&times;</button>
+
+                    <h2 class="modal__title">Стимулирующие акции</h2>
+
+                    <div class="modal__text">
+                        <p>
+                            Стимулирующие акции&nbsp;&mdash; это точечные
+                            механики, которые разгоняют продажи здесь
+                            и&nbsp;сейчас: скидки, конкурсы, бонусы, подарки
+                            за&nbsp;покупку.
+                        </p>
+
+                        <p>
+                            Они не&nbsp;заменяют стратегию, а&nbsp;работают как
+                            ускоритель. Акции особенно эффективны, когда нужно
+                            привлечь новых клиентов, активировать
+                            &laquo;спящую&raquo; базу или увеличить средний чек.
+                        </p>
+                    </div>
+
+                    <div class="modal__btns">
+                        
+
+                        <a
+                            class="open-modal-btn modal__active"
+                            data-modal="modal-11"
+                        >
+                            хочу поработать с вами
+                        </a>
+
+                        <a
+                            href="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx"
+                            download="./documents/Продукт_для_ТРЦ_от_Двойников_маркетинг.pptx"
+                            target="_blank"
+                            class="modal__preza open-modal-btn"
+                            data-modal="modal-11"
+                        >
+                            скачать презентацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="modal-4">
+                <div class="modal__overlay"></div>
+
+                <div class="modal__content">
+                    <img
+                        src="./img/modal/shape3.png"
+                        alt="фоновое изображение"
+                        class="modal__content-img modal__content-img-three"
+                    />
+                    <button class="modal__close">&times;</button>
+
+                    <h2 class="modal__title">перфоманс</h2>
+
+                    <div class="modal__text">
+                        <p>
+                            Перформанс&nbsp;&mdash; это маркетинг, который
+                            платит за&nbsp;результат. Мы&nbsp;запускаем
+                            рекламные кампании в&nbsp;цифровых каналах
+                            и&nbsp;фиксируем каждое целевое действие: заявку,
+                            звонок, покупку.
+                        </p>
+
+                        <p>
+                            Обычно первые результаты видны уже через 3&ndash;7
+                            дней после запуска. Главное отличие
+                            от&nbsp;классической рекламы&nbsp;&mdash;
+                            вы&nbsp;платите не&nbsp;за&nbsp;показы,
+                            а&nbsp;за&nbsp;реальный результат. Все метрики
+                            прозрачны: стоимость лида, ROMI, конверсии
+                            в&nbsp;каждой кампании.
+                        </p>
+                    </div>
+
+                    <div class="modal__btns">
+                        
+
+                        <a
+                            class="open-modal-btn modal__active"
+                            data-modal="modal-11"
+                        >
+                            хочу поработать с вами
+                        </a>
+
+                        <a
+                            href="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx"
+                            download="./documents/Продукт_перформанс_марктеинг_от_Двойников_марктеинг.pptx"
+                            class="modal__preza open-modal-btn"
+                            data-modal="modal-11"
+                        >
+                            скачать презентацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="modal" id="modal-6">
+                <div class="modal__overlay"></div>
+
+                <div class="modal__content">
+                    <img
+                        src="./img/modal/shape4.png"
+                        alt="фоновое изображение"
+                        class="modal__content-img modal__content-img-four"
+                    />
+                    <button class="modal__close">&times;</button>
+
+                    <h2 class="modal__title">комплекс</h2>
+
+                    <div class="modal__text">
+                        <p>
+                            Комплекс&nbsp;&mdash; это полное маркетинговое
+                            сопровождение под ключ. Мы&nbsp;забираем
+                            на&nbsp;себя всё: стратегию, рекламу, SMM, брендинг,
+                            сайт, аналитику и&nbsp;отчёты.
+                        </p>
+
+                        <p>
+                            Для бизнеса это означает одного подрядчика вместо
+                            пяти. Вы&nbsp;получаете единую команду, общую цель
+                            и&nbsp;понятный бюджет. Комплекс подходит компаниям,
+                            которые хотят передать маркетинг полностью
+                            и&nbsp;сфокусироваться на&nbsp;продукте.
+                        </p>
+                    </div>
+
+                    <div class="modal__btns">
+                        
+
+                        <a
+                            class="open-modal-btn modal__active"
+                            data-modal="modal-11"
+                        >
+                            хочу поработать с вами
+                        </a>
+
+                        <a
+                            href="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx"
+                            download="./documents/Предложение комплекса по маркетинга от Двойников Маркетинг.pptx"
+                            target="_blank"
+                            class="modal__preza open-modal-btn"
+                            data-modal="modal-11"
+                        >
+                            скачать презентацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- МОДАЛКА КЕЙСЫ -->
+
+            <!-- МОДАЛКА HH -->
+            <div class="modal container" id="modal-100">
+                <div class="modal__overlay"></div>
+
+                <div class="form__container container">
+                    <div class="form__content hh">
+
+                        <img src="./img/hh/bg.png" alt="" class="hh__bg hidden-mobile">
+
+                        <h2 class="form__title hh__title">
+                            Заявка в команду
+                        </h2>
+                        <button class="modal__close">&times;</button>
+
+                        <form
+                            class="hh__body js-contact-form"
+                            id="contactForm"
+                            novalidate
+                        >
+
+                        <div class="form__honeypot">
+                            <input
+                                type="text"
+                                name="qwerty123"
+                                autocomplete="off"
+                            />
+                            <input
+                                type="text"
+                                name="123qwerty"
+                                autocomplete="off"
+                            />
+                        </div>
+
+                        <div class="form__grid hh__grid">
+                            
+                            <div class="form__group hh__group">
+                                <h3 class="hh__grid-title">
+                                    Контактные данные
+                                </h3>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Имя"
+                                    autocomplete="name"
+                                    required
+                                    class="bg-liquid-glass"
+                                />
+                                <span class="form__error"></span>
+                            </div>
+
+                            <div class="form__group hh__group">
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Номер телефона"
+                                    maxlength="12"
+                                    autocomplete="tel"
+                                    inputmode="tel"
+                                    required
+                                />
+                                <span class="form__error"></span>
+                            </div>
+
+                            <div class="form__group hh__group">
+                                <h3 class="hh__grid-title">
+                                    Где удобно связаться
+                                </h3>
+
+                                <div class="hh__group-social">
+                                    <label class="social-check">
+                                        <input
+                                            type="checkbox"
+                                            name="contact_telegram"
+                                            value="telegram"
+                                        />
+                                        <span class="social-check__box">
+                                            <img
+                                                src="./img/form/tg.svg"
+                                                alt="Телеграм"
+                                                width="25"
+                                                height="25"
+                                            />
+                                            Telegram
+                                        </span>
+                                    </label>
+
+                                    <label class="social-check">
+                                        <input
+                                            type="checkbox"
+                                            name="contact_max"
+                                            value="max"
+                                        />
+                                        <span class="social-check__box">
+                                            <img
+                                                src="./img/form/max.svg"
+                                                alt="макс"
+                                                width="25"
+                                                height="25"
+                                            />
+                                            MAX
+                                        </span>
+                                    </label>
+
+                                    <label class="social-check">
+                                        <input
+                                            type="checkbox"
+                                            name="contact_vk"
+                                            value="vk"
+                                        />
+                                        <span class="social-check__box">
+                                            <img
+                                                src="./img/form/vk.svg"
+                                                alt="вконтакте"
+                                                width="25"
+                                                height="25"
+                                            />
+                                            ВКонтакте
+                                        </span>
+                                    </label>
+
+                                    <span
+                                        class="social-error form__error"
+                                        style="display: none"
+                                    >
+                                        Выберите удобный способ связи
+                                    </span>
+                                </div>
+                                <span class="form__error"></span>
+                            </div>
+
+                            <div class="form__group hh__group">
+                                <h3 class="hh__grid-title">
+                                    Профессиональная сфера
+                                </h3>
+                                <input
+                                    type="textarea"
+                                    name="name"
+                                    placeholder="Напишите свою сферу"
+                                    autocomplete="name"
+                                    required
+                                    class="bg-liquid-glass"
+                                />
+                                <span class="form__error"></span>
+                            </div>
+
+                            <div class="form__group hh__group">
+                                <h3 class="hh__grid-title">
+                                    Почему хотите в команду
+                                </h3>
+                                <input
+                                    type="textarea"
+                                    name="name"
+                                    placeholder="Напишите причину"
+                                    autocomplete="name"
+                                    required
+                                    class="bg-liquid-glass"
+                                />
+                                <span class="form__error"></span>
+                            </div>
+                        </div>
+
+                        <div class="form__bottom hh__bottom">
+                            <div class="form__btns">
+                                <button
+                                    type="submit"
+                                    class="form__button"
+                                >
+                                    <img src="./img/form/star.svg" alt="" class="form__button-star">
+                                    <span>Отправить</span>
+                                    <img src="./img/form/star.svg" alt="" class="form__button-star">
+                                </button>
+                            </div>
+                        </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- МОДАЛКА HH -->
+        </main>
+        <!-- MAIN -->
+
+        <!-- FOOTER -->
+        <footer class="footer" id="footer">
+            <div class="footer__container container">
+                <div class="footer__content">
+                    <div class="footer__logo">
+                        <a href="#" class="footer__logo-link">
+                            <img
+                                src="./img/footer/logo.svg"
+                                alt="Логотип"
+                                width="370"
+                                height="92"
+                                class="footer__logo-img"
+                            />
+                        </a>
+                    </div>
+
+                    <div class="footer__bottom">
+                        <p class="footer__text">
+                            Помогаем компаниям и&nbsp; экспертам находить свои
+                            рабочие маркетинговые инструменты, чтобы расти
+                            быстрее, смелее и выходить на&nbsp;новый уровень
+                        </p>
+
+                        <div class="footer__icons">
+                            <ul class="footer__list">
+                                <li class="footer__item">
+                                    <a
+                                        href="https://t.me/DVMarketing24"
+                                        class="footer__link"
+                                        target="_blank"
+                                    >
+                                        <img
+                                            src="./img/footer/telega.svg"
+                                            alt="Мессенджер Телеграм"
+                                        />
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a class="footer__link" target="_blank">
+                                        <img
+                                            src="./img/footer/max.svg"
+                                            alt="Мессенджер МАКС"
+                                        />
+                                    </a>
+                                </li>
+                                <li class="footer__item">
+                                    <a
+                                        href="https://vk.com/dvm_agency?w=club235903218"
+                                        class="footer__link"
+                                        target="_blank"
+                                    >
+                                        <img
+                                            src="./img/footer/vk.svg"
+                                            alt="Мессенджер Вконтакте"
+                                        />
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- FOOTER -->
+
+        <!-- SCROLL UP -->
+        <div class="fab-pill-wrap">
+            <div class="fab-pill" id="fabPill">
+                <div class="fab-pill-actions" id="fabPillActions">
+                    <button
+                        class="fab-pill-btn fab-pill-btn--top"
+                        onclick="
                             window.scrollTo({ top: 0, behavior: 'smooth' })
-                        " aria-label="Наверх">
-                    <i class="ti ti-arrow-up"></i>
-                    <span class="fab-pill-tooltip">Наверх</span>
-                </button>
+                        "
+                        aria-label="Наверх"
+                    >
+                        <i class="ti ti-arrow-up"></i>
+                        <span class="fab-pill-tooltip">Наверх</span>
+                    </button>
 
-                <button class="fab-pill-btn fab-pill-btn--theme theme-toggle" onclick="toggleTheme()"
-                    aria-label="Сменить тему">
-                    <i class="ti ti-sun-moon"></i>
-                    <span class="fab-pill-tooltip">Тема</span>
-                </button>
+                    <button
+                        class="fab-pill-btn fab-pill-btn--theme theme-toggle"
+                        onclick="toggleTheme()"
+                        aria-label="Сменить тему"
+                    >
+                        <i class="ti ti-sun-moon"></i>
+                        <span class="fab-pill-tooltip">Тема</span>
+                    </button>
 
-                <!-- <a href="#" class="theme-toggle">
+                    <!-- <a href="#" class="theme-toggle">
                         <img
                             src="./img/header/eye.svg"
                             alt="Версия для слепых"
@@ -1393,57 +2252,84 @@
                         />
                     </a> -->
 
-                <div class="fab-pill-sep"></div>
+                    <div class="fab-pill-sep"></div>
 
-                <button class="fab-pill-btn fab-pill-btn--telegram" onclick="window.open('https://t.me/yourname')"
-                    aria-label="Telegram">
-                    <i class="ti ti-brand-telegram"></i>
-                    <span class="fab-pill-tooltip">Telegram</span>
-                </button>
+                    <button
+                        class="fab-pill-btn fab-pill-btn--telegram"
+                        onclick="window.open('https://t.me/yourname')"
+                        aria-label="Telegram"
+                    >
+                        <i class="ti ti-brand-telegram"></i>
+                        <span class="fab-pill-tooltip">Telegram</span>
+                    </button>
 
-                <button class="fab-pill-btn fab-pill-btn--vk" onclick="window.open('https://vk.com/yourpage')"
-                    aria-label="ВКонтакте">
-                    <i class="ti ti-brand-vk"></i>
-                    <span class="fab-pill-tooltip">ВКонтакте</span>
-                </button>
+                    <button
+                        class="fab-pill-btn fab-pill-btn--vk"
+                        onclick="window.open('https://vk.com/yourpage')"
+                        aria-label="ВКонтакте"
+                    >
+                        <i class="ti ti-brand-vk"></i>
+                        <span class="fab-pill-tooltip">ВКонтакте</span>
+                    </button>
 
-                <div class="fab-pill-sep"></div>
+                    <div class="fab-pill-sep"></div>
 
-                <button class="fab-pill-btn fab-pill-btn--phone" onclick="window.location = 'tel:+7XXXXXXXXXX'"
-                    aria-label="Позвонить">
-                    <i class="ti ti-phone"></i>
-                    <span class="fab-pill-tooltip">Позвонить</span>
+                    <button
+                        class="fab-pill-btn fab-pill-btn--phone"
+                        onclick="window.location = 'tel:+7XXXXXXXXXX'"
+                        aria-label="Позвонить"
+                    >
+                        <i class="ti ti-phone"></i>
+                        <span class="fab-pill-tooltip">Позвонить</span>
+                    </button>
+                </div>
+                <button
+                    class="fab-pill-toggle"
+                    id="fabPillToggle"
+                    aria-label="Меню"
+                >
+                    <i class="ti ti-arrow-left"></i>
                 </button>
             </div>
-            <button class="fab-pill-toggle" id="fabPillToggle" aria-label="Меню">
-                <i class="ti ti-arrow-left"></i>
-            </button>
         </div>
-    </div>
-    <!-- SCROLL UP -->
+        <!-- SCROLL UP -->
 
-    <!-- SCRIPT -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <script src="./script/dark-light.js"></script>
-    <script src="./script/burger.js"></script>
-    <script src="./script/advantages.js"></script>
+        <!-- SCRIPT -->
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        ></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+        ></script>
+        <script src="./script/dark-light.js"></script>
+        <script src="./script/burger.js"></script>
+        <script src="./script/advantages.js"></script>
 
-    <script src="./script/accordion.js"></script>
-    <script src="./script/slider.js?v2.2"></script>
-    <script src="./script/form.js?v2.8"></script>
-    <script src="./script/scroll.js"></script>
-    <script src="./script/phone.js?v2.0"></script>
-    <script src="./script/hero-parallax.js"></script>
-    <script src="./script/boom.js"></script>
+        <script src="./script/accordion.js"></script>
+        <script src="./script/slider.js?v2.2"></script>
+        <script src="./script/form.js?v2.8"></script>
+        <script src="./script/scroll.js"></script>
+        <script src="./script/phone.js?v2.0"></script>
+        <script src="./script/hero-parallax.js"></script>
+        <script src="./script/boom.js"></script>
 
-    <!-- текст расстягивается на всю ширну блока -->
-    <script src="https://cdn.jsdelivr.net/npm/fitty/dist/fitty.min.js"></script>
-    <script>
-        fitty("#hero__text");
-        fitty("#form__title");
-    </script>
-    <!-- SCRIPT -->
-</body>
+        <!-- текст расстягивается на всю ширну блока -->
+        <script src="https://cdn.jsdelivr.net/npm/fitty/dist/fitty.min.js"></script>
+        <script>
+            fitty("#hero__text");
+            fitty("#form__title");
+        </script>
+        <!-- SCRIPT -->
 
+        <script>
+            const btn = document.querySelector(".team__slider-close-open");
+            const slider = document.querySelector(".team__slider-close");
+
+            btn.addEventListener("click", () => {
+                slider.style.display = "none";
+            });
+        </script>
+    </body>
 </html>

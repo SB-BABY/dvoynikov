@@ -1,0 +1,77 @@
+.hh {
+    position: relative;
+    background: linear-gradient(213deg, #000060 0%, #121033 42.25%, #4d53f0 100%);
+    padding: 50px;
+    border-radius: 50px;
+    border: 2px solid white;
+
+    &__bg{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 1;
+    }
+
+    &__title {
+        @include fluid-text(30, 14);
+        font-family: var(--font3);
+        font-weight: 500;
+    }
+
+    &__body{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        z-index: 2;
+
+        @include mobile{
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__grid{
+        position: relative;
+        z-index: 2;
+    }
+
+    &__group {
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 48px;
+            // border: 1px solid var(--color-border-light);
+            background: rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            // box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            color: var(--color-light);
+            text-align: left;
+            text-transform: uppercase;
+
+            &:focus {
+                outline: 2px solid #1d7fbf;
+            }
+        }
+
+        input::placeholder,
+        select::placeholder {
+            color: var(--color-light);
+            text-align: left;
+        }
+
+        &-social{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+    }
+
+    &__bottom{
+        align-items: flex-end;
+        position: relative;
+        z-index: 2;
+    }
+}
