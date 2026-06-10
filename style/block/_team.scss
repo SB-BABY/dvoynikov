@@ -103,24 +103,25 @@
         }
 
         &-text {
-            // margin-left: 100px;
-            text-align: left;
+            align-self: stretch;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             align-items: flex-start;
+            min-height: 150px;
+
             span {
                 display: inline-block;
                 font-family: var(--font-family);
                 font-weight: 500;
                 @include fluid-text(20, 12);
                 text-align: left;
-                width: 70%;
                 margin-top: 20px;
             }
+
             @include mobile {
                 margin-left: 0;
-                text-align: center;
+                align-items: center;
             }
         }
 
@@ -143,12 +144,18 @@
             font-weight: 400;
             color: #3b42f4;
 
-            position: relative;
-            column-gap: 20px;
-            padding: 37px 40px 45px;
+            width: 280px; // подбери под размер картинки кнопки
+            height: 50px; // подбери под размер картинки кнопки
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 0;
             border-radius: 70px;
             text-transform: uppercase;
             @include fluid-text(16, 10);
+            margin-top: auto;
         }
 
         &-btn {
@@ -246,6 +253,7 @@
             left: -9%;
             width: 30%;
             height: auto;
+
             @include tablet {
                 display: none;
             }
@@ -256,6 +264,7 @@
             right: 3%;
             width: 35%;
             height: auto;
+
             @include tablet {
                 display: none;
             }

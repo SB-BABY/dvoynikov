@@ -1,10 +1,8 @@
 .slider {
     // background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
-    background: radial-gradient(
-        55.72% 55.72% at 50% 50%,
-        #4d53f2 0%,
-        #000016 100%
-    );
+    background: radial-gradient(55.72% 55.72% at 50% 50%,
+            #4d53f2 0%,
+            #000016 100%);
     padding-top: 100px;
     padding-bottom: 30px;
     overflow: hidden;
@@ -113,116 +111,101 @@
             border-radius: 78px;
         }
 
-        &-dekor {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px;
-            height: 50px;
-            border-radius: 39px;
-            background: var(--color-light);
-            transform: translate(0%, -50%);
-        }
-
         &-content {
             border-radius: 78px;
-            // padding: 40px 30px 30px;
-            padding: 40px 30px 60px;
-            background: linear-gradient(
-                180deg,
-                rgba(36, 41, 149, 0) 0%,
-                #0b0d2f 67.31%
-            );
-            transform: scale(1);
+            padding: 40px 30px 40px;
+            background: linear-gradient(180deg, rgba(36, 41, 149, 0) 0%, #0b0d2f 67.31%);
             border: 5px solid var(--color-light);
             text-align: center;
+            box-sizing: border-box;
+            height: 450px; // фиксированная высота
 
-            position: relative;
+            display: flex;
+            flex-direction: column; // flexbox проще грида здесь
+        }
 
-            display: grid;
-            grid-template-rows: 95px 60px 120px;
-
-            height: 100%;
+        &-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-shrink: 0;
+            gap: 8px;
         }
 
         &-title {
-            @include fluid-text(46, 14);
+            @include fluid-text(46, 40);
             font-family: var(--font-family-bold);
             font-weight: 700;
             line-height: 110%;
             text-transform: uppercase;
             color: var(--color-light);
-            // margin-bottom: 125px;
-            // margin-bottom: 3em;
-
-            min-height: 1.4em; // 2 строки
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-img {
-            margin: 0 auto;
-            width: 150px;
-            height: 150px;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            object-fit: contain;
-
-            img {
-                margin: 0 auto;
-            }
         }
 
         &-text {
-            @include fluid-text(15, 8);
+            @include fluid-text(15, 12);
             font-family: var(--font-family);
             font-weight: 500;
             text-transform: capitalize;
-            margin-bottom: 20px;
-            min-height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
 
-        &-button {
-            text-align: center;
+        &-img {
+            overflow: hidden;
+            padding: 40px 0 0;
+            min-height: 130px; // фиксированная высота блока
+            height: 190px;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
         }
 
         &-btn {
-            padding: 30px 20px 30px 40px;
-            text-align: center;
+            white-space: nowrap;
+            flex-shrink: 0; // не сжимается
+            margin-top: 20px;
+            padding: 20px 20px 20px 40px;
             font-family: var(--font-family);
             font-weight: 500;
-            @include fluid-text(18, 11);
+            @include fluid-text(16, 11);
             text-transform: uppercase;
             color: var(--color-light);
             box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.25);
             background: rgba(255, 255, 255, 0.1);
             border-radius: 77px;
             width: 100%;
-
             display: flex;
             align-items: center;
-            justify-content: space-between;
             column-gap: 20px;
 
+            background-image: url(../img/case/btn.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: center;
+
+            @include mobile {
+
+                padding: 30px 20px 30px 40px;
+            }
+
             img {
-                width: 15%;
+                width: 12%;
+                object-fit: contain;
             }
         }
     }
 
-    .slick-center > .slider__item-dekor {
+    .slick-center>.slider__item-dekor {
         display: none;
     }
 
     .slick-active {
         @include mobile-above {
-            &:not(.slick-center) .slider__item-content {
-                
+
+            &:not(.slick-center) .slider__item-btn {
+                display: none;
+                height: 0;
             }
 
             &:not(.slick-center) .slider__item-title {
@@ -241,6 +224,7 @@
         max-width: 700px;
         text-align: center;
         margin: 0 auto;
+
         &-img {
             background: #000;
             width: 100px;
