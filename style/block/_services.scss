@@ -22,7 +22,7 @@
     &__title {
         font-family: var(--font-family);
         font-weight: 400;
-        @include fluid-text(60, 18);
+        @include fluid-text(60, 32);
         text-transform: uppercase;
         position: relative;
 
@@ -87,6 +87,14 @@
         justify-content: flex-end;
         padding: 200px 40px 40px;
         min-height: 100%;
+
+        @include mobile{
+            padding: 60px 20px 40px;
+        }
+
+        @include mobile-s{
+            padding: 50px 20px 30px;
+        }
 
         &:hover {
             transform: scale(1.02);
@@ -156,7 +164,7 @@
             /* Ключевое свойство */
 
             @include mobile {
-                margin-top: 100px;
+                margin-top: 30px;
             }
         }
 
@@ -249,7 +257,7 @@
         column-gap: 150px;
 
         @include mobile {
-            flex-direction: column;
+            grid-template-columns: 1fr;
             row-gap: 20px;
         }
 

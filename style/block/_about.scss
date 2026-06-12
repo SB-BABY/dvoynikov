@@ -52,7 +52,7 @@
         font-family: var(--font-family);
         font-weight: 400;
         text-transform: uppercase;
-        @include fluid-text(64, 24);
+        @include fluid-text(64, 32);
         margin-bottom: 58px;
         position: relative;
         z-index: 9;

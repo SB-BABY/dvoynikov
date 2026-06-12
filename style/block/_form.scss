@@ -52,6 +52,11 @@
         z-index: 1;
         margin-bottom: 110px;
         text-shadow: 6px 4px 0 #000461;
+
+        @include mobile{
+            line-height: 30px;
+            margin-bottom: 40px;
+        }
     }
 
     &__body {
@@ -76,6 +81,7 @@
         @include mobile {
             grid-template-columns: repeat(1, 1fr);
             padding: 50px 25px;
+            gap: 20px;
         }
 
         &-bg {
@@ -86,6 +92,10 @@
             transform: translate(-50%, -50%);
             width: 40%;
             height: auto;
+
+            @include tablet{
+                left: 35%;
+            }
         }
     }
 
@@ -311,6 +321,7 @@
         background-image: url("../img/form/bg-btn.svg");
         background-repeat: no-repeat;
         background-size: 100%;
+        width: fit-content;
         transition: all 0.3s ease-in-out;
 
         &:hover {
@@ -335,6 +346,14 @@
 
         &-star {
             width: 50%;
+        }
+
+        @include tablet{
+            padding: 13px 28px;
+        }
+
+        @include mobile{
+            padding: 11px 28px;
         }
     }
 

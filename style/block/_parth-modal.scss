@@ -1,0 +1,101 @@
+.parth {
+    &__content {
+        &-img-bg {
+            width: 20%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        &-block {
+            width: 100%;
+            height: 300px;
+            background: var(--color-light);
+            margin-top: 40px;
+            border-radius: 50px;
+        }
+    }
+
+    &__title {
+        &-bg {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    &__text {
+        position: relative;
+        z-index: 2;
+        margin-top: 50px;
+        font-family: var(--third-family);
+        font-weight: 400;
+        // font-size: 48px;
+        @include fluid-text(24, 12);
+        line-height: 105%;
+        letter-spacing: 0.1em;
+        color: #fff;
+
+        p {
+            display: inline-block;
+            // max-width: 60%;
+        }
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 40px;
+        gap: 50px;
+        margin-bottom: 40px;
+    }
+
+    &__item {
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        &-title {
+            font-family: var(--font3);
+            font-weight: 500;
+            font-size: 60px;
+            text-transform: uppercase;
+            @include fluid-text(34, 24);
+        }
+
+        &-text {
+            font-family: var(--font-family);
+            font-weight: 400;
+            @include fluid-text(34, 24);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+    }
+
+    &__btn {
+        border: none;
+        background: none;
+        background-image: url("../img/parthners/modal-btn.svg");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center;
+
+        font-family: var(--font3);
+        font-weight: 400;
+        color: #3b42f4;
+
+        width: 40%;
+        height: 55px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 0;
+        border-radius: 70px;
+        text-transform: uppercase;
+        @include fluid-text(16, 14);
+        margin-top: auto;
+        left: 50%;
+    }
+}

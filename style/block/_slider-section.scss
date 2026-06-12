@@ -50,9 +50,9 @@
         }
 
         h2 {
-            font-family: var(--second-family);
-            font-weight: 700;
-            @include fluid-text(64, 24);
+            font-family: var(--font-family);
+            font-weight: 500;
+            @include fluid-text(64, 32);
             text-transform: uppercase;
             position: relative;
             z-index: 10;
@@ -118,7 +118,7 @@
             border: 5px solid var(--color-light);
             text-align: center;
             box-sizing: border-box;
-            height: 450px; // фиксированная высота
+            height: 400px; // фиксированная высота
 
             display: flex;
             flex-direction: column; // flexbox проще грида здесь
