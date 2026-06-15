@@ -24,6 +24,7 @@
 
     &__container {
         position: relative;
+        z-index: 2;
     }
 
     &__content {
@@ -53,7 +54,7 @@
         margin-bottom: 110px;
         text-shadow: 6px 4px 0 #000461;
 
-        @include mobile{
+        @include mobile {
             line-height: 30px;
             margin-bottom: 40px;
         }
@@ -93,7 +94,7 @@
             width: 40%;
             height: auto;
 
-            @include tablet{
+            @include tablet {
                 left: 35%;
             }
         }
@@ -318,10 +319,11 @@
     }
 
     &__btns {
-        background-image: url("../img/form/bg-btn.svg");
-        background-repeat: no-repeat;
-        background-size: 100%;
         width: fit-content;
+
+        background: url("../img/form/bg-btn.svg") center center / 100% 100%
+            no-repeat;
+
         transition: all 0.3s ease-in-out;
 
         &:hover {
@@ -348,11 +350,11 @@
             width: 50%;
         }
 
-        @include tablet{
+        @include tablet {
             padding: 13px 28px;
         }
 
-        @include mobile{
+        @include mobile {
             padding: 11px 28px;
         }
     }

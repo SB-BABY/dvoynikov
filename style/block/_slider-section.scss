@@ -1,8 +1,10 @@
 .slider {
     // background: linear-gradient(180deg, #000016 0%, #3d44fb 100%);
-    background: radial-gradient(55.72% 55.72% at 50% 50%,
-            #4d53f2 0%,
-            #000016 100%);
+    background: radial-gradient(
+        55.72% 55.72% at 50% 50%,
+        #4d53f2 0%,
+        #000016 100%
+    );
     padding-top: 100px;
     padding-bottom: 30px;
     overflow: hidden;
@@ -114,7 +116,11 @@
         &-content {
             border-radius: 78px;
             padding: 40px 30px 40px;
-            background: linear-gradient(180deg, rgba(36, 41, 149, 0) 0%, #0b0d2f 67.31%);
+            background: linear-gradient(
+                180deg,
+                rgba(36, 41, 149, 0) 0%,
+                #0b0d2f 67.31%
+            );
             border: 5px solid var(--color-light);
             text-align: center;
             box-sizing: border-box;
@@ -179,13 +185,10 @@
             align-items: center;
             column-gap: 20px;
 
-            background-image: url(../img/case/btn.png);
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: center;
+            background: url("../img/case/btn.png") center center / 100% 100%
+                no-repeat;
 
             @include mobile {
-
                 padding: 30px 20px 30px 40px;
             }
 
@@ -196,13 +199,12 @@
         }
     }
 
-    .slick-center>.slider__item-dekor {
+    .slick-center > .slider__item-dekor {
         display: none;
     }
 
     .slick-active {
         @include mobile-above {
-
             &:not(.slick-center) .slider__item-btn {
                 display: none;
                 height: 0;

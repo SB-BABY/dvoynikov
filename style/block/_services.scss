@@ -88,11 +88,11 @@
         padding: 200px 40px 40px;
         min-height: 100%;
 
-        @include mobile{
+        @include mobile {
             padding: 60px 20px 40px;
         }
 
-        @include mobile-s{
+        @include mobile-s {
             padding: 50px 20px 30px;
         }
 
@@ -261,6 +261,127 @@
             row-gap: 20px;
         }
 
+        &-second {
+            padding: 0;
+            grid-template-columns: 1fr;
+            &-title {
+                font-family: var(--font-family);
+                font-weight: 400;
+                // font-size: 90px;
+                @include fluid-text(40, 30);
+                line-height: 103%;
+                text-transform: uppercase;
+                margin-top: 50px;
+            }
+
+            &-left {
+                display: inline-block;
+                width: 50%;
+            }
+
+            &-right {
+                display: inline-block;
+                width: 40%;
+                margin-left: auto;
+            }
+
+            &-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                margin-top: 30px;
+            }
+
+            &-radio-group {
+                display: inline-block;
+                // margin: 20px;
+                border-radius: 10px;
+                overflow: hidden;
+
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                align-items: center;
+                gap: 20px;
+
+                & input[type="radio"] {
+                    position: absolute;
+                    visibility: hidden;
+                    display: none;
+                }
+
+                & label {
+                    color: var(--color-dark);
+                    background: var(--color-light);
+                    display: inline-block;
+                    cursor: pointer;
+                    font-weight: bold;
+                    padding: 5px 20px;
+                    text-align: center;
+                    font-family: var(--third-family);
+                    font-weight: bold;
+                    // font-size: 35px;
+                    @include fluid-text(17, 10);
+                    border-radius: 95px;
+                    white-space: nowrap;
+                }
+
+                & input[type="radio"]:checked + label {
+                    color: var(--color-dark);
+                    background: var(--color-light);
+                    border: solid 5px var(--color-accent-light);
+                }
+
+                & label + input[type="radio"] + label {
+                    border: solid 1px var(--color-light);
+                    width: 100%;
+                }
+            }
+
+            &-group {
+                & input {
+                    border-radius: 95px;
+                    padding-left: 20px;
+                    border: none;
+                    padding-top: 8px;
+                    padding-bottom: 8px;
+                    width: 100%;
+
+                    @include mobile {
+                        width: 100%;
+                    }
+                }
+
+                &-list {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+                }
+            }
+
+            &-button {
+                border: none;
+                width: 100%;
+                min-height: 50px;
+
+                background: url("../img/modal/btn-modal-second.png  ") center center / 100% 100%
+                    no-repeat;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-family: var(--font3);
+                font-weight: 400;
+                color: var(--color-light);
+
+                padding: 0;
+                border-radius: 70px;
+                text-transform: uppercase;
+                @include fluid-text(10, 8);
+                margin-top: auto;
+            }
+        }
+
         &-grid {
             display: flex;
             flex-direction: column;
@@ -341,13 +462,13 @@
                 white-space: nowrap;
             }
 
-            & input[type="radio"]:checked+label {
+            & input[type="radio"]:checked + label {
                 color: var(--color-dark);
                 background: var(--color-light);
                 border: solid 5px var(--color-accent-light);
             }
 
-            & label+input[type="radio"]+label {
+            & label + input[type="radio"] + label {
                 border: solid 1px var(--color-light);
                 width: 100%;
             }

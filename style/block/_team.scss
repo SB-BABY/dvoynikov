@@ -85,7 +85,7 @@
             padding: 60px 30px;
             flex-wrap: nowrap;
 
-            @include tablet{
+            @include tablet {
                 gap: 70px;
             }
 
@@ -100,11 +100,11 @@
             width: 35%;
             height: auto;
 
-            @include mobile{
+            @include mobile {
                 width: 70%;
             }
 
-            @include mobile-s{
+            @include mobile-s {
                 width: 100%;
             }
         }
@@ -146,22 +146,19 @@
 
         &-open {
             border: none;
-            background: none;
-            background-image: url("../img/team/btn.png");
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: center;
-
-            font-family: var(--font-family);
-            font-weight: 400;
-            color: #3b42f4;
-
             width: 70%;
-            height: 50px;
+            min-height: 50px;
+
+            background: url("../img/team/btn.png") center center / 100% 100%
+                no-repeat;
 
             display: flex;
             align-items: center;
             justify-content: center;
+
+            font-family: var(--font-family);
+            font-weight: 400;
+            color: #3b42f4;
 
             padding: 0;
             border-radius: 70px;
@@ -172,46 +169,33 @@
 
         &-btn {
             border: none;
-            background: none;
-            background-image: url("../img/team/btn-close.svg");
-            background-repeat: no-repeat;
-            background-size: 100%;
-            background-position: center;
+            width: min(70%, 400px);
 
-            font-family: var(--font-family);
-            font-weight: 500;
-            color: #3b42f4;
+            min-height: 60px;
 
-            width: 50%;
-            height: 11%;
+            background: url("../img/team/btn-close.svg") center center / 100%
+                100% no-repeat;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            padding: 0;
+            padding-inline: 30px;
             border-radius: 70px;
+            font-family: var(--font-family);
+            font-weight: 500;
+            color: #3b42f4;
+
             text-transform: uppercase;
-            @include fluid-text(24, 12);
+            @include fluid-text(18, 10);
             margin-top: auto;
 
             text-align: center;
 
             box-shadow: 0 4px 26px 0 rgba(255, 255, 255, 0.55);
-
-            @include tablet {
-                width: 70%;
-                height: 9%;
-            }
-
-            @include mobile {
-                width: 70%;
-                height: 9%;
-            }
-
+            
             @include mobile-s {
-                width: 70%;
-                height: 5%;
+                min-height: 40px;
             }
         }
     }

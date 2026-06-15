@@ -105,7 +105,7 @@
         z-index: 10;
 
         @include mobile {
-            justify-content: space-between;     
+            justify-content: space-between;
         }
     }
 
@@ -157,11 +157,15 @@
 
     &__link {
         font-weight: 500;
-        text-transform: uppercase;
         background: linear-gradient(180deg, #fff 0%, #8c9df4 100%);
         background-clip: text;
         -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+        // -webkit-text-fill-color: transparent;
+        color: transparent;
+        line-height: 1.1;
+
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
         transition: all 0.3s ease-in-out;
         &:hover {
             background: #8c9df4;
@@ -183,7 +187,7 @@
     &__phone {
         background-image: url("../img/header//btn.svg");
         background-repeat: no-repeat;
-        background-size: 100%;
+        background-size: contain;
         background-position: center;
 
         position: relative;

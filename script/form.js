@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function showFieldError(input, message) {
         input.style.outline = "2px solid red";
         const errorEl = input
-            .closest(".form__group, .services__form-group, .form__check, .hh__group")
+            .closest(".form__group, .services__form-group, .services__form-second-radio-group, .form__check, .hh__group")
             ?.querySelector(".form__error");
         if (errorEl) {
             errorEl.textContent = message || "Заполните поле";
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function clearFieldError(input) {
         input.style.outline = "";
         const errorEl = input
-            .closest(".form__group, .services__form-group, .form__check, .hh__group")
+            .closest(".form__group, .services__form-group, .services__form-second-radio-group, .form__check, .hh__group")
             ?.querySelector(".form__error");
         if (errorEl) {
             errorEl.textContent = "";
@@ -281,7 +281,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (radioGroup) {
                 const anyRadioChecked = [...form.querySelectorAll('input[name="selector"]')].some((r) => r.checked);
                 if (!anyRadioChecked) {
-                    const radioContainer = form.querySelector(".services__form-radio-group");
+                    const radioContainer = form.querySelector(".services__form-radio-group, .services__form-second-radio-group ");
                     if (radioContainer) {
                         radioContainer.style.outline = "2px solid red";
                         radioContainer.style.borderRadius = "8px";
