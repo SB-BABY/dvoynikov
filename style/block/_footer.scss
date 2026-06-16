@@ -25,7 +25,6 @@
         font-family: var(--font-family);
         font-weight: 500;
         @include fluid-text(22, 16);
-        text-transform: uppercase;
         max-width: 28%;
         @include mobile{
             max-width: 70%;
@@ -40,8 +39,8 @@
 
     &__item {
         position: relative;
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         background-color: #fff;
         cursor: pointer;
@@ -50,8 +49,8 @@
 
     &__link {
         & img {
-            width: 60px;
-            height: 60px;
+            width: 45px;
+            height: 45px;
             position: relative;
 
             &::before {

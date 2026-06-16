@@ -15,6 +15,8 @@
         gap: 6px;
         z-index: 101;
 
+        position: absolute;
+
         span {
             display: block;
             width: 100%;
@@ -25,6 +27,7 @@
 
         @include mobile {
             display: flex;
+            position: relative;
         }
     }
 
@@ -152,6 +155,7 @@
         @include mobile {
             column-gap: 20px;
             font-size: 12px;
+            font-size: 32px;
         }
     }
 
@@ -214,6 +218,8 @@
 
         @include mobile {
             padding: 10px 20px;
+            font-size: 16px;
+            text-transform: lowercase;
         }
     }
 
@@ -234,7 +240,7 @@
     }
 
     &__phone-number {
-        @include fluid-text(12, 6);
+        @include fluid-text(12, 12);
         white-space: nowrap;
         background: var(--color-blue); // тёмный фон — контраст
         color: var(--color-light);
@@ -247,11 +253,6 @@
     &__phone-link {
         width: 30px;
         height: 30px;
-
-        @include tablet {
-            width: 20px;
-            height: 20px;
-        }
     }
 
     /* активное состояние */

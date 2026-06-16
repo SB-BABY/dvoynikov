@@ -49,7 +49,7 @@
         font-weight: 400;
         @include fluid-text(24, 18);
         margin-top: 20px;
-        max-width: 70%;
+        max-width: 57%;
     }
 
     &__list {
@@ -67,6 +67,7 @@
             z-index: 9;
             top: -10%;
             right: 10%;
+            width: 13%;
 
             @include mobile {
                 width: 20%;
@@ -85,7 +86,7 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        padding: 200px 40px 40px;
+        padding: 170px 40px 40px;
         min-height: 100%;
 
         @include mobile {
@@ -156,7 +157,7 @@
             display: inline-block;
             font-family: var(--font3);
             font-weight: 500;
-            @include fluid-text(24, 16);
+            @include fluid-text(32, 16);
             text-transform: uppercase;
             // margin-bottom: 20px;
             z-index: 9;
@@ -182,7 +183,7 @@
 
         &-two {
             grid-area: 1 / 3 / 2 / 6;
-            line-height: 40px;
+            line-height: 50px;
 
             @include mobile {
                 grid-area: 2 / 1 / 3 / 6;
@@ -200,8 +201,9 @@
             &-bg {
                 position: absolute;
                 z-index: 9;
-                top: 20%;
-                right: 15%;
+                top: 5%;
+                right: 20%;
+                width: 13%;
 
                 @include mobile {
                     width: 20%;
@@ -231,7 +233,7 @@
 
         &-five {
             grid-area: 3 / 1 / 4 / 6;
-            line-height: 40px;
+            line-height: 50px;
             position: relative;
             z-index: 2;
 
@@ -363,8 +365,8 @@
                 width: 100%;
                 min-height: 50px;
 
-                background: url("../img/modal/btn-modal-second.png  ") center center / 100% 100%
-                    no-repeat;
+                background: url("../img/modal/btn-modal-second.png  ") center
+                    center / 100% 100% no-repeat;
 
                 display: flex;
                 align-items: center;

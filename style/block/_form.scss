@@ -47,7 +47,7 @@
     &__title {
         font-family: var(--font3);
         font-weight: 500;
-        @include fluid-text(66, 24);
+        @include fluid-text(18, 12);
         text-transform: uppercase;
         position: relative;
         z-index: 1;
